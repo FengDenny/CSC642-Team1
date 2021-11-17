@@ -1,38 +1,27 @@
-.App {
-  text-align: center;
+/* Google Font Import */
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+/* CSS RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+  list-style-type: none;
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html,
+body {
+  background-color: var(--bg-color);
+  font-family: var(--primary-font);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+:root {
+  --primary-gradient-color: linear-gradient(180deg, #037f9b 0%, #0fa0b2 100%);
+  --primary-font: "Lato", sans-serif;
+  --bg-color: #f6f9fc;
+  --drop-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+  --border-radius: 5px;
 }
