@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Navbar,
-  Container,
-  Row,
-  Col,
-  Nav,
-  Form,
-  Button,
-} from "react-bootstrap";
+import { Navbar, Container, Col, Nav, Button } from "react-bootstrap";
 import SearchBar from "./SearchBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
@@ -18,28 +10,14 @@ library.add(faGithub, faLinkedin, faSearch);
 export default function NavbarComponent() {
   return (
     <>
-      <Navbar variant='dark' className='gradient'>
+      <Navbar collapseOnSelect expand='lg' variant='dark' className='gradient'>
         <Container>
-          <Row>
-            <Col xs={8} md={4}>
-              <Nav.Item>
-                <Navbar.Brand href='/' className='navbar-logo'>
-                  Participaid
-                </Navbar.Brand>
-                <SearchBar />
-                <Button variant='primary' className='search-button'>
-                  <FontAwesomeIcon icon={faSearch} size='1x' />
-                </Button>
-                <Button
-                  variant='outline-primary'
-                  className='justify-content-end'
-                >
-                  Primary
-                </Button>
-              </Nav.Item>
-            </Col>
-
-            <Nav className='justify-content-center'>
+          <Navbar.Brand href='#home' className='navbar-logo'>
+            Participaid
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls='responsive-navbar-nav' />
+          <Navbar.Collapse id='responsive-navbar-nav'>
+            <Nav className='me-auto '>
               <Col xs={6} md={4}>
                 <Nav.Item>
                   <Nav.Link href='/about' className='links '>
@@ -62,7 +40,21 @@ export default function NavbarComponent() {
                 </Nav.Item>
               </Col>
             </Nav>
-          </Row>
+            <Nav className='d-flex'>
+              <SearchBar />
+              <Button variant='primary' className='search-button'>
+                <FontAwesomeIcon icon={faSearch} size='1x' />
+              </Button>
+            </Nav>
+            <Nav>
+              <Button variant='outline-primary' className='signin-btn'>
+                SIGN IN
+              </Button>
+              <Button variant='outline-primary' className='signup-btn'>
+                SIGN UP, IT’S FREE
+              </Button>
+            </Nav>
+          </Navbar.Collapse>
         </Container>
       </Navbar>
     </>
