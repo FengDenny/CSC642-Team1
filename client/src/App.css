@@ -19,7 +19,11 @@ body {
 }
 
 :root {
-  --primary-gradient-color: linear-gradient(180deg, #037f9b 0%, #0fa0b2 100%);
+  --primary-gradient-color: linear-gradient(
+    90deg,
+    rgba(15, 160, 178, 1) 0%,
+    rgba(3, 127, 155, 1) 100%
+  );
   --primary-font: "Lato", sans-serif;
   --bg-color: #f6f9fc;
   --drop-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
