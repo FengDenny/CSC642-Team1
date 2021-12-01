@@ -12,7 +12,7 @@ import {
 export default function SearchBar() {
   return (
     <>
-      <Form>
+      <Form className='search-form'>
         <Form.Select
           aria-label='Default select example'
           className='search-select'
