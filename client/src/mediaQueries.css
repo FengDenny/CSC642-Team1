@@ -1,0 +1,35 @@
+@media screen and (max-width: 890px) {
+  /* navbar */
+  .gradient .links {
+    left: 0px;
+  }
+  .search-form {
+    right: 120px;
+  }
+  .search-button {
+    position: relative;
+    left: 300px;
+    bottom: 40px;
+  }
+  .search-bar {
+    width: auto !important;
+    position: relative;
+    left: 117px;
+    width: 300px !important;
+    padding: 0.375rem 0.3rem !important;
+  }
+  .search-select {
+    visibility: hidden;
+  }
+  .signin-btn {
+    position: relative;
+    bottom: 20px;
+    width: 350px !important;
+  }
+
+  .signup-btn {
+    position: relative;
+    bottom: 10px;
+    width: 350px !important;
+  }
+}
