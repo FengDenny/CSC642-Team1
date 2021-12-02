@@ -1,3 +1,17 @@
+@media screen and (max-width: 991.98px) {
+  .row {
+    flex-wrap: wrap !important;
+  }
+
+  /* Hero */
+
+  .hero .hero-img {
+    position: relative;
+    left: 10%;
+    top: 25px;
+  }
+}
+
 @media screen and (max-width: 890px) {
   /* navbar */
   .gradient .links {
