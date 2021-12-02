@@ -1,5 +1,6 @@
 import React from "react";
-import { Navbar, Container, Col, Nav, Button } from "react-bootstrap";
+import { Navbar, Container, Col, Nav, Button, Image } from "react-bootstrap";
+import Logo from "../../image/logo.png";
 import SearchBar from "./SearchBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
@@ -12,15 +13,15 @@ export default function NavbarComponent() {
     <>
       <Navbar collapseOnSelect expand='lg' variant='dark' className='gradient'>
         <Container>
-          <Navbar.Brand href='#home' className='navbar-logo'>
-            Participaid
+          <Navbar.Brand href='/'>
+            <Image src={Logo} rounded alt='logo' className='navbar-logo' />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse id='responsive-navbar-nav'>
             <Nav className='me-auto '>
               <Col xs={6} md={4}>
                 <Nav.Item>
-                  <Nav.Link href='/about' className='links '>
+                  <Nav.Link href='/about' className='links  '>
                     About Us
                   </Nav.Link>
                 </Nav.Item>
@@ -50,7 +51,10 @@ export default function NavbarComponent() {
               <Button variant='outline-primary' className='signin-btn'>
                 SIGN IN
               </Button>
-              <Button variant='outline-primary' className='signup-btn'>
+              <Button
+                variant='outline-primary'
+                className='signup-btn outline-white'
+              >
                 SIGN UP, IT’S FREE
               </Button>
             </Nav>
