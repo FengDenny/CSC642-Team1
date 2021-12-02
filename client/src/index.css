@@ -1,17 +1,17 @@
 /* Use this file to manipulate bootstrap css */
 /* Navbar START */
-.gradient {
-  background: var(--primary-gradient-color) !important;
-}
 
 .row {
   width: 412px !important;
+  flex-wrap: nowrap !important;
 }
 
 .gradient .links {
   color: #fff;
   position: relative;
-  left: 347px;
+  left: 34px;
+  width: 100px;
+  font-family: var(--primary-font);
 }
 
 .gradient .links:hover {
@@ -22,41 +22,102 @@
 .navbar-dark .navbar-nav .nav-link {
   color: #fff !important;
 }
-/* .nav-links {
-  padding: 0.5rem 17rem !important;
-} */
 
 .nav-item {
   display: flex;
   flex-direction: row;
 }
-
+.nav-items {
+  position: relative;
+}
 .navbar-logo {
-  font-size: 1.5rem !important;
-  font-weight: bold;
+  width: 90px;
 }
 
 .search-bar {
   width: auto !important;
   position: relative;
   left: 87px;
-  width: 500px !important;
+  width: 450px !important;
   padding: 0.375rem 5.75rem !important;
 }
 .search-select {
-  width: auto !important;
+  width: 90px !important;
   position: absolute;
   /* left: 364px; */
   margin-left: 86px;
   z-index: 100;
 }
+.search-form {
+  position: relative;
+  right: 60px;
+}
 
 .search-button {
-  width: 80px;
+  position: relative;
+  width: 50px;
   height: 40px;
-  margin-left: 56px;
+  right: 20px;
   z-index: 100;
   background: var(--primary-gradient-color) !important;
 }
 
+.signin-btn {
+  color: #fff !important;
+  border: none !important;
+  width: 100px !important;
+  margin-right: 13px;
+  outline: none !important;
+  font-family: var(--primary-font);
+}
+
+.signin-btn:hover,
+.signin-btn:active,
+.signup-btn:hover,
+.signup-btn:active {
+  background: var(--primary-gradient-color) !important;
+}
+
+.signin-btn:focus,
+.signup-btn:focus {
+  box-shadow: none !important;
+}
+
 /* Navbar END */
+
+/* Hero START */
+
+.hero .hero-text {
+  width: 492px;
+}
+
+.hero .submit-btn {
+  font-weight: bold;
+}
+
+.hero .submit-btn:hover {
+  background: var(--primary-gradient-color) !important;
+  border: 1px solid var(--primary-gradient-color) !important;
+  outline: none;
+  color: var(--white-color) !important;
+}
+
+.submit-btn:focus {
+  box-shadow: none !important;
+}
+
+.hero .apply-btn {
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+.hero .apply-btn:hover {
+  background: var(--primary-gradient-color) !important;
+}
+
+.hero .hero-img {
+  position: relative;
+  left: 80%;
+  bottom: 30px;
+}
+/* Hero END */
