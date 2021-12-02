@@ -15,7 +15,6 @@ a {
 html,
 body {
   background-color: var(--bg-color);
-  font-family: var(--primary-font);
 }
 
 :root {
@@ -25,7 +24,53 @@ body {
     rgba(3, 127, 155, 1) 100%
   );
   --primary-font: "Lato", sans-serif;
+  --primary-color: #0b97ab;
   --bg-color: #f6f9fc;
   --drop-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
   --border-radius: 5px;
+  --white-color: #fff;
+  --font-size-xsm: 20px;
+  --font-size-sm: 25px;
+  --font-size-md: 30px;
+  --font-size-lg: 45px;
+}
+
+/* UniversaL CSS */
+
+/* Background */
+.gradient {
+  background: var(--primary-gradient-color) !important;
+}
+
+/* Color */
+.white-color {
+  color: var(--white-color);
+}
+
+/* Font */
+.primary-font {
+  font-family: var(--primary-font);
+}
+
+/* Font Size */
+.font-size-sm {
+  font-size: var(--font-size-sm) !important;
+}
+
+/* Buttons */
+
+.outline-white {
+  color: var(--white-color) !important;
+  border: 1px solid var(--white-color) !important;
+  width: 170px !important;
+  font-family: var(--primary-font);
+  box-shadow: var(--drop-shadow) !important;
+}
+
+.bg-white-btn {
+  background-color: var(--white-color) !important;
+  border: 1px solid var(--white-color) !important;
+  color: var(--primary-color) !important;
+  width: 170px !important;
+  box-shadow: var(--drop-shadow) !important;
 }
