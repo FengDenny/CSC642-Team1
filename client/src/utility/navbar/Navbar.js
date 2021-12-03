@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navbar, Container, Col, Nav, Button, Image } from "react-bootstrap";
 import Logo from "../../image/logo.png";
 import SearchBar from "./SearchBar";
+import ModalCentered from "../../components/modals/ModalForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -9,6 +10,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 library.add(faGithub, faLinkedin, faSearch);
 
 export default function NavbarComponent() {
+  const [showModal, setShowModal] = useState(false);
   return (
     <>
       <Navbar collapseOnSelect expand='lg' variant='dark' className='gradient'>
@@ -54,6 +56,7 @@ export default function NavbarComponent() {
               <Button
                 variant='outline-primary'
                 className='signup-btn outline-white'
+                onClick={() => setShowModal(true)}
               >
                 SIGN UP, IT’S FREE
               </Button>
@@ -61,6 +64,19 @@ export default function NavbarComponent() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      <ModalCentered
+        show={showModal}
+        onHide={() => setShowModal(false)}
+        title={"Welcome to Participaid"}
+        accountInfo={"participants"}
+        labelOne={"First name"}
+        labelTwo={"Last name"}
+        typeOne={"text"}
+        placeholderOne={"John"}
+        typeTwo={"text"}
+        placeholderTwo={"Doe"}
+        participants
+      ></ModalCentered>
     </>
   );
 }
