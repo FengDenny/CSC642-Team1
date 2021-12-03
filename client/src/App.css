@@ -25,6 +25,7 @@ body {
   );
   --primary-font: "Lato", sans-serif;
   --primary-color: #0b97ab;
+  --header-color: #5f6368;
   --bg-color: #f6f9fc;
   --drop-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
   --border-radius: 5px;
@@ -46,7 +47,9 @@ body {
 .white-color {
   color: var(--white-color);
 }
-
+.primary-color {
+  color: var(--primary-color);
+}
 /* Font */
 .primary-font {
   font-family: var(--primary-font);
