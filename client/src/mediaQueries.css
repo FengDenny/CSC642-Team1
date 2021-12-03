@@ -5,6 +5,10 @@
 
   /* Hero */
 
+  .hero .hero-text {
+    width: 452px;
+  }
+
   .hero .hero-img {
     position: relative;
     left: 10%;
