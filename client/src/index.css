@@ -121,3 +121,20 @@
   bottom: 30px;
 }
 /* Hero END */
+
+/* Modal START */
+
+.title-modal {
+  margin-left: 20%;
+}
+
+.modal-header-p {
+  margin-left: 15%;
+  color: var(--header-color);
+  font-weight: 500;
+}
+.form-row {
+  width: 180px !important;
+  margin-left: 11% !important;
+}
+/* Modal END */
