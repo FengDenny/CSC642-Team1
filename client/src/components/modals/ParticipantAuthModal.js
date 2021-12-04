@@ -19,7 +19,7 @@ export default function ModalForm(props) {
         </Modal.Header>
 
         <p className='modal-header-p'>
-          To get started, sign up for an participants account
+          To get started, sign up for a participants account
         </p>
 
         <Modal.Body>

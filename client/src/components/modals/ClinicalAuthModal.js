@@ -12,7 +12,7 @@ export default function ClinicalAuthModal(props) {
       </Modal.Header>
 
       <p className='modal-header-p'>
-        To get started, sign up for an clinicial account
+        To get started, sign up for a clinical account
       </p>
       <Modal.Body>
         <Form>
