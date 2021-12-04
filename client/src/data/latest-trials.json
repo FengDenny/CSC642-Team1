@@ -1,0 +1,334 @@
+[
+  {
+    "id": 1,
+    "title": "Long-term Safety and Efficacy Study for  Individuals Who Are Long Term Smokers",
+    "participants": "Smoker Participants",
+    "description": "This is a Phase 1, clinical trial for long term smokers that will be performed in San Francisco. This study will enroll a sufficient number of participants to see  any side effects releated to smoking .",
+    "eligibility": [
+      {
+        "eligible": [
+          {
+            "requirement_one": "21 and older",
+            "requirement_two": "Allergy Test Required",
+            "requirement_three": "Smokers",
+            "requirement_four": "Gender Neutral"
+          }
+        ]
+      },
+      {
+        "ineligible": [
+          {
+            "requirement_one": "Peanut Allergies",
+            "requirement_two": "Non-Smokers"
+          }
+        ]
+      }
+    ],
+    "prerequisite": [
+      { "requirement_one": "Must have Allergic Test Reaction test completed" }
+    ],
+    "detail": [
+      {
+        "_id": "CP10250014",
+        "payout": "140",
+        "status": "Recruiting",
+        "study-type": "Observational",
+        "start-date": "10/10/2021",
+        "end-date": "04/10/2022",
+        "last-updated": "10/05/2021"
+      }
+    ],
+    "location": [
+      {
+        "address": "101 Van Ness Ave, San Francisco, CA 94109",
+        "coordinates": [-122.4217866, 37.7763661]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Drug-Drug Interaction Study Assessing Effect of nonsteroidal anti-inflammatory drugs in Healthy Participants",
+    "participants": "Healthy Participants",
+    "description": "This is a Phase I, fixed sequnce, 3-period study to evaluate the effect of the strong nonsteroidal anti-inflammatory in healthy participants. ",
+    "eligibility": [
+      {
+        "eligible": [
+          {
+            "requirement_one": "20-50 years",
+            "requirement_two": "Allergy Test Required",
+            "requirement_three": "Healthy Participants",
+            "requirement_four": "Gender Neutral"
+          }
+        ]
+      },
+      {
+        "ineligible": [
+          {
+            "requirement_one": "Drug Allergies",
+            "requirement_two": "Non-Healthy Participants"
+          }
+        ]
+      }
+    ],
+    "prerequisite": [
+      { "requirement_one": "Must have Allergic Test Reaction test completed" }
+    ],
+    "detail": [
+      {
+        "_id": "CD10250085",
+        "payout": "180",
+        "status": "Recruiting",
+        "study-type": "Observational",
+        "start-date": "12/10/2021",
+        "end-date": "05/10/2022",
+        "last-updated": "10/10/2021"
+      }
+    ],
+    "location": [
+      {
+        "address": "1001 Potrero Ave, San Francisco, CA 94110",
+        "coordinates": [-122.4591373, 37.7365308]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "A Clinical Trial to Assess the Safety, Tolerability and Immutability of Meningococcal vaccine in Healthy Infants",
+    "participants": "Healthy Infants",
+    "description": "The aim of the study is to describe the safety, tolerability, and immunogenicity of Meningococcal vaccine in healthy infants 2 and 6 months of age.",
+    "eligibility": [
+      {
+        "eligible": [
+          {
+            "requirement_one": "2-6 months",
+            "requirement_two": "Allergy Test Required",
+            "requirement_three": "Infants",
+            "requirement_four": "Gender Neutral"
+          }
+        ]
+      },
+      {
+        "ineligible": [
+          {
+            "requirement_one": "7 months and up",
+            "requirement_two": "Non-infants"
+          }
+        ]
+      }
+    ],
+    "prerequisite": [
+      { "requirement_one": "Must have Allergic Test Reaction test completed" }
+    ],
+    "detail": [
+      {
+        "_id": "CP10250145",
+        "payout": "180",
+        "status": "Recruiting",
+        "study-type": "Interventional ",
+        "start-date": "12/12/2021",
+        "end-date": "05/12/2022",
+        "last-updated": "10/12/2021"
+      }
+    ],
+    "location": [
+      {
+        "address": "1001 Potrero Ave, San Francisco, CA 94110",
+        "coordinates": [-122.4591373, 37.7365308]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Infliximab Biosimilar for Intravenous Drip Infusion 100 mg Pfizer Drug Use Investigation (Psoriasis)",
+    "participants": "Psoriasis Participants",
+    "description": "To collect information on the safety and effectiveness of Infliximab BS for Intravenous Drip Infusion 100 mg Pfizer against psoriasis vulgaris, psoriasis arthropathica, pustular psoriasis, or erythrodermic psoriasis under actual status of use.",
+    "eligibility": [
+      {
+        "eligible": [
+          {
+            "requirement_one": "Psoriasis Vulgaris",
+            "requirement_two": "Allergy Test Required",
+            "requirement_three": "Psoriasis",
+            "requirement_four": "Gender Neutral"
+          }
+        ]
+      },
+      { "ineligible": [{ "requirement_one": "Drug Allergies" }] }
+    ],
+    "prerequisite": [
+      { "requirement_one": "Must have Allergic Test Reaction test completed" }
+    ],
+    "detail": [
+      {
+        "_id": "CP10250156",
+        "payout": "170",
+        "status": "Recruiting",
+        "study-type": "Interventional ",
+        "start-date": "12/15/2021",
+        "end-date": "06/10/2022",
+        "last-updated": "10/10/2021"
+      }
+    ],
+    "location": [
+      {
+        "address": "2356 Sutter St, San Francisco, CA 94115",
+        "coordinates": [-122.4415068, 37.7854709]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Ertugliflozin Type 2 Diabetes Mellitus",
+    "participants": "Type 2 Diabetics",
+    "description": "This study will evaluate the safety and efficacy of ertugliflozin (MK-8835) in pediatric participants with T2DM on metformin with/without insulin. ",
+    "eligibility": [
+      {
+        "eligible": [
+          {
+            "requirement_one": "10-17 years",
+            "requirement_two": "MK-8835 Allergy Test Required",
+            "requirement_three": "Type 2 Diabetes Mellitus",
+            "requirement_four": "Gender Neutral"
+          }
+        ]
+      },
+      { "ineligible": [{ "requirement_one": "MK-8835 Allergic Reaction" }] }
+    ],
+    "prerequisite": [
+      {
+        "requirement_one": "Must have MK-8835 Allergic Test Reaction test completed"
+      }
+    ],
+    "detail": [
+      {
+        "_id": "CP10250176",
+        "payout": "190",
+        "status": "Recruiting",
+        "study-type": "Interventional ",
+        "start-date": "1/10/2022",
+        "end-date": "07/10/2022",
+        "last-updated": "10/05/2021"
+      }
+    ],
+    "location": [
+      {
+        "address": "1825 4th St, San Francisco, CA 94158",
+        "coordinates": [-122.3923191, 37.7663783]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Talazoparib + Enzalutamide vs. Enzalutamide Monotherapy in mCRPC",
+    "participants": "mCRPC Patients",
+    "description": "This study compares rPFS in men with mCRPC treated with talazoparib plus enzalutamide  ",
+    "eligibility": [
+      {
+        "eligible": [
+          {
+            "requirement_one": "10-17 years",
+            "requirement_two": "Talazoparib Allergy Test Required",
+            "requirement_three": "TmCRPC",
+            "requirement_four": "Male"
+          }
+        ]
+      },
+      { "ineligible": [{ "requirement_one": "Talazoparib Allergic Reaction" }] }
+    ],
+    "prerequisite": [
+      {
+        "requirement_one": "Must have Talazoparib Allergic Test Reaction test completed"
+      }
+    ],
+    "detail": [
+      {
+        "_id": "CP10250177",
+        "payout": "160",
+        "status": "Recruiting",
+        "study-type": "Observational ",
+        "start-date": "1/11/2022",
+        "end-date": "06/15/2022",
+        "last-updated": "10/07/2021"
+      }
+    ],
+    "location": [
+      {
+        "address": "1825 4th St, San Francisco, CA 94158",
+        "coordinates": [-122.3923191, 37.7663783]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Sasanlimab (PF-06801591, PD-1 Inhibitor) in Participants With Advanced Malignancies",
+    "participants": "Advanced Malignancies, Non-small-cell Lung Cancer",
+    "description": "This is a Phase 1b/2 protocol to evaluate pharmacokinetics, safety, efficacy, and pharmacodynamics of PF-06801591 for NSCLC patients. ",
+    "eligibility": [
+      {
+        "eligible": [
+          {
+            "requirement_one": "18 years and up",
+            "requirement_two": "Advanced Malignancies",
+            "requirement_three": "Non-small-cell Lung Cancer",
+            "requirement_four": "Gender Neutral"
+          }
+        ]
+      },
+      { "ineligible": [{ "requirement_one": "Non NSCLC Patients" }] }
+    ],
+    "prerequisite": [{ "requirement_one": "none" }],
+    "detail": [
+      {
+        "_id": "CP10250178",
+        "payout": "190",
+        "status": "Recruiting",
+        "study-type": "Interventional",
+        "start-date": "12/30/2021",
+        "end-date": "05/15/2022",
+        "last-updated": "10/10/2021"
+      }
+    ],
+    "location": [
+      {
+        "address": "1975 4th St, San Francisco, CA 94158",
+        "coordinates": [-122.3924584, 37.7648591]
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": " Participants With Advanced Solid Tumors",
+    "participants": "Solid Tumor's Patients",
+    "description": "The purpose of this first-in-patient, open label study is to determine the maximum tolerated dose and/or recommended dose for further study of  solid tumors. ",
+    "eligibility": [
+      {
+        "eligible": [
+          {
+            "requirement_one": "18 years and up",
+            "requirement_two": "Solid Tumor",
+            "requirement_three": "Gender Neutral"
+          }
+        ]
+      },
+      { "ineligible": [{ "requirement_one": "Non Solid Tumor Patients" }] }
+    ],
+    "prerequisite": [{ "requirement_one": "none" }],
+    "detail": [
+      {
+        "_id": "CP10250177",
+        "payout": "175",
+        "status": "Recruiting",
+        "study-type": "Interventional",
+        "start-date": "12/10/2021",
+        "end-date": "03/15/2022",
+        "last-updated": "10/11/2021"
+      }
+    ],
+    "location": [
+      {
+        "address": "1975 4th St, San Francisco, CA 94158",
+        "coordinates": [-122.3924584, 37.7648591]
+      }
+    ]
+  }
+]
