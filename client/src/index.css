@@ -137,4 +137,27 @@
   width: 180px !important;
   margin-left: 11% !important;
 }
+.form-group-control {
+  width: 335px;
+  margin-left: 14%;
+}
+.form-group-control-last {
+  position: relative;
+  bottom: 20px;
+}
+.form-control {
+  border: 1px solid var(--primary-color) !important;
+}
+
+.button-link {
+  position: relative;
+  bottom: 3px;
+  background-color: #fff !important;
+  color: var(--primary-color) !important;
+  border-color: #fff !important;
+  text-decoration: underline !important;
+}
+.button-link:active:focus {
+  box-shadow: none !important;
+}
 /* Modal END */
