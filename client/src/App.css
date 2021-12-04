@@ -34,6 +34,7 @@ body {
   --font-size-sm: 25px;
   --font-size-md: 30px;
   --font-size-lg: 45px;
+  --border-radius: 5px;
 }
 
 /* UniversaL CSS */
@@ -64,10 +65,20 @@ body {
 
 .outline-white {
   color: var(--white-color) !important;
-  border: 1px solid var(--white-color) !important;
+  border: 2px solid var(--white-color) !important;
   width: 170px !important;
   font-family: var(--primary-font);
   box-shadow: var(--drop-shadow) !important;
+}
+
+.primary-color-btn {
+  background-color: var(--primary-color) !important;
+  border: 2px solid var(--primary-color) !important;
+  border-radius: var(--border-radius) !important;
+  width: 335px !important;
+  font-family: var(--primary-font);
+  box-shadow: var(--drop-shadow) !important;
+  color: var(--white-color) !important;
 }
 
 .bg-white-btn {
@@ -76,4 +87,16 @@ body {
   color: var(--primary-color) !important;
   width: 170px !important;
   box-shadow: var(--drop-shadow) !important;
+}
+
+/* position */
+
+.top5 {
+  position: relative;
+  top: 5px !important;
+}
+
+.left120 {
+  position: relative;
+  left: 120px !important;
 }
