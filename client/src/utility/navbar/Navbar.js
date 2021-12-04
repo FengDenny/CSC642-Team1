@@ -69,8 +69,8 @@ export default function NavbarComponent() {
                 variant='outline-primary'
                 className='signup-btn outline-white'
                 onClick={() => {
-                  setActive("clinical");
-                  setShowClincicalModal(true);
+                  setActive("participant");
+                  setShowModal(true);
                 }}
               >
                 SIGN UP, IT’S FREE
