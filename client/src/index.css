@@ -2,8 +2,9 @@
 /* Navbar START */
 
 .row {
-  width: 412px !important;
+  width: 420px !important;
   flex-wrap: nowrap !important;
+  margin-left: 0px !important;
 }
 
 .gradient .links {
@@ -37,27 +38,31 @@
 .search-bar {
   width: auto !important;
   position: relative;
-  left: 87px;
+  left: 20px;
   width: 450px !important;
   padding: 0.375rem 5.75rem !important;
 }
 .search-select {
   width: 90px !important;
-  position: absolute;
-  /* left: 364px; */
-  margin-left: 86px;
+  position: relative;
+  right: 2px;
+  top: 38px;
   z-index: 100;
 }
+
 .search-form {
   position: relative;
-  right: 60px;
+  margin: auto;
+  bottom: 50px;
+  width: 50%;
 }
 
 .search-button {
   position: relative;
   width: 50px;
   height: 40px;
-  right: 20px;
+  left: 450px;
+  bottom: 40px;
   z-index: 100;
   background: var(--primary-gradient-color) !important;
 }
@@ -116,9 +121,10 @@
 }
 
 .hero .hero-img {
-  position: relative;
-  left: 80%;
-  bottom: 30px;
+  position: absolute;
+  right: 120px;
+  bottom: -10px;
+  width: 450px;
 }
 /* Hero END */
 
@@ -161,3 +167,63 @@
   box-shadow: none !important;
 }
 /* Modal END */
+
+/* Card */
+
+.card-container {
+  width: 400px !important;
+  height: auto;
+  padding: 10px !important;
+}
+.card {
+  border-radius: 5px !important;
+  box-shadow: var(--drop-shadow) !important;
+}
+
+.card-body {
+  padding: 0rem 0rem !important;
+  position: relative;
+  top: 8px;
+}
+.card .title-header {
+  margin-left: 12px !important;
+}
+/* first card */
+.card {
+  height: 350px !important;
+  width: 401px;
+}
+
+.price-banner {
+  background: #227c8e;
+  height: 50px;
+  color: #fff;
+  font-size: 30px;
+  box-shadow: 1px 0px px rgba(0, 0, 0, 0.3) !important;
+}
+
+.card-title {
+  margin-bottom: 0 !important;
+}
+.card-header-css {
+  width: 375px;
+  font-size: 17px !important;
+  background: var(--white-color) !important;
+}
+
+/* Footer */
+
+.height-footer {
+  height: 400px !important;
+  margin-top: 103px;
+}
+
+.height-footer .nav-item a {
+  color: var(--white-color) !important;
+}
+.height-footer .nav-item a:hover {
+  text-decoration: underline !important;
+}
+.height-footer .links {
+  width: 200px !important;
+}
