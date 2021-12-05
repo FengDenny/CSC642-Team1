@@ -31,6 +31,9 @@
 .nav-items {
   position: relative;
 }
+.nav-height {
+  height: 70px !important;
+}
 .navbar-logo {
   width: 90px;
 }
