@@ -14,7 +14,12 @@ a {
 
 html,
 body {
-  background-color: var(--bg-color);
+  background-color: var(--bg-color) !important;
+}
+
+textarea {
+  resize: none !important;
+  height: 80px !important;
 }
 
 :root {
@@ -133,19 +138,43 @@ body {
 }
 
 /* position */
+/* footer */
+.bottom-0 {
+  position: absolute;
+  bottom: 0 !important;
+  width: 100%;
+}
 
 .top5 {
   position: relative;
   top: 5px !important;
 }
+.top-10 {
+  position: relative;
+  top: 10px !important;
+}
+.top-20 {
+  position: relative;
+  top: 20px !important;
+}
 
 .left-20 {
   position: relative;
-  left: 50px !important;
+  margin-left: 50px !important;
 }
+
 .margin-left-50 {
   position: relative;
   margin-left: 50px !important;
+}
+.margin-left-57 {
+  position: relative;
+  margin-left: 57px !important;
+}
+
+.margin-left-70 {
+  position: relative;
+  margin-left: 70px !important;
 }
 .left120 {
   position: relative;
@@ -171,6 +200,10 @@ body {
   margin-top: 50px !important;
 }
 
+.margin-right-sm {
+  margin-right: 120px !important;
+}
+
 .margin-10 {
   margin: 10px;
 }
@@ -178,6 +211,26 @@ body {
 /* Width */
 .width-400 {
   width: 400px !important;
+}
+.width-450 {
+  width: 450px !important;
+}
+
+.width-308 {
+  width: 308px !important;
+}
+.width-200 {
+  width: 320px !important;
+}
+
+/* Height */
+
+.height-auto {
+  height: auto !important;
+}
+
+.height60 {
+  height: 60px !important;
 }
 
 /* social icons */
@@ -190,4 +243,9 @@ body {
 }
 .fafb:hover {
   color: #4267b2;
+}
+
+/* padding */
+.padding-10 {
+  padding: 10px !important;
 }
