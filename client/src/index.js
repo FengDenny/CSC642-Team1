@@ -5,11 +5,21 @@ import "./mediaQueries.css";
 import App from "./App";
 import "bootstrap/dist/css/bootstrap.css";
 import { HashRouter as Router } from "react-router-dom";
+import { Provider } from "react-redux";
+import thunk from "redux-thunk";
+import { createStore, combineReducers, applyMiddleware } from "redux";
+import authReducer from "./redux/reducers/authReducer";
+
+const rootReducer = combineReducers({
+  auth: authReducer,
+});
+
+const store = createStore(rootReducer, applyMiddleware(thunk));
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <Router>
       <App />
     </Router>
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById("root")
 );
