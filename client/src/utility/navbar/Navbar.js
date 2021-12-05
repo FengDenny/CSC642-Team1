@@ -19,13 +19,13 @@ export default function NavbarComponent() {
   return (
     <>
       <Navbar collapseOnSelect expand='lg' variant='dark' className='gradient'>
-        <Container>
+        <Container fluid>
           <Navbar.Brand href='/'>
             <Image src={Logo} rounded alt='logo' className='navbar-logo' />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse id='responsive-navbar-nav'>
-            <Nav className='me-auto '>
+            <Nav className='me-auto margin-auto'>
               <Col xs={6} md={4}>
                 <Nav.Item>
                   <Nav.Link href='/about' className='links  '>
@@ -48,13 +48,8 @@ export default function NavbarComponent() {
                 </Nav.Item>
               </Col>
             </Nav>
-            <Nav className='d-flex'>
-              <SearchBar />
-              <Button variant='primary' className='search-button'>
-                <FontAwesomeIcon icon={faSearch} size='1x' />
-              </Button>
-            </Nav>
-            <Nav>
+
+            <Nav className='right-135'>
               <Button
                 variant='outline-primary'
                 className='signin-btn'
@@ -79,6 +74,11 @@ export default function NavbarComponent() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      <Nav className='d-flex gradient'>
+        <Container>
+          <SearchBar />
+        </Container>
+      </Nav>
       {active === "signin" && (
         <SignInModal
           show={showSignInModal}
