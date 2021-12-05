@@ -4,7 +4,7 @@ import SocialIcons from "./SocialIcons";
 export default function Footer() {
   return (
     <>
-      <footer className='gradient margin-top-10 height-footer py-4'>
+      <footer className='gradient margin-top-10 height-footer py-4 '>
         <Container fluid className='text-start margin-top-10'>
           <h2 className=' margin-top-10 white-color font-weight-bold left-20'>
             Participaid
