@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Col, Row, Button, Image } from "react-bootstrap";
 import Explore from "../../image/explore.png";
 import LatestCard from "../Card/LatestCard";
 import ConflictCard from "../Card/ConflictCard";
 import FutureCard from "../Card/FutureCards";
-import FutureCards from "../Card/FutureCards";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+  // submit
+  const [showSubmitModal, setShowSubmitModal] = useState(false);
+  // const [showApplyModal, setShowSubmitModal] = useState(false);
+  const [active, setActive] = useState("submit-trials");
+  const navigate = useNavigate();
   return (
     <main>
       <section className='jumbotron gradient hero'>
@@ -17,7 +22,10 @@ export default function Home() {
               trials, and for participants to get paid for finished trials.
             </p>
             <div className='button-mobile'>
-              <Button variant='outline-primary  bg-white-btn submit-btn'>
+              <Button
+                variant='outline-primary  bg-white-btn submit-btn'
+                onClick={() => navigate("/submit-trials")}
+              >
                 Submit Trials
               </Button>
               <Button variant='outline-primary outline-white apply-btn'>
