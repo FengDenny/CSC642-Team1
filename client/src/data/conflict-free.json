@@ -1,0 +1,331 @@
+{
+  "Conflict-Free": [
+    {
+      "id": 1,
+      "title": "A Study in Back Pain Discomfort",
+      "participants": "Back Pain Participants",
+      "description": "This is a Phase 1, clinical trial for back pain that will be performed in San Francisco. This study will enroll a sufficient number of participants to see  any side effects realted to back pain medicine.",
+      "eligibility": [
+        {
+          "eligible": [
+            {
+              "requirement_one": "21 and older",
+              "requirement_two": "Allergy Test Required",
+              "requirement_three": "Back Pain",
+              "requirement_four": "Gender Neutral"
+            }
+          ],
+          "ineligible": [
+            {
+              "requirement_one": "Drug Allergies",
+              "requirement_two": "No Backpain"
+            }
+          ]
+        }
+      ],
+      "prerequisite": [
+        { "requirement_one": "Must have Allergic Test Reaction test completed" }
+      ],
+      "detail": [
+        {
+          "_id": "CP10250110",
+          "payout": "90",
+          "status": "Recruiting",
+          "study-type": "Observational",
+          "start-date": "11/15/2021",
+          "end-date": "02/15/2022",
+          "last-updated": "10/03/2021"
+        }
+      ],
+      "location": [
+        {
+          "address": "101 Van Ness Ave, San Francisco, CA 94109",
+          "coordinates": [-122.4217866, 37.7763661]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Study of the Efficacy and Safety of Somatropin in Korean Participants With PWS",
+      "participants": "Prader-Willi Syndrome Participants",
+      "description": "The purpose of this trial is to study the safety of Somatropin for Koreans with PWS. ",
+      "eligibility": [
+        {
+          "eligible": [
+            {
+              "requirement_one": "19 years and up",
+              "requirement_two": "Aspergillosis",
+              "requirement_three": "Gender Neutral",
+              "requirement_four": "Mucormycosis"
+            }
+          ],
+          "ineligible": [
+            {
+              "requirement_one": "Non Aspergillosis",
+              "requirement_two": "Mucormycosis  "
+            }
+          ]
+        }
+      ],
+      "prerequisite": [{ "requirement_one": "none" }],
+      "detail": [
+        {
+          "_id": "CFT10250111",
+          "payout": "80",
+          "status": "Recruiting",
+          "study-type": "Observational",
+          "start-date": "11/10/2021",
+          "end-date": "02/10/2022",
+          "last-updated": "9/12/2021"
+        }
+      ],
+      "location": [
+        {
+          "address": "2356 Sutter St, San Francisco, CA 94115",
+          "coordinates": [-122.4415068, 37.7854709]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Talazoparib + Enzalutamide vs. Enzalutamide Monotherapy in mCRPC",
+      "participants": "mCRPC Participants",
+      "description": "The purpose of this trial is to compares rPFS in men with mCRPC treated with talazoparib plus enzalutamide vs. enzalutamide ",
+      "eligibility": [
+        {
+          "eligible": [
+            {
+              "requirement_one": "18 years and up",
+              "requirement_two": "Men",
+              "requirement_three": "mCRPC"
+            }
+          ],
+          "ineligible": [{ "requirement_one": "Non-men" }]
+        }
+      ],
+      "prerequisite": [{ "requirement_one": "mCRPC drug test" }],
+      "detail": [
+        {
+          "_id": "CFT10250112",
+          "payout": "70",
+          "status": "Recruiting",
+          "study-type": "Interventional",
+          "start-date": "12/15/2021",
+          "end-date": "03/10/2022",
+          "last-updated": "12/10/2021"
+        }
+      ],
+      "location": [
+        {
+          "address": "101 Van Ness Ave, San Francisco, CA 94109",
+          "coordinates": [-122.4217866, 37.7763661]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Safety and Efficacy of Lorbrena",
+      "participants": "Non-small Cell Lung Cancer Participants",
+      "description": "The purpose of this trial is to investigate the following matters under post-marketing use of Lorbrena in patients who received this drug Factors ",
+      "eligibility": [
+        {
+          "eligible": [
+            {
+              "requirement_one": "18 years and up",
+              "requirement_two": "Gender Neutral",
+              "requirement_three": "Non-small Cell Lung Cancer"
+            }
+          ],
+          "ineligible": [{ "requirement_one": "Lorbrena side effects" }]
+        }
+      ],
+      "prerequisite": [{ "requirement_one": "Lorbrena drug test" }],
+      "detail": [
+        {
+          "_id": "CFT10250113",
+          "payout": "70",
+          "status": "Recruiting",
+          "study-type": "Interventional",
+          "start-date": "12/22/2021",
+          "end-date": "04/01/2022",
+          "last-updated": "12/10/2021"
+        }
+      ],
+      "location": [
+        {
+          "address": "2356 Sutter St, San Francisco, CA 94115",
+          "coordinates": [-122.4415068, 37.7854709]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Evaluation of Protease Inhibition for COVID-19 in Standard-Risk Patients ",
+      "participants": "COVID-19 Participants",
+      "description": "The purpose of this trial is  to be tested is whether or not there is a difference in time to sustained alleviation of all targeted COVID-19 signs and symptoms. ",
+      "eligibility": [
+        {
+          "eligible": [
+            {
+              "requirement_one": "COVID-19 Positive",
+              "requirement_two": "Gender Neutral",
+              "requirement_three": "18+ years"
+            }
+          ],
+          "ineligible": [{ "requirement_one": "COVID-19 Negative" }]
+        }
+      ],
+      "prerequisite": [{ "requirement_one": "Lorbrena drug test" }],
+      "detail": [
+        {
+          "_id": "CFT10250114",
+          "payout": "50",
+          "status": "Recruiting",
+          "study-type": "Interventional",
+          "start-date": "12/09/2021",
+          "end-date": "05/01/2022",
+          "last-updated": "12/12/2021"
+        }
+      ],
+      "location": [
+        {
+          "address": "2356 Sutter St, San Francisco, CA 94115",
+          "coordinates": [-122.4415068, 37.7854709]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Study of the Efficacy and Safety PF-06741086",
+      "participants": "Hemophilia A, Hemophilia B Participants",
+      "description": "The purpose of this trial is  to be tested is whether or not there is a difference in time to sustained alleviation of all targeted COVID-19 signs and symptoms. ",
+      "eligibility": [
+        {
+          "eligible": [
+            {
+              "requirement_one": "Hemophilia A",
+              "requirement_two": "Hemophilia B",
+              "requirement_three": "Male",
+              "requirement_four": "12-50 years"
+            }
+          ],
+          "ineligible": [
+            {
+              "requirement_one": "Non-Hemophilia A",
+              "requirement_two": "Non-Hemophilia B"
+            }
+          ]
+        }
+      ],
+      "prerequisite": [
+        {
+          "requirement_one": "Severe Hemophilia A",
+          "requirement_two": "Moderately Severe to Severe Hemophilia B"
+        }
+      ],
+      "detail": [
+        {
+          "_id": "CFT10250115",
+          "payout": "60",
+          "status": "Recruiting",
+          "study-type": "Interventional",
+          "start-date": "12/09/2021",
+          "end-date": "05/01/2022",
+          "last-updated": "12/12/2021"
+        }
+      ],
+      "location": [
+        {
+          "address": "101 Van Ness Ave, San Francisco, CA 94109",
+          "coordinates": [-122.4217866, 37.7763661]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "MenABCWY Noninferiority Study in Healthy Participants ≥10 to <26 Years of Age",
+      "participants": "Meningococcal Vaccine ",
+      "description": "The aim of this study is to determine the immunologic noninferiority of MenABCWY to licensed vaccines Trumenba and MenACWY-CRM (Menveo) by assessing the safety and immunogenicity of MenABCWY  ",
+      "eligibility": [
+        {
+          "eligible": [
+            {
+              "requirement_one": "MenABCWY",
+              "requirement_two": "MenACWY-CRM (Menveo)",
+              "requirement_three": "Gender Neutral",
+              "requirement_four": "10-25 years"
+            }
+          ],
+          "ineligible": [
+            {
+              "requirement_one": "27+ years",
+              "requirement_two": "Trumenba vacines allergic"
+            }
+          ]
+        }
+      ],
+      "prerequisite": [
+        {
+          "requirement_one": " MenABCWY ",
+          "requirement_two": "Trumenba allergic reaction result"
+        }
+      ],
+      "detail": [
+        {
+          "_id": "CFT10250116",
+          "payout": "50",
+          "status": "Recruiting",
+          "study-type": "Observational",
+          "start-date": "12/09/2021",
+          "end-date": "05/01/2022",
+          "last-updated": "12/12/2021"
+        }
+      ],
+      "location": [
+        {
+          "address": "101 Van Ness Ave, San Francisco, CA 94109",
+          "coordinates": [-122.4217866, 37.7763661]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "A Study of PF-07260437 in Advanced or Metastatic Solid Tumors",
+      "participants": "Ovarian Neoplasms, Endometrial Neoplasms, Breast Neoplasms ",
+      "description": "A study to evaluate the safety, tolerability, pharmacokinetics (PK), pharmacodynamics (PD), and antitumor activity of PF-07260437 ",
+      "eligibility": [
+        {
+          "eligible": [
+            "Neoplasms",
+            "Gender Neutral",
+            "Metastatic Solid Tumors",
+            "10-25 years"
+          ],
+          "ineligible": ["Non-neoplasms", "Non-Metastatic Solid Tumors"]
+        }
+      ],
+      "prerequisite": [
+        " Ovarian Neoplasms",
+        "Endometrial Neoplasms",
+        "Breast Neoplasms"
+      ],
+      "detail": [
+        {
+          "_id": "CFT10250117",
+          "payout": "70",
+          "status": "Recruiting",
+          "study-type": "Interventional",
+          "start-date": "12/01/2021",
+          "end-date": "06/01/2022",
+          "last-updated": "12/02/2021"
+        }
+      ],
+      "location": [
+        {
+          "address": "101 Van Ness Ave, San Francisco, CA 94109",
+          "coordinates": [-122.4217866, 37.7763661]
+        }
+      ]
+    }
+  ]
+}
