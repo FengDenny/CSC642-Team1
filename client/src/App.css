@@ -25,6 +25,9 @@ body {
   );
   --primary-font: "Lato", sans-serif;
   --primary-color: #0b97ab;
+  --primary-color-hover: #086f80;
+  --green-color: #35c03a;
+  --red-color: #ed455d;
   --header-color: #5f6368;
   --bg-color: #f6f9fc;
   --drop-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
@@ -46,19 +49,38 @@ body {
 
 /* Color */
 .white-color {
-  color: var(--white-color);
+  color: var(--white-color) !important;
 }
 .primary-color {
-  color: var(--primary-color);
+  color: var(--primary-color) !important;
 }
+
+.header-color {
+  color: var(--header-color);
+}
+
+.green-color {
+  color: var(--green-color);
+}
+
+.red-color {
+  color: var(--red-color);
+}
+
 /* Font */
 .primary-font {
   font-family: var(--primary-font);
+}
+.font-weight-bold {
+  font-weight: bold;
 }
 
 /* Font Size */
 .font-size-sm {
   font-size: var(--font-size-sm) !important;
+}
+.font-size-md {
+  font-size: var(--font-size-md) !important;
 }
 
 /* Buttons */
@@ -89,14 +111,76 @@ body {
   box-shadow: var(--drop-shadow) !important;
 }
 
+.card-primary-color-btn {
+  width: 400px !important;
+  /* margin-left: 17px !important;
+  margin-bottom: 6px !important; */
+  background-color: var(--primary-color) !important;
+  border: 2px solid var(--primary-color) !important;
+  border-radius: var(--border-radius) !important;
+  font-family: var(--primary-font);
+  box-shadow: var(--drop-shadow) !important;
+  color: var(--white-color) !important;
+  font-weight: bold !important;
+}
+
+.card-primary-color-btn:hover {
+  background-color: var(--primary-color-hover) !important;
+  border: 2px solid var(--primary-color-hover) !important;
+}
+
 /* position */
 
 .top5 {
   position: relative;
   top: 5px !important;
 }
-
+.left-20 {
+  position: relative;
+  left: 200px !important;
+}
+.margin-left-50 {
+  position: relative;
+  margin-left: 50px !important;
+}
 .left120 {
   position: relative;
   left: 120px !important;
+}
+.left300 {
+  position: relative;
+  left: 300px !important;
+}
+
+.right-135 {
+  position: relative;
+  right: 135px !important;
+}
+.margin-auto {
+  margin: auto !important;
+}
+
+.margin-top-10 {
+  margin-top: 50px !important;
+}
+
+.margin-10 {
+  margin: 10px;
+}
+
+/* Width */
+.width-400 {
+  width: 400px !important;
+}
+
+/* social icons */
+
+.fatwitter:hover {
+  color: #00acee;
+}
+.falinkedin:hover {
+  color: #0e76a8;
+}
+.fafb:hover {
+  color: #4267b2;
 }
