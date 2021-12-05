@@ -76,6 +76,9 @@ body {
 }
 
 /* Font Size */
+.font-size-xsm {
+  font-size: var(--font-size-xsm) !important;
+}
 .font-size-sm {
   font-size: var(--font-size-sm) !important;
 }
@@ -135,9 +138,10 @@ body {
   position: relative;
   top: 5px !important;
 }
+
 .left-20 {
   position: relative;
-  left: 200px !important;
+  left: 50px !important;
 }
 .margin-left-50 {
   position: relative;
@@ -158,6 +162,9 @@ body {
 }
 .margin-auto {
   margin: auto !important;
+}
+.margin-top-sm {
+  margin-top: 10px !important;
 }
 
 .margin-top-10 {
