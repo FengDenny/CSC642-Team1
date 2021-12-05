@@ -8,6 +8,7 @@ import {
   useRoutes,
 } from "react-router-dom";
 import Home from "./pages/home/Home";
+import SubmitTrials from "./pages/submit/SubmitTrial";
 import Navbar from "./utility/navbar/Navbar";
 import Footer from "./utility/footer/Footer";
 
@@ -17,14 +18,26 @@ function App() {
       path: "/",
       element: (
         <>
-          <Navbar />
           <Home />
-          <Footer />
+        </>
+      ),
+    },
+    {
+      path: "submit-trials",
+      element: (
+        <>
+          <SubmitTrials />
         </>
       ),
     },
   ]);
-  return <div className='App'>{element}</div>;
+  return (
+    <div className='App'>
+      <Navbar />
+      {element}
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
