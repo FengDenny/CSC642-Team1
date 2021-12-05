@@ -29,6 +29,7 @@ export default function LatestCard() {
                         ineligibleTwo={notEligible.requirement_two}
                         ineligibleThree={notEligible.requirement_three}
                         ineligibleFour={notEligible.requirement_four}
+                        btnName={"Learn More"}
                       ></Card>
                     </>
                   ))
