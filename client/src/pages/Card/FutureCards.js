@@ -31,6 +31,7 @@ export default function FutureCards() {
                         ineligibleTwo={notEligible.requirement_two}
                         ineligibleThree={notEligible.requirement_three}
                         ineligibleFour={notEligible.requirement_four}
+                        btnName={"Discover"}
                       ></Card>
                     </>
                   ))
