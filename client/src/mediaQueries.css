@@ -34,7 +34,7 @@
   }
   .nav-footer {
     position: relative;
-    left: 35px !important;
+    margin-left: 35px !important;
   }
 
   /* Hero */
