@@ -1,0 +1,338 @@
+[
+  {
+    "id": 1,
+    "title": "A Study in Joint Pain Discomfort ",
+    "participants": "Joint Pain Participants",
+    "description": "This is a Phase 1, clinical trial for joint pain that will be performed in San Francisco. This study will enroll a sufficient number of participants to see  any side effects realted to joint pain medicine.",
+    "eligibility": [
+      {
+        "eligible": [
+          {
+            "requirement_one": "21 and older",
+            "requirement_two": "Allergy Test Required",
+            "requirement_three": "Joint pain",
+            "requirement_four": "Gender Neutral"
+          }
+        ],
+        "ineligible": [
+          {
+            "requirement_one": "Drug Allergies",
+            "requirement_two": "Person without joint pain"
+          }
+        ]
+      }
+    ],
+    "prerequisite": [
+      { "requirement_one": "Must have Allergic Test Reaction test completed" }
+    ],
+    "detail": [
+      {
+        "_id": "FT10250014",
+        "payout": "70",
+        "status": "Not Recruiting",
+        "study-type": "Observational",
+        "start-date": "1/10/2023",
+        "end-date": "10/10/2023",
+        "last-updated": "10/10/2021"
+      }
+    ],
+    "location": [
+      {
+        "address": "1001 Potrero Ave, San Francisco, CA 94110",
+        "coordinates": [-122.4591373, 37.7365308]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Safety and Efficacy Study of PF-06835375 in Primary Immune Thrombocytopenia ",
+    "participants": "Primary Immune, Thrombocytopenia",
+    "description": "This is a Phase 2, open-label, single arm, multicenter, multiple subcutaneous injection, safety and efficacy study of PF-06835375",
+    "eligibility": [
+      {
+        "eligible": [
+          {
+            "requirement_one": "18 - 70 years ",
+            "requirement_two": "Primary Immune",
+            "requirement_three": "Thrombocytopenia",
+            "requirement_four": "Gender Neutral"
+          }
+        ],
+        "ineligible": [
+          {
+            "requirement_one": "Non-Primary Immune",
+            "requirement_two": "Non-Thrombocytopenia"
+          }
+        ]
+      }
+    ],
+    "prerequisite": [
+      { "requirement_one": "Must have Allergic Test Reaction test completed" }
+    ],
+    "detail": [
+      {
+        "_id": "FT10250015",
+        "payout": "70",
+        "status": "Not Recruiting",
+        "study-type": "Interventional",
+        "start-date": "12/15/2023",
+        "end-date": "4/10/2024",
+        "last-updated": "11/10/2021"
+      }
+    ],
+    "location": [
+      {
+        "address": "2356 Sutter St, San Francisco, CA 94115",
+        "coordinates": [-122.4415068, 37.7854709]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Real-World Effectiveness of Tafamidis on Neurologic Disease Progression in Patients ",
+    "participants": "Hereditary Transthyretin Amyloidosis (ATTRv)",
+    "description": "This will be an observational, retrospective cohort study using structured secondary anonymized data. Patients with mixed-phenotype ATTRv-CM receiving high dose tafamidis for at least 12 months will be identified.",
+    "eligibility": [
+      {
+        "eligible": [
+          {
+            "requirement_one": "ATTRv",
+            "requirement_two": "18+ years",
+            "requirement_three": "Negative ATTRv ",
+            "requirement_four": "Gender Neutral"
+          }
+        ],
+        "ineligible": [
+          {
+            "requirement_one": "Positive ATTRv "
+          }
+        ]
+      }
+    ],
+    "prerequisite": [
+      { "requirement_one": "Must have negative ATTRv test reaction" }
+    ],
+    "detail": [
+      {
+        "_id": "FT10250016",
+        "payout": "60",
+        "status": "Not Recruiting",
+        "study-type": "Observational",
+        "start-date": "02/15/2023",
+        "end-date": "7/10/2023",
+        "last-updated": "10/15/2021"
+      }
+    ],
+    "location": [
+      {
+        "address": "1001 Potrero Ave, San Francisco, CA 94110",
+        "coordinates": [-122.4591373, 37.7365308]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "ZEN003694 Combined With Talazoparib in Patients With Recurrent Ovarian Cancer",
+    "participants": "Ovarian Cancer, Peritoneal Cancer, Fallopian Tube Cancer",
+    "description": "This Phase 2, open label, study with safety lead in of oral talazoparib in combination with ZEN003694 given daily in 28-day cycles will enroll patients with recurrent ovarian, fallopian tube or primary peritoneal carcinoma.",
+    "eligibility": [
+      {
+        "eligible": [
+          {
+            "requirement_one": "Cancers listed above",
+            "requirement_two": "18+ years",
+            "requirement_three": "Female",
+            "requirement_four": "ZEN003694"
+          }
+        ],
+        "ineligible": [
+          {
+            "requirement_one": "Men"
+          }
+        ]
+      }
+    ],
+    "prerequisite": [{ "requirement_one": "Must have  listed above cancers" }],
+    "detail": [
+      {
+        "_id": "FT10250017",
+        "payout": "90",
+        "status": "Not Recruiting",
+        "study-type": "Interventional",
+        "start-date": "03/20/2023",
+        "end-date": "8/10/2023",
+        "last-updated": "09/15/2021"
+      }
+    ],
+    "location": [
+      {
+        "address": "2356 Sutter St, San Francisco, CA 94115",
+        "coordinates": [-122.4415068, 37.7854709]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Korean Regulatory Post Marketing Surveillance for Somavert",
+    "participants": "Acromegaly",
+    "description": "Non-interventional observational study, to identify safety and effectiveness of Somavert during the post-marketing period based on the Korean RMP as required by the regulations of Ministry of Food and Drug Safety (MFDS)",
+    "eligibility": [
+      {
+        "eligible": [
+          {
+            "requirement_one": "Acromegaly",
+            "requirement_two": "Any age",
+            "requirement_three": "Gender Neutral",
+            "requirement_four": "Korean "
+          }
+        ],
+        "ineligible": [
+          {
+            "requirement_one": "Non-Korean"
+          }
+        ]
+      }
+    ],
+    "prerequisite": [{ "requirement_one": "Korean RMP" }],
+    "detail": [
+      {
+        "_id": "FT10250018",
+        "payout": "90",
+        "status": "Not Recruiting",
+        "study-type": "Observational",
+        "start-date": "01/20/2023",
+        "end-date": "05/10/2023",
+        "last-updated": "10/15/2021"
+      }
+    ],
+    "location": [
+      {
+        "address": "1001 Potrero Ave, San Francisco, CA 94110",
+        "coordinates": [-122.4591373, 37.7365308]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Korean Regulatory Post Marketing Surveillance for Somavert",
+    "participants": "Acromegaly",
+    "description": "Non-interventional observational study, to identify safety and effectiveness of Somavert during the post-marketing period based on the Korean RMP as required by the regulations of Ministry of Food and Drug Safety (MFDS)",
+    "eligibility": [
+      {
+        "eligible": [
+          {
+            "requirement_one": "Acromegaly",
+            "requirement_two": "Any age",
+            "requirement_three": "Gender Neutral",
+            "requirement_four": "Korean "
+          }
+        ],
+        "ineligible": [
+          {
+            "requirement_one": "Non-Korean"
+          }
+        ]
+      }
+    ],
+    "prerequisite": [{ "requirement_one": "Korean RMP" }],
+    "detail": [
+      {
+        "_id": "FT10250019",
+        "payout": "70",
+        "status": "Not Recruiting",
+        "study-type": "Observational",
+        "start-date": "01/10/2023",
+        "end-date": "04/10/2023",
+        "last-updated": "11/15/2021"
+      }
+    ],
+    "location": [
+      {
+        "address": "1001 Potrero Ave, San Francisco, CA 94110",
+        "coordinates": [-122.4591373, 37.7365308]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Protonix Treatment of Maintenance of Healing in Pediatric Participants",
+    "participants": "Esophagitis",
+    "description": "The purpose of this study is to explore the outcomes, tolerability and safety of 2 different doses of oral pantoprazole (full healing dose, half healing dose), assigned based upon weight, for the maintenance of healing of erosive esophagitis in pediatric participants aged 1 to 17 years with endoscopically-confirmed, healed erosive esophagitis.",
+    "eligibility": [
+      {
+        "eligible": [
+          {
+            "requirement_one": "Esophagitis",
+            "requirement_two": "1-17 years",
+            "requirement_three": "Gender Neutral"
+          }
+        ],
+        "ineligible": [
+          {
+            "requirement_one": "Positive oral pantoprazole reaction "
+          }
+        ]
+      }
+    ],
+    "prerequisite": [
+      { "requirement_one": "Negative oral pantoprazole reaction " }
+    ],
+    "detail": [
+      {
+        "_id": "FT10250020",
+        "payout": "75",
+        "status": "Not Recruiting",
+        "study-type": "Interventional",
+        "start-date": "03/15/2023",
+        "end-date": "06/10/2023",
+        "last-updated": "11/15/2021"
+      }
+    ],
+    "location": [
+      {
+        "address": "2356 Sutter St, San Francisco, CA 94115",
+        "coordinates": [-122.4415068, 37.7854709]
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "A Study of PF-07258669 In Healthy Adult Participants",
+    "participants": "Healthy Participants",
+    "description": "Part A of this study is to evaluate safety, tolerability, and pharmacokinetics (PK) of PF-07258669 after administration of multiple ascending oral doses to healthy adult participants.",
+    "eligibility": [
+      {
+        "eligible": [
+          {
+            "requirement_one": "Healthy",
+            "requirement_two": "18-60 years",
+            "requirement_three": "Gender Neutral"
+          }
+        ],
+        "ineligible": [
+          {
+            "requirement_one": "Non-healthy participants "
+          }
+        ]
+      }
+    ],
+    "prerequisite": [{ "requirement_one": "Must be healthy" }],
+    "detail": [
+      {
+        "_id": "FT10250021",
+        "payout": "75",
+        "status": "Not Recruiting",
+        "study-type": "Interventional",
+        "start-date": "02/20/2023",
+        "end-date": "08/10/2023",
+        "last-updated": "09/15/2021"
+      }
+    ],
+    "location": [
+      {
+        "address": "2356 Sutter St, San Francisco, CA 94115",
+        "coordinates": [-122.4415068, 37.7854709]
+      }
+    ]
+  }
+]
