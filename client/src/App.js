@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import Home from "./pages/home/Home";
 import Navbar from "./utility/navbar/Navbar";
+import Footer from "./utility/footer/Footer";
 
 function App() {
   let element = useRoutes([
@@ -18,6 +19,7 @@ function App() {
         <>
           <Navbar />
           <Home />
+          <Footer />
         </>
       ),
     },
