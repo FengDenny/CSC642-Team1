@@ -18,7 +18,7 @@ export default function NavbarComponent() {
   const [active, setActive] = useState("signup");
   return (
     <>
-      <Navbar collapseOnSelect expand='lg' variant='dark' className='gradient'>
+      <Navbar collapseOnSelect expand='lg' variant='dark' className='gradient '>
         <Container fluid>
           <Navbar.Brand href='/'>
             <Image src={Logo} rounded alt='logo' className='navbar-logo' />
@@ -74,7 +74,7 @@ export default function NavbarComponent() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Nav className='d-flex gradient'>
+      <Nav className='d-flex gradient nav-height'>
         <Container>
           <SearchBar />
         </Container>
