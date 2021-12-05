@@ -16,7 +16,7 @@ export default function ConflictCard() {
                   i.ineligible &&
                   i.ineligible.map((notEligible) => (
                     //   console.log(notEligible),
-                    //   console.log(isEligible),
+                    // console.log(item),
                     <>
                       <Card
                         key={index}
@@ -31,6 +31,7 @@ export default function ConflictCard() {
                         ineligibleTwo={notEligible.requirement_two}
                         ineligibleThree={notEligible.requirement_three}
                         ineligibleFour={notEligible.requirement_four}
+                        btnName={"Participate"}
                       ></Card>
                     </>
                   ))
