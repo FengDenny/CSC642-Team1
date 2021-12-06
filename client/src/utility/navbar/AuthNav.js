@@ -5,25 +5,38 @@ import {
   setUserID,
   setIsLoggedIn,
 } from "../../redux/actions/authAction";
-import { useNavigate } from "react-router-dom";
-export const AuthNav = () => {
+import { useNavigate, useParams } from "react-router-dom";
+import { NavDropdown } from "react-bootstrap";
+export const AuthClinicalNav = () => {
   const { auth } = useSelector((state) => ({ ...state }));
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const title = auth.clinicalEmail;
   return (
     <>
       {auth.clinicalLoggedIn ? (
         <>
-          <div>Hello {auth.clinicalEmail}</div>
-
-          <button
-            onClick={() => {
-              dispatch(setClinicalLoggedIn(false));
-              navigate("/");
-            }}
+          <NavDropdown
+            title={title}
+            menuVariant='dark'
+            className='margin-left-149'
           >
-            Logout
-          </button>
+            <NavDropdown.Item href='#action/3.1'>Action</NavDropdown.Item>
+            <NavDropdown.Item href='#action/3.2'>
+              Another action
+            </NavDropdown.Item>
+            <NavDropdown.Item href='#action/3.3'>Something</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item
+              as='button'
+              onClick={() => {
+                dispatch(setClinicalLoggedIn(false));
+                navigate("/");
+              }}
+            >
+              Logout
+            </NavDropdown.Item>
+          </NavDropdown>
         </>
       ) : null}
     </>
@@ -33,20 +46,34 @@ export const AuthParticipant = () => {
   const { auth } = useSelector((state) => ({ ...state }));
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const title = auth.email;
   return (
     <>
       {auth.isLoggedIn ? (
         <>
-          <div>Hello {auth.email}</div>
-
-          <button
-            onClick={() => {
-              dispatch(setIsLoggedIn(false));
-              navigate("/");
-            }}
+          <NavDropdown
+            title={title}
+            menuVariant='dark'
+            className='margin-left-149'
           >
-            Logout
-          </button>
+            <NavDropdown.Item href={`/account/${auth.userId}`}>
+              Account Settings
+            </NavDropdown.Item>
+            <NavDropdown.Item href='#action/3.2'>
+              Another action
+            </NavDropdown.Item>
+            <NavDropdown.Item href='#action/3.3'>Something</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item
+              as='button'
+              onClick={() => {
+                dispatch(setIsLoggedIn(false));
+                navigate("/");
+              }}
+            >
+              Logout
+            </NavDropdown.Item>
+          </NavDropdown>
         </>
       ) : null}
     </>
