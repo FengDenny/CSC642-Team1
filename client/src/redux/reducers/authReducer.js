@@ -4,6 +4,7 @@ const INITIAL_STATE = {
   email: "",
   password: "",
   userId: "",
+  isLoggedIn: false,
 };
 
 const authReducer = (state = INITIAL_STATE, action) => {
@@ -32,6 +33,11 @@ const authReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         userId: action.userId,
+      };
+    case "SET_USER_IS_LOGGED_IN":
+      return {
+        ...state,
+        isLoggedIn: action.isLoggedIn,
       };
     default:
       return state;
