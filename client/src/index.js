@@ -9,9 +9,11 @@ import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import authReducer from "./redux/reducers/authReducer";
+import trailSubmitReducer from "./redux/reducers/trialSubmitReducer";
 
 const rootReducer = combineReducers({
   auth: authReducer,
+  submit: trailSubmitReducer,
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
