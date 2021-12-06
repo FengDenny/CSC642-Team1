@@ -73,15 +73,7 @@ export default function SubmitTrial() {
                 <Form.Label>Payout</Form.Label>
                 <Form.Control type='number' placeholder='50' min='0' />
               </Form.Group>
-              <Form.Group className='mb-3 form-group-control'>
-                <Form.Label>Who may participate</Form.Label>
-                <Form.Control
-                  as='textarea'
-                  placeholder='Qualified'
-                  rows={4}
-                  maxLength='400'
-                />
-              </Form.Group>
+
               <Form.Group className='mb-3 form-group-control'>
                 <Form.Label>Trial Status</Form.Label>
                 <Form.Select aria-label='Default select example'>
