@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import { Navbar, Container, Col, Nav, Button, Image } from "react-bootstrap";
 import Logo from "../../image/logo.png";
 import SearchBar from "./SearchBar";
 import ParticipantAuthModal from "../../components/modals/ParticipantAuthModal";
 import ClinicalAuthModal from "../../components/modals/ClinicalAuthModal";
 import SignInModal from "../../components/modals/SignInModal";
+import { AuthNav, AuthParticipant } from "./AuthNav";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -16,6 +18,7 @@ export default function NavbarComponent() {
   const [showClincicalModal, setShowClincicalModal] = useState(false);
   const [showSignInModal, setShowSignInModal] = useState(false);
   const [active, setActive] = useState("signup");
+  const { auth } = useSelector((state) => ({ ...state }));
   return (
     <>
       <Navbar collapseOnSelect expand='lg' variant='dark' className='gradient '>
@@ -28,8 +31,8 @@ export default function NavbarComponent() {
             <Nav className='me-auto margin-auto'>
               <Col xs={6} md={4}>
                 <Nav.Item>
-                  <Nav.Link href='/about' className='links  '>
-                    About Us
+                  <Nav.Link href='/' className='links  '>
+                    Home
                   </Nav.Link>
                 </Nav.Item>
               </Col>
@@ -42,7 +45,7 @@ export default function NavbarComponent() {
               </Col>
               <Col xs={6} md={4}>
                 <Nav.Item>
-                  <Nav.Link href='/post' className='links'>
+                  <Nav.Link href='/submit-trials' className='links'>
                     Post
                   </Nav.Link>
                 </Nav.Item>
@@ -50,26 +53,34 @@ export default function NavbarComponent() {
             </Nav>
 
             <Nav className='right-135'>
-              <Button
-                variant='outline-primary'
-                className='signin-btn'
-                onClick={() => {
-                  setActive("signin");
-                  setShowSignInModal(true);
-                }}
-              >
-                SIGN IN
-              </Button>
-              <Button
-                variant='outline-primary'
-                className='signup-btn outline-white'
-                onClick={() => {
-                  setActive("participant");
-                  setShowModal(true);
-                }}
-              >
-                SIGN UP, IT’S FREE
-              </Button>
+              {auth.clinicalLoggedIn === true ? (
+                <AuthNav />
+              ) : auth.isLoggedIn === true ? (
+                <AuthParticipant />
+              ) : (
+                <>
+                  <Button
+                    variant='outline-primary'
+                    className='signin-btn'
+                    onClick={() => {
+                      setActive("signin");
+                      setShowSignInModal(true);
+                    }}
+                  >
+                    SIGN IN
+                  </Button>
+                  <Button
+                    variant='outline-primary'
+                    className='signup-btn outline-white'
+                    onClick={() => {
+                      setActive("participant");
+                      setShowModal(true);
+                    }}
+                  >
+                    SIGN UP, IT’S FREE
+                  </Button>
+                </>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>
