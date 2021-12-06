@@ -120,10 +120,10 @@ export default function SubmitTrial() {
                 .
               </p>
             </Form.Group>
-            <Form.Group className='left-20'>
+            <Form.Group className='left-20 '>
               <Button
                 variant='primary'
-                className='card-primary-color-btn width-308'
+                className='card-primary-color-btn width-308 bottom-3'
               >
                 Submit For Review
               </Button>
