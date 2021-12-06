@@ -6,7 +6,7 @@ import SearchBar from "./SearchBar";
 import ParticipantAuthModal from "../../components/modals/ParticipantAuthModal";
 import ClinicalAuthModal from "../../components/modals/ClinicalAuthModal";
 import SignInModal from "../../components/modals/SignInModal";
-import { AuthNav, AuthParticipant } from "./AuthNav";
+import { AuthClinicalNav, AuthParticipant } from "./AuthNav";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -54,7 +54,7 @@ export default function NavbarComponent() {
 
             <Nav className='right-135'>
               {auth.clinicalLoggedIn === true ? (
-                <AuthNav />
+                <AuthClinicalNav />
               ) : auth.isLoggedIn === true ? (
                 <AuthParticipant />
               ) : (
