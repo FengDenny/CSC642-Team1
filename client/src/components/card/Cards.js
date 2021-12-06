@@ -75,10 +75,7 @@ export default function Cards(props) {
             </Col>
           </Row>
         </Card.Body>
-        <Button
-          variant='primary'
-          className='card-primary-color-btn font-size-xsm'
-        >
+        <Button variant='primary' className='card-primary-color-btn '>
           {props.btnName}
         </Button>
       </Card>
