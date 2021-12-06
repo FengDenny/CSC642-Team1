@@ -23,3 +23,25 @@ export const setIsLoggedIn = (isLoggedIn) => ({
   type: "SET_USER_IS_LOGGED_IN",
   isLoggedIn,
 });
+
+export const setCompanyName = (companyName) => ({
+  type: "SET_USER_COMPANY_NAME",
+  companyName,
+});
+
+export const setClinicalEmail = (clinicalEmail) => ({
+  type: "SET_USER_CLINICAL_EMAIL",
+  clinicalEmail,
+});
+export const setClinicalPassword = (clinicalPassword) => ({
+  type: "SET_USER_CLINICAL_PASSWORD",
+  clinicalPassword,
+});
+export const setClinicalID = (clinicalID) => ({
+  type: "SET_USER_CLINICAL_ID",
+  clinicalID,
+});
+export const setClinicalLoggedIn = (clinicalLoggedIn) => ({
+  type: "SET_USER_CLINICAL_LOGGED_IN",
+  clinicalLoggedIn,
+});
