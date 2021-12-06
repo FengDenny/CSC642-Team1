@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Modal, Button, Form, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import ParticipantAuthForm from "../form/ParticipantAuthForm";
+import ParticipantFormData from "../form/ParticipantFormData";
 
 export default function ModalForm(props) {
   const { onHide, setActive, setShowClincicalModal, setShowSignInModal } =
@@ -24,7 +24,7 @@ export default function ModalForm(props) {
         </p>
 
         <Modal.Body>
-          <ParticipantAuthForm
+          <ParticipantFormData
             setActive={setActive}
             setShowClincicalModal={setShowClincicalModal}
             setShowSignInModal={setShowSignInModal}

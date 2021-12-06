@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Modal, Button, Form, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import ClinicalAuthForm from "../form/ClinicalAuthForm";
+import ClinicalFormData from "../form/ClinicalFormData";
 export default function ClinicalAuthModal(props) {
   const { onHide, setActive, setShowModal, setShowSignInModal } = props;
   return (
@@ -16,7 +16,7 @@ export default function ClinicalAuthModal(props) {
         To get started, sign up for a clinical account
       </p>
       <Modal.Body>
-        <ClinicalAuthForm
+        <ClinicalFormData
           setActive={setActive}
           setShowSignInModal={setShowSignInModal}
           setShowModal={setShowModal}
