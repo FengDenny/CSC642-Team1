@@ -18,3 +18,8 @@ export const setUserID = (userId) => ({
   type: "SET_USER_ID",
   userId,
 });
+
+export const setIsLoggedIn = (isLoggedIn) => ({
+  type: "SET_USER_IS_LOGGED_IN",
+  isLoggedIn,
+});
