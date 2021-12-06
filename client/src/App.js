@@ -8,7 +8,7 @@ import {
   useRoutes,
 } from "react-router-dom";
 import Home from "./pages/home/Home";
-import SubmitTrials from "./pages/submit/SubmitTrial";
+import SubmitTrials from "./pages/Submit/SubmitTrial";
 import Navbar from "./utility/navbar/Navbar";
 import Footer from "./utility/footer/Footer";
 
