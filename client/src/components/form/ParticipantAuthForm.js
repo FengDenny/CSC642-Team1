@@ -6,6 +6,15 @@ export default function ParticipantAuthForm({
   setActive,
   setShowSignInModal,
   setShowClincicalModal,
+  first,
+  setFirst,
+  last,
+  setLast,
+  email,
+  setEmail,
+  password,
+  setPassword,
+  handleFormSubmit,
 }) {
   return (
     <>
@@ -17,6 +26,8 @@ export default function ParticipantAuthForm({
               type='text'
               placeholder='John'
               className='form-control-width'
+              value={first}
+              onChange={(e) => setFirst(e.target.value)}
             />
           </Form.Group>
           <Form.Group className='mb-3'>
@@ -25,25 +36,43 @@ export default function ParticipantAuthForm({
               type='text'
               placeholder='Doe'
               className='form-control-width'
+              value={last}
+              onChange={(e) => setLast(e.target.value)}
             />
           </Form.Group>
         </Row>
         <Form.Group className='mb-3 form-group-control'>
           <Form.Label>Email</Form.Label>
-          <Form.Control type='email' placeholder='JohnDoe@health.gov' />
+          <Form.Control
+            type='email'
+            placeholder='JohnDoe@health.gov'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </Form.Group>
         <Form.Group className='mb-3 form-group-control'>
           <Form.Label>Password</Form.Label>
-          <Form.Control type='password' placeholder='*******' />
+          <Form.Control
+            type='password'
+            placeholder='*******'
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </Form.Group>
         <Form.Group className='mb-3 form-group-control'>
           <Form.Label>
             By signing up, I accept Participaid‘s{" "}
-            <Link to='/tos'>Terms and Conditions</Link>
+            <Link to='#' className='primary-color '>
+              Terms and Conditions
+            </Link>
           </Form.Label>
         </Form.Group>
         <Form.Group className='mb-3 form-group-control'>
-          <Button variant='outline-primary' className='primary-color-btn'>
+          <Button
+            variant='outline-primary'
+            className='primary-color-btn'
+            onClick={(e) => handleFormSubmit(e)}
+          >
             SIGN UP, IT'S FREE
           </Button>
         </Form.Group>
