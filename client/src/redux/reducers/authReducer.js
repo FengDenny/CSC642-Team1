@@ -5,6 +5,11 @@ const INITIAL_STATE = {
   password: "",
   userId: "",
   isLoggedIn: false,
+  companyName: "",
+  clinicalEmail: "",
+  clinicalPassword: "",
+  clinicalID: "",
+  clinicalLoggedIn: false,
 };
 
 const authReducer = (state = INITIAL_STATE, action) => {
@@ -38,6 +43,31 @@ const authReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isLoggedIn: action.isLoggedIn,
+      };
+    case "SET_USER_COMPANY_NAME":
+      return {
+        ...state,
+        companyName: action.companyName,
+      };
+    case "SET_USER_CLINICAL_EMAIL":
+      return {
+        ...state,
+        clinicalEmail: action.clinicalEmail,
+      };
+    case "SET_USER_CLINICAL_PASSWORD":
+      return {
+        ...state,
+        clinicalPassword: action.clinicalPassword,
+      };
+    case "SET_USER_CLINICAL_ID":
+      return {
+        ...state,
+        clinicalID: action.clinicalID,
+      };
+    case "SET_USER_CLINICAL_LOGGED_IN":
+      return {
+        ...state,
+        clinicalLoggedIn: action.clinicalLoggedIn,
       };
     default:
       return state;
