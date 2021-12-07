@@ -9,7 +9,9 @@ import {
   ListGroup,
 } from "react-bootstrap";
 import { FaCheck, FaTimes } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 export default function Cards(props) {
+  const navigate = useNavigate();
   return (
     <Container className='card-container '>
       <Card className='card'>
@@ -75,7 +77,19 @@ export default function Cards(props) {
             </Col>
           </Row>
         </Card.Body>
-        <Button variant='primary' className='card-primary-color-btn '>
+        <Button
+          variant='primary'
+          className='card-primary-color-btn '
+          onClick={() =>
+            props.btnName === " Learn More"
+              ? navigate(`latest/${props.id}`)
+              : props.btnName === "Participate"
+              ? navigate(`conflict-free/${props.id}`)
+              : props.btnName === "Discover"
+              ? navigate(`discover/${props.id}`)
+              : null
+          }
+        >
           {props.btnName}
         </Button>
       </Card>
