@@ -81,7 +81,7 @@ export default function Cards(props) {
           variant='primary'
           className='card-primary-color-btn '
           onClick={() =>
-            props.btnName === " Learn More"
+            props.btnName === "Learn More"
               ? navigate(`latest/${props.id}`)
               : props.btnName === "Participate"
               ? navigate(`conflict-free/${props.id}`)
