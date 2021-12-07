@@ -39,7 +39,12 @@ function App() {
     },
     {
       path: "account/:id",
-      element: auth.isLoggedIn ? <AccountSettings /> : <Navigate to='/' />,
+      element:
+        auth.isLoggedIn || auth.clinicalLoggedIn ? (
+          <AccountSettings />
+        ) : (
+          <Navigate to='/' />
+        ),
     },
     {
       path: "latest/:id",
