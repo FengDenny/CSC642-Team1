@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../../components/card/Cards";
-import trials from "../../stimulate-backend/controller/data/latest-trials.json";
+import trials from "../../stimulate-backend/data/latest-trials.json";
 
 export default function LatestCard() {
   return (

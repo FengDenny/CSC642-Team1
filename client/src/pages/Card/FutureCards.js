@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../../components/card/Cards";
-import trials from "../../stimulate-backend/controller/data/future-trials.json";
+import trials from "../../stimulate-backend/data/future-trials.json";
 
 export default function FutureCards() {
   return (

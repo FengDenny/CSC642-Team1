@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import trials from "../../stimulate-backend/controller/data/conflict-free.json";
+import trials from "../../stimulate-backend/data/conflict-free.json";
 
 export default function AboutConflictTrials() {
   const { id } = useParams();
