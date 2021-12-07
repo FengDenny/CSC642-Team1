@@ -26,16 +26,22 @@ export default function SignInFormData({ setActive, setShowModal }) {
     // console.log(reduxPass === password, reduxEmail === email);
 
     if (reduxEmail === email && reduxPass === password) {
-      window.location.replace(`account/${auth.userId}`);
       dispatch(setIsLoggedIn(true));
+
+      setTimeout(() => {
+        window.location.replace(`account/${auth.userId}`);
+      }, 500);
     } else {
       dispatch(setIsLoggedIn(false));
     }
 
     if (ReduxClinicalEmail === email && ReduxClinicalPass === password) {
       console.log(ReduxClinicalEmail === email);
-      window.location.replace("/submit-trials");
       dispatch(setClinicalLoggedIn(true));
+
+      setTimeout(() => {
+        window.location.replace("/submit-trials");
+      }, 500);
     } else {
       dispatch(setClinicalLoggedIn(false));
     }
