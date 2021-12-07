@@ -15,7 +15,7 @@ export default function CreateAccountModal(props) {
       <Modal.Body>
         {auth.isLoggedIn ? (
           <p className='modal-header-p font-weight-200 margin-left-percent-9  font-size-18 '>
-            Trail Submissions are only available to clincial users.
+            Trail Submissions are only available to clinical users.
           </p>
         ) : (
           <p className='modal-header-p font-weight-200 margin-left-percent-9  font-size-18 '>
