@@ -6,7 +6,9 @@ import SearchBar from "./SearchBar";
 import ParticipantAuthModal from "../../components/modals/ParticipantAuthModal";
 import ClinicalAuthModal from "../../components/modals/ClinicalAuthModal";
 import SignInModal from "../../components/modals/SignInModal";
+import CreateAccountModal from "../../components/modals/CreateAccountModal";
 import { AuthClinicalNav, AuthParticipant } from "./AuthNav";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -15,6 +17,7 @@ library.add(faGithub, faLinkedin, faSearch);
 
 export default function NavbarComponent() {
   const [showModal, setShowModal] = useState(false);
+  const [alertModal, setAlertModal] = useState(false);
   const [showClincicalModal, setShowClincicalModal] = useState(false);
   const [showSignInModal, setShowSignInModal] = useState(false);
   const [active, setActive] = useState("signup");
@@ -36,6 +39,7 @@ export default function NavbarComponent() {
                   </Nav.Link>
                 </Nav.Item>
               </Col>
+
               <Col xs={6} md={4}>
                 <Nav.Item>
                   <Nav.Link href='/participate' className='links'>
@@ -43,11 +47,25 @@ export default function NavbarComponent() {
                   </Nav.Link>
                 </Nav.Item>
               </Col>
+
               <Col xs={6} md={4}>
                 <Nav.Item>
-                  <Nav.Link href='/submit-trials' className='links'>
-                    Post
-                  </Nav.Link>
+                  {auth.isLoggedIn ? (
+                    <Nav.Link
+                      href='#'
+                      className='links'
+                      onClick={() => {
+                        setActive("participants");
+                        setAlertModal(true);
+                      }}
+                    >
+                      Post
+                    </Nav.Link>
+                  ) : (
+                    <Nav.Link href='/submit-trials' className='links'>
+                      Post
+                    </Nav.Link>
+                  )}
                 </Nav.Item>
               </Col>
             </Nav>
@@ -114,6 +132,16 @@ export default function NavbarComponent() {
           setActive={setActive}
           setShowClincicalModal={setShowClincicalModal}
           setShowSignInModal={setShowSignInModal}
+        />
+      )}
+      {active === "participants" && (
+        <CreateAccountModal
+          fname={auth.firstName}
+          show={alertModal}
+          onHide={() => {
+            setAlertModal(false);
+          }}
+          setActive={setActive}
         />
       )}
     </>
