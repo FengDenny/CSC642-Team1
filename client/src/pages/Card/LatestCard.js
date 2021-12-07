@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../../components/card/Cards";
-import trials from "../../data/latest-trials.json";
+import trials from "../../stimulate-backend/controller/data/latest-trials.json";
 
 export default function LatestCard() {
   return (
@@ -10,7 +10,7 @@ export default function LatestCard() {
       {trials["Latest Trials"] &&
         trials["Latest Trials"]
           .sort(function (a, b) {
-            return b.id - a.id;
+            return b.id - a.id || b.price - a.price;
           })
           .slice(0, 4)
           .map((item, index) =>

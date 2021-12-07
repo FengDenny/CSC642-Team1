@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../../components/card/Cards";
-import trials from "../../data/conflict-free.json";
+import trials from "../../stimulate-backend/controller/data/conflict-free.json";
 
 export default function ConflictCard() {
   return (

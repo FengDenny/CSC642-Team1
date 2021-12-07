@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import trials from "../../data/latest-trials.json";
+import trials from "../../stimulate-backend/controller/data/latest-trials.json";
 
 export default function AboutLatestTrials() {
   const { id } = useParams();
