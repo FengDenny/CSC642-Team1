@@ -38,6 +38,7 @@ textarea {
   --drop-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
   --border-radius: 5px;
   --white-color: #fff;
+  --font-size-18: 18px;
   --font-size-xsm: 20px;
   --font-size-sm: 25px;
   --font-size-md: 30px;
@@ -79,8 +80,14 @@ textarea {
 .font-weight-bold {
   font-weight: bold;
 }
+.font-weight-200 {
+  font-weight: 200 !important;
+}
 
 /* Font Size */
+.font-size-18 {
+  font-size: var(--font-size-18) !important;
+}
 .font-size-xsm {
   font-size: var(--font-size-xsm) !important;
 }
@@ -169,7 +176,14 @@ textarea {
   position: relative;
   margin-left: 50px !important;
 }
-
+.margin-left-percent-9 {
+  position: relative;
+  margin-left: 9% !important;
+}
+.margin-left-percent-33 {
+  position: relative;
+  margin-left: 33% !important;
+}
 .margin-left-50 {
   position: relative;
   margin-left: 50px !important;
