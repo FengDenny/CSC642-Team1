@@ -5,15 +5,13 @@ import {
   setIsLoggedIn,
   setClinicalLoggedIn,
 } from "../../redux/actions/authAction";
-import AccountSettings from "../../pages/Protected/AccountSettings";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate, useParams } from "react-router-dom";
 
 export default function SignInFormData({ setActive, setShowModal }) {
   const { auth } = useSelector((state) => ({ ...state }));
   const [email, setEmail] = useState("DFENG415@YAHOO.COM");
   const [password, setPassword] = useState("123456");
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
