@@ -201,15 +201,15 @@
 .card .title-header {
   margin-left: 12px !important;
 }
-/* first card */
+
 .card {
-  height: 350px !important;
+  height: 380px !important;
   width: 401px;
 }
 
 .price-banner {
   background: #227c8e;
-  height: 50px;
+  height: 35px;
   color: #fff;
   font-size: 30px;
   box-shadow: 1px 0px px rgba(0, 0, 0, 0.3) !important;
