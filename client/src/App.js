@@ -11,6 +11,9 @@ import {
 import Home from "./pages/home/Home";
 import SubmitTrials from "./pages/Submit/SubmitTrial";
 import AccountSettings from "./pages/Protected/AccountSettings";
+import AboutLatestTrials from "./pages/Trials/AboutLatestTrials";
+import AboutConflictTrials from "./pages/Trials/AboutConflictTrials";
+import AboutDiscoverTrials from "./pages/Trials/AboutDiscoverTrials";
 import Navbar from "./utility/navbar/Navbar";
 import Footer from "./utility/footer/Footer";
 import { useSelector } from "react-redux";
@@ -37,6 +40,18 @@ function App() {
     {
       path: "account/:id",
       element: auth.isLoggedIn ? <AccountSettings /> : <Navigate to='/' />,
+    },
+    {
+      path: "latest/:id",
+      element: <AboutLatestTrials />,
+    },
+    {
+      path: "conflict-free/:id",
+      element: <AboutConflictTrials />,
+    },
+    {
+      path: "discover/:id",
+      element: <AboutDiscoverTrials />,
     },
   ]);
   return (
