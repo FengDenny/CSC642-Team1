@@ -21,7 +21,9 @@ export const AuthClinicalNav = () => {
             menuVariant='dark'
             className='margin-left-149'
           >
-            <NavDropdown.Item href='#action/3.1'>Action</NavDropdown.Item>
+            <NavDropdown.Item href={`/account/${auth.clinicalID}`}>
+              Account Settings
+            </NavDropdown.Item>
             <NavDropdown.Item href='#action/3.2'>
               Another action
             </NavDropdown.Item>
