@@ -296,12 +296,19 @@
       "eligibility": [
         {
           "eligible": [
-            "Neoplasms",
-            "Gender Neutral",
-            "Metastatic Solid Tumors",
-            "10-25 years"
+            {
+              "requirement_one": "Neoplasms",
+              "requirement_two": "Gender Neutral",
+              "requirement_three": "Metastatic Solid Tumors",
+              "requirement_four": "10-25 years"
+            }
           ],
-          "ineligible": ["Non-neoplasms", "Non-Metastatic Solid Tumors"]
+          "ineligible": [
+            {
+              "requirement_one": "Non-neoplasms",
+              "requirement_two": "Non-Metastatic Solid Tumors"
+            }
+          ]
         }
       ],
       "prerequisite": [
