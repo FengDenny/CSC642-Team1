@@ -4,6 +4,7 @@ import Explore from "../../image/explore.png";
 import LatestCard from "../Card/LatestCard";
 import ConflictCard from "../Card/ConflictCard";
 import FutureCard from "../Card/FutureCards";
+import SubmitCard from "../Card/SubmitCard";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import CreateAccountModal from "../../components/modals/CreateAccountModal";
@@ -64,6 +65,7 @@ export default function Home() {
               Latest Trials
             </h2>
             <div className='d-flex flex-wrap'>
+              <SubmitCard />
               <LatestCard />
             </div>
           </Container>
