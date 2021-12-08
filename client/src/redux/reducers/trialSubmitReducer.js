@@ -1,12 +1,14 @@
 const INITIAL_STATE = {
   title: "",
   description: "",
-  qualified: "",
-  notQualified: "",
+  qualified: [],
+  participants: "",
+  notQualified: [],
   prerequisite: "",
   location: "",
   payout: "",
   status: "",
+  trialID: "",
   date: [{ start: "", end: "" }],
 };
 
@@ -17,6 +19,11 @@ const trialSubmitReducer = (state = INITIAL_STATE, action) => {
         ...state,
         title: action.title,
       };
+    case "SET_TRIAL_PARTICIPANTS":
+      return {
+        ...state,
+        participants: action.participants,
+      };
     case "SET_TRIAL_DESCRIPTION":
       return {
         ...state,
@@ -25,7 +32,7 @@ const trialSubmitReducer = (state = INITIAL_STATE, action) => {
     case "SET_TRIAL_QUALIFIED":
       return {
         ...state,
-        qualified: action.qualified,
+        qualified: [action.qualified],
       };
     case "SET_TRIAL_NOT_QUALIFIED":
       return {
@@ -51,6 +58,11 @@ const trialSubmitReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         status: action.status,
+      };
+    case "SET_TRIAL_ID":
+      return {
+        ...state,
+        trialID: action.trialID,
       };
     case "SET_TRIAL_DATE":
       return {
