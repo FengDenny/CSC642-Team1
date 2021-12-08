@@ -6,6 +6,10 @@ export const setTrialDescription = (description) => ({
   type: "SET_TRIAL_DESCRIPTION",
   description,
 });
+export const setTrialParticipants = (participants) => ({
+  type: "SET_TRIAL_PARTICIPANTS",
+  participants,
+});
 export const setTrialQualified = (qualified) => ({
   type: "SET_TRIAL_QUALIFIED",
   qualified,
@@ -31,6 +35,10 @@ export const setTrialPayout = (payout) => ({
 export const setTrialStatus = (status) => ({
   type: "SET_TRIAL_STATUS",
   status,
+});
+export const setTrialID = (trialID) => ({
+  type: "SET_TRIAL_ID",
+  trialID,
 });
 
 export const setTrialDate = (start, end) => ({
