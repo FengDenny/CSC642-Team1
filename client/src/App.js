@@ -9,7 +9,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import Home from "./pages/home/Home";
-import SubmitTrials from "./pages/Submit/SubmitTrial";
+import SubmitTrialData from "./pages/Submit/SubmitTrialData";
 import AccountSettings from "./pages/Protected/AccountSettings";
 import AboutLatestTrials from "./pages/Trials/AboutLatestTrials";
 import AboutConflictTrials from "./pages/Trials/AboutConflictTrials";
@@ -33,7 +33,7 @@ function App() {
       path: "submit-trials",
       element: (
         <>
-          <SubmitTrials />
+          <SubmitTrialData />
         </>
       ),
     },
