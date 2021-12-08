@@ -1,14 +1,24 @@
-import React from "react";
-import {
-  Container,
-  Card,
-  Button,
-  Form,
-  FloatingLabel,
-  Row,
-} from "react-bootstrap";
+import React, { useState } from "react";
+import { Container, Card, Button, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-export default function SubmitTrial() {
+export default function SubmitTrial({
+  title,
+  setTitle,
+  participants,
+  setParticipants,
+  handleFormSubmit,
+  payout,
+  setPayout,
+  description,
+  setDescription,
+  qualified,
+  notQualified,
+  setQualified,
+  setNotQualified,
+  addCheck,
+  setRequirement,
+  requirement,
+}) {
   return (
     <Container>
       <section className='margin-top-10 margin-right-sm'>
@@ -23,8 +33,25 @@ export default function SubmitTrial() {
             <Form className='margin-top-sm font-size-xsm'>
               <Form.Group className='mb-3 form-group-control '>
                 <Form.Label>Trial Title</Form.Label>
-                <Form.Control type='text' placeholder='Title' />
+                <Form.Control
+                  type='text'
+                  placeholder='Title'
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                />
               </Form.Group>
+              <Form.Group className='mb-3 form-group-control'>
+                <Form.Label>Participants</Form.Label>
+                <Form.Control
+                  type='text'
+                  placeholder='Smokers'
+                  rows={4}
+                  maxLength='100'
+                  value={participants}
+                  onChange={(e) => setParticipants(e.target.value)}
+                />
+              </Form.Group>
+
               <Form.Group className='mb-3 form-group-control'>
                 <Form.Label>Description</Form.Label>
                 <Form.Control
@@ -32,24 +59,32 @@ export default function SubmitTrial() {
                   placeholder='Trial Description'
                   rows={4}
                   maxLength='400'
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
                 />
               </Form.Group>
               <Form.Group className='mb-3 form-group-control'>
                 <Form.Label>Who may participate</Form.Label>
                 <Form.Control
                   as='textarea'
-                  placeholder='Qualified'
+                  id='isQualified'
+                  placeholder='Smoker, 18+ years, Gender Neutral'
                   rows={4}
-                  maxLength='400'
+                  maxLength='100'
+                  value={requirement}
+                  onChange={(e) => setRequirement(e.target.value)}
                 />
               </Form.Group>
               <Form.Group className='mb-3 form-group-control'>
                 <Form.Label>Who may not participate</Form.Label>
                 <Form.Control
                   as='textarea'
+                  id='notQualified'
                   placeholder='Not Qualified'
                   rows={4}
                   maxLength='400'
+                  value={notQualified}
+                  onChange={(e) => setNotQualified(e.target.value)}
                 />
               </Form.Group>
               <Form.Group className='mb-3 form-group-control'>
@@ -71,7 +106,13 @@ export default function SubmitTrial() {
               </Form.Group>
               <Form.Group className='mb-3 form-group-control'>
                 <Form.Label>Payout</Form.Label>
-                <Form.Control type='number' placeholder='50' min='0' />
+                <Form.Control
+                  type='number'
+                  placeholder='50'
+                  min='0'
+                  value={payout}
+                  onChange={(e) => setPayout(e.target.value)}
+                />
               </Form.Group>
 
               <Form.Group className='mb-3 form-group-control'>
@@ -124,6 +165,9 @@ export default function SubmitTrial() {
               <Button
                 variant='primary'
                 className='card-primary-color-btn width-308 bottom-3'
+                onClick={(e) => {
+                  handleFormSubmit(e);
+                }}
               >
                 Submit For Review
               </Button>
