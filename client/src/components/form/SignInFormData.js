@@ -29,7 +29,7 @@ export default function SignInFormData({ setActive, setShowModal }) {
       dispatch(setIsLoggedIn(true));
 
       setTimeout(() => {
-        window.location.replace(`account/${auth.userId}`);
+        window.location.reload(`account/${auth.userId}`);
       }, 500);
     } else {
       dispatch(setIsLoggedIn(false));
