@@ -47,7 +47,10 @@ textarea {
 }
 
 /* UniversaL CSS */
-
+/* text */
+.text-shadow {
+  text-shadow: 1px 1px #fff, 1px 1px #ffff, 1px 0px #fff;
+}
 /* Background */
 .gradient {
   background: var(--primary-gradient-color) !important;
@@ -147,6 +150,10 @@ textarea {
   border: 2px solid var(--primary-color-hover) !important;
 }
 
+/* cursor */
+.cursor-pointer {
+  cursor: pointer !important;
+}
 /* position */
 /* footer */
 .bottom-0 {
