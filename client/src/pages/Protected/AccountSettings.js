@@ -148,10 +148,7 @@ export default function AccountSettings(props) {
             <a class='nav-link link-dark '>Orders</a>
           </li>
           <li>
-            <buitton
-              class='nav-link link-dark'
-              onClick={() => showPersonalProfile}
-            >
+            <buitton class='nav-link link-dark' onClick={showPersonalProfile}>
               {/* <svg class='bi me-2' width='16' height='16'>
                 <use xlink:href='#grid' />
               </svg> */}
