@@ -14,7 +14,8 @@ export default function Home() {
   const [alertModal, setAlertModal] = useState(false);
   const [alertApplyModal, setAlertApplyModal] = useState(false);
   const [active, setActive] = useState("participants");
-  const { auth } = useSelector((state) => ({ ...state }));
+  const { auth, submit } = useSelector((state) => ({ ...state }));
+  const { title, payout, qualified, notQualified, prerequisite } = submit;
   const navigate = useNavigate();
 
   return (
@@ -65,8 +66,15 @@ export default function Home() {
               Latest Trials
             </h2>
             <div className='d-flex flex-wrap'>
-              <SubmitCard />
-              <LatestCard />
+              {!title ||
+              !qualified ||
+              !prerequisite ||
+              !notQualified ||
+              !payout ? null : (
+                <SubmitCard />
+              )}
+
+              <LatestCard slice='4' />
             </div>
           </Container>
         </section>
@@ -76,7 +84,7 @@ export default function Home() {
               Participate without conflictions
             </h2>
             <div className='d-flex flex-wrap'>
-              <ConflictCard />
+              <ConflictCard slice='4' />
             </div>
           </Container>
         </section>
@@ -86,7 +94,7 @@ export default function Home() {
               Discover future trials
             </h2>
             <div className='d-flex flex-wrap'>
-              <FutureCard />
+              <FutureCard slice='4' />
             </div>
           </Container>
         </section>
