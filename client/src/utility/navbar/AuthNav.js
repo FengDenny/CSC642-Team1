@@ -24,8 +24,8 @@ export const AuthClinicalNav = () => {
             <NavDropdown.Item href={`/account/${auth.clinicalID}`}>
               Account Settings
             </NavDropdown.Item>
-            <NavDropdown.Item href='#action/3.2'>
-              Another action
+            <NavDropdown.Item href={`/approved-trials/${auth.clinicalID}`}>
+              Approved Trials
             </NavDropdown.Item>
             <NavDropdown.Item href='#action/3.3'>Something</NavDropdown.Item>
             <NavDropdown.Divider />
@@ -61,8 +61,8 @@ export const AuthParticipant = () => {
             <NavDropdown.Item href={`/account/${auth.userId}`}>
               Account Settings
             </NavDropdown.Item>
-            <NavDropdown.Item href='#action/3.2'>
-              Another action
+            <NavDropdown.Item href={`/trials/${auth.userId}`}>
+              Applied Trials
             </NavDropdown.Item>
             <NavDropdown.Item href='#action/3.3'>Something</NavDropdown.Item>
             <NavDropdown.Divider />
