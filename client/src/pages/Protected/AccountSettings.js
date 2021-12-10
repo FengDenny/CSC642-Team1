@@ -119,20 +119,23 @@ export default function AccountSettings(props) {
 
   // const ID = auth.userId === id;
   // console.log(ID);
+
   return (
     <>
       <div
-        style='flex-shrink: 0;
-                  width: 25rem;
-                  height: 100vh;
-                  background-color: rgba(0, 0, 0, .1);
-                  border: solid rgba(0, 0, 0, .15);
-                  border-width: 1px 0;'
+        style={{
+          flexShrink: 0,
+          width: "25rem",
+          height: "100vh",
+          backgroundColor: "rgba(0, 0, 0, .1)",
+          border: "1px solid rgba(0, 0, 0, .15)",
+          borderWidth: "1px 0",
+        }}
       ></div>
 
       <div
         class='d-flex flex-column flex-shrink-0 p-3 bg-light'
-        style='width: 280px;'
+        style={{ width: "280px" }}
       >
         <ul class='nav nav-pills flex-column mb-auto'>
           <li class='margin-top-10'>
@@ -145,24 +148,27 @@ export default function AccountSettings(props) {
             <a class='nav-link link-dark '>Orders</a>
           </li>
           <li>
-            <a
-              href='#'
+            <buitton
               class='nav-link link-dark'
-              onClick={showPersonalProfile}
+              onClick={() => showPersonalProfile}
             >
               {/* <svg class='bi me-2' width='16' height='16'>
                 <use xlink:href='#grid' />
               </svg> */}
               Personal Details
-            </a>
+            </buitton>
           </li>
           <li>
-            <a href='#' class='nav-link link-dark' onClick={showUpdateProfile}>
+            <button
+              href='#'
+              class='nav-link link-dark'
+              onClick={showUpdateProfile}
+            >
               {/* <svg class='bi me-2' width='16' height='16'>
                 <use xlink:href='#people-circle' />
               </svg> */}
               Update Account
-            </a>
+            </button>
           </li>
         </ul>
       </div>
