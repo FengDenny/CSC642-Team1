@@ -15,7 +15,7 @@ import { useSelector } from "react-redux";
 export default function Cards(props) {
   const navigate = useNavigate();
   const { submit } = useSelector((state) => ({ ...state }));
-  const { qualified } = submit;
+  const { qualified, notQualified } = submit;
   return (
     <Container className='card-container '>
       <Card className='card'>
@@ -36,9 +36,18 @@ export default function Cards(props) {
           <Row>
             <Col xs={6}>
               {qualified
-                ? qualified[0].map((m) => (
+                ? qualified[0].map((data) => (
                     <Card.Body>
-                      <FaCheck className='green-color' /> {m}
+                      <FaCheck className='green-color' /> {data}
+                    </Card.Body>
+                  ))
+                : null}
+            </Col>{" "}
+            <Col xs={6}>
+              {notQualified
+                ? notQualified[0].map((data) => (
+                    <Card.Body>
+                      <FaTimes className='red-color' /> {data}
                     </Card.Body>
                   ))
                 : null}
@@ -50,7 +59,7 @@ export default function Cards(props) {
           className='card-primary-color-btn '
           onClick={() =>
             props.btnName === "Learn More"
-              ? navigate(`latest/${props.id}`)
+              ? navigate(`latest/${props.id}`, { replace: true })
               : props.btnName === "Participate"
               ? navigate(`conflict-free/${props.id}`)
               : props.btnName === "Discover"
