@@ -13,11 +13,13 @@ import { nanoid } from "nanoid/async";
 import { useSelector } from "react-redux";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { passwordReveal } from "../passwordToggle/PasswordReveal";
+import { useNavigate } from "react-router-dom";
 
 export default function ParticipantFormData({
   setActive,
   setShowSignInModal,
   setShowClincicalModal,
+  setShowModal,
 }) {
   const dispatch = useDispatch();
   const [first, setFirst] = useState("");
@@ -26,6 +28,7 @@ export default function ParticipantFormData({
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const { auth } = useSelector((state) => ({ ...state }));
+  const { isLoggedIn } = auth;
   const handleFormSubmit = async (e) => {
     const Id = await nanoid(4);
     e.preventDefault();
@@ -35,7 +38,8 @@ export default function ParticipantFormData({
     dispatch(setUserPassword(password));
     dispatch(setUserID(Id));
     dispatch(setIsLoggedIn(true));
-    window.location.replace(`account/${auth.id}`);
+
+    // window.location.reload();
   };
 
   return (
@@ -57,6 +61,7 @@ export default function ParticipantFormData({
       FaEye={FaEye}
       FaEyeSlash={FaEyeSlash}
       passwordReveal={passwordReveal}
+      setShowModal={setShowModal}
     />
   );
 }
