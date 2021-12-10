@@ -52,7 +52,7 @@ export default function ClinicalAuthForm({
           />
           <span
             id='eye'
-            className='toggle-password primary-color'
+            className='toggle-password primary-color cursor-pointer'
             onClick={() => passwordReveal(showPassword, setShowPassword)}
           >
             {!showPassword ? <FaEye /> : <FaEyeSlash />}
