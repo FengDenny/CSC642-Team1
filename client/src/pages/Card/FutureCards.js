@@ -2,7 +2,7 @@ import React from "react";
 import Card from "../../components/card/Cards";
 import trials from "../../stimulate-backend/data/future-trials.json";
 
-export default function FutureCards() {
+export default function FutureCards(props) {
   return (
     <>
       {/* show only 4 cards  */}
@@ -12,7 +12,7 @@ export default function FutureCards() {
           .sort(function (a, b) {
             return b.id - a.id;
           })
-          .slice(0, 4)
+          .slice(0, props.slice)
           .map((item, index) =>
             item.eligibility.map(
               (i) =>

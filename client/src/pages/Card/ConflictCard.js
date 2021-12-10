@@ -2,7 +2,7 @@ import React from "react";
 import Card from "../../components/card/Cards";
 import trials from "../../stimulate-backend/data/conflict-free.json";
 
-export default function ConflictCard() {
+export default function ConflictCard(props) {
   return (
     <>
       {/* show only 4 cards  */}
@@ -12,7 +12,7 @@ export default function ConflictCard() {
           .sort(function (a, b) {
             return b.id - a.id;
           })
-          .slice(0, 4)
+          .slice(0, props.slice)
           .map((item, index) =>
             item.eligibility.map(
               (i) =>

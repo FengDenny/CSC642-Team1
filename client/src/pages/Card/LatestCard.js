@@ -2,7 +2,7 @@ import React from "react";
 import Card from "../../components/card/Cards";
 import trials from "../../stimulate-backend/data/latest-trials.json";
 
-export default function LatestCard() {
+export default function LatestCard(props) {
   return (
     <>
       {/* show only 4 cards  */}
@@ -12,7 +12,7 @@ export default function LatestCard() {
           .sort(function (a, b) {
             return b.id - a.id || b.price - a.price;
           })
-          .slice(0, 4)
+          .slice(0, props.slice)
           .map((item, index) =>
             item.eligibility.map(
               (i) =>
