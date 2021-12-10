@@ -35,7 +35,7 @@ export default function Cards(props) {
           <Card.Title className='title-header'>{props.eligibility}</Card.Title>
           <Row>
             <Col xs={6}>
-              {qualified
+              {qualified[0]
                 ? qualified[0].map((data) => (
                     <Card.Body>
                       <FaCheck className='green-color' /> {data}
@@ -44,7 +44,7 @@ export default function Cards(props) {
                 : null}
             </Col>{" "}
             <Col xs={6}>
-              {notQualified
+              {notQualified[0]
                 ? notQualified[0].map((data) => (
                     <Card.Body>
                       <FaTimes className='red-color' /> {data}
