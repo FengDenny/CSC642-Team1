@@ -2,6 +2,10 @@ const INITIAL_STATE = {
   firstName: "",
   lastName: "",
   email: "",
+  address: "",
+  aptno: "", 
+  citystate: "",
+  zipcode: "",
   password: "",
   userId: "",
   isLoggedIn: false,
@@ -34,6 +38,26 @@ const authReducer = (state = INITIAL_STATE, action) => {
         ...state,
         password: action.password,
       };
+    case "SET_USER_ADDRESS":
+      return{
+        ...state,
+        address: action.address,
+      }
+    case "SET_USER_APTNO":
+      return{
+        ...state,
+        aptno: action.aptno,
+      }
+    case "SET_USER_CITYSTATE":
+      return{
+        ...state,
+        citystate: action.citystate,
+      }
+    case "SET_USER_ZIPCODE":
+      return{
+        ...state,
+        zipcode: action.zipcode,
+      }
     case "SET_USER_ID":
       return {
         ...state,
@@ -68,6 +92,24 @@ const authReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         clinicalLoggedIn: action.clinicalLoggedIn,
+      };
+    case "DELETE_USER_INFO":
+      return{
+        firstName: "",
+        lastName: "",
+        email: "",
+        address: "",
+        aptno: "", 
+        citystate: "",
+        zipcode: "",
+        password: "",
+        userId: "",
+        isLoggedIn: false,
+        companyName: "",
+        clinicalEmail: "",
+        clinicalPassword: "",
+        clinicalID: "",
+        clinicalLoggedIn: false,
       };
     default:
       return state;
