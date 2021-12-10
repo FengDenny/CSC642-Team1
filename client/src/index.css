@@ -105,6 +105,7 @@
   position: absolute;
   right: 18%;
   bottom: 52%;
+  border: none !important;
 }
 
 /* Navbar END */
@@ -195,7 +196,7 @@
   padding: 10px !important;
 }
 .card {
-  border-radius: 5px !important;
+  border-radius: 7px !important;
   box-shadow: var(--drop-shadow) !important;
 }
 
@@ -219,6 +220,7 @@
   color: #fff;
   font-size: 30px;
   box-shadow: 1px 0px px rgba(0, 0, 0, 0.3) !important;
+  border-radius: 7px;
 }
 
 .card-title {
