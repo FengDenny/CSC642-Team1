@@ -11,9 +11,18 @@ export default function AboutDiscoverTrials() {
         <div>
           <h1>{discover.title}</h1>
           <p>{discover.description}</p>
+          <button
+                onClick={() => {
+                  setActive("participant");
+                  setShowModal(true);
+                }}
+              >
+                Apply Now!
+              </button>
         </div>
       ) : (
-        <h1> Sorry, but this trials doesn't exist yet!</h1>
+        <h1> This is Phase1, clinical trial for long term smokers that will be performed in San Francisco.
+          The study will enroll a sufficient number of parrticipants tosee any side effects related to smoke!</h1>
       )}
     </div>
   );
