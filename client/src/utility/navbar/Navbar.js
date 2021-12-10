@@ -132,6 +132,7 @@ export default function NavbarComponent() {
           setActive={setActive}
           setShowClincicalModal={setShowClincicalModal}
           setShowSignInModal={setShowSignInModal}
+          setShowModal={setShowModal}
         />
       )}
       {active === "participants" && (
