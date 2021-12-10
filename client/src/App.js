@@ -11,6 +11,7 @@ import {
 import Home from "./pages/home/Home";
 import SubmitTrialData from "./pages/Submit/SubmitTrialData";
 import AccountSettings from "./pages/Protected/AccountSettings";
+import Participate from "./pages/Protected/Participate/Participate";
 import TrialSubmitted from "./pages/Protected/clinical/TrialSubmitted";
 import AboutLatestTrials from "./pages/Trials/AboutLatestTrials";
 import AboutConflictTrials from "./pages/Trials/AboutConflictTrials";
@@ -46,6 +47,15 @@ function App() {
         ) : (
           <Navigate to='/' />
         ),
+    },
+    {
+      path: "/participate",
+      element: <Participate />,
+    },
+
+    {
+      path: "/participate/latest/:id",
+      element: <AboutLatestTrials />,
     },
     {
       path: "/approved-trials/:userID/",
