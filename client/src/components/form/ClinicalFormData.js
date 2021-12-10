@@ -10,6 +10,8 @@ import {
 } from "../../redux/actions/authAction";
 import { nanoid } from "nanoid/async";
 import { useNavigate } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { passwordReveal } from "../passwordToggle/PasswordReveal";
 
 export default function ClinicalFormData({
   setActive,
@@ -19,9 +21,10 @@ export default function ClinicalFormData({
   const dispatch = useDispatch();
   const { auth } = useSelector((state) => ({ ...state }));
   //Company name state
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [name, setName] = useState("health");
+  const [email, setEmail] = useState("H@yahoo.org");
+  const [password, setPassword] = useState("123456");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleFormSubmit = async (e) => {
     const Id = await nanoid(4);
@@ -46,6 +49,11 @@ export default function ClinicalFormData({
       password={password}
       setPassword={setPassword}
       handleFormSubmit={handleFormSubmit}
+      passwordReveal={passwordReveal}
+      showPassword={showPassword}
+      setShowPassword={setShowPassword}
+      FaEye={FaEye}
+      FaEyeSlash={FaEyeSlash}
     />
   );
 }

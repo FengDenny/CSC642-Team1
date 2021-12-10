@@ -11,6 +11,8 @@ import {
 } from "../../redux/actions/authAction";
 import { nanoid } from "nanoid/async";
 import { useSelector } from "react-redux";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { passwordReveal } from "../passwordToggle/PasswordReveal";
 
 export default function ParticipantFormData({
   setActive,
@@ -22,6 +24,7 @@ export default function ParticipantFormData({
   const [last, setLast] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const { auth } = useSelector((state) => ({ ...state }));
   const handleFormSubmit = async (e) => {
     const Id = await nanoid(4);
@@ -49,6 +52,11 @@ export default function ParticipantFormData({
       password={password}
       setPassword={setPassword}
       handleFormSubmit={handleFormSubmit}
+      showPassword={showPassword}
+      setShowPassword={setShowPassword}
+      FaEye={FaEye}
+      FaEyeSlash={FaEyeSlash}
+      passwordReveal={passwordReveal}
     />
   );
 }

@@ -13,6 +13,11 @@ export default function ClinicalAuthForm({
   setEmail,
   setPassword,
   handleFormSubmit,
+  passwordReveal,
+  showPassword,
+  setShowPassword,
+  FaEye,
+  FaEyeSlash,
 }) {
   return (
     <>
@@ -39,11 +44,19 @@ export default function ClinicalAuthForm({
           <Form.Label>Password</Form.Label>
 
           <Form.Control
+            id='password-input'
             type='password'
             placeholder='*********'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          <span
+            id='eye'
+            className='show primary-color'
+            onClick={() => passwordReveal(showPassword, setShowPassword)}
+          >
+            {!showPassword ? <FaEye /> : <FaEyeSlash />}
+          </span>
         </Form.Group>
         <Form.Group className='mb-3 form-group-control'>
           <Form.Label>
