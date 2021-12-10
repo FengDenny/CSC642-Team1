@@ -4,12 +4,13 @@ const INITIAL_STATE = {
   qualified: [],
   participants: "",
   notQualified: [],
-  prerequisite: "",
-  location: "",
+  prerequisite: [],
+  location: [{ address: "", coordinates: [{ lat: "", lng: "" }] }],
   payout: "",
   status: "",
   trialID: "",
   date: [{ start: "", end: "" }],
+  poster: "",
 };
 
 const trialSubmitReducer = (state = INITIAL_STATE, action) => {
@@ -37,17 +38,20 @@ const trialSubmitReducer = (state = INITIAL_STATE, action) => {
     case "SET_TRIAL_NOT_QUALIFIED":
       return {
         ...state,
-        notQualified: action.notQualified,
+        notQualified: [action.notQualified],
       };
     case "SET_TRIAL_PREREQUISITE":
       return {
         ...state,
-        prerequisite: action.prerequisite,
+        prerequisite: [action.prerequisite],
       };
     case "SET_TRIAL_LOCATION":
       return {
         ...state,
-        location: action.location,
+        location: {
+          address: action.address,
+          coordinates: [{ lat: action.lat, lng: action.lng }],
+        },
       };
     case "SET_TRIAL_PAYOUT":
       return {
@@ -68,6 +72,11 @@ const trialSubmitReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         date: [{ start: action.start, end: action.end }],
+      };
+    case "SET_TRIAL_POSTER":
+      return {
+        ...state,
+        poster: action.poster,
       };
     default:
       return state;
