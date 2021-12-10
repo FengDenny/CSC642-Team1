@@ -24,9 +24,10 @@ export const setTrialPrerequisite = (prerequisite) => ({
   prerequisite,
 });
 
-export const setTrialLocation = (location) => ({
+export const setTrialLocation = (address, coordinates) => ({
   type: "SET_TRIAL_LOCATION",
-  location,
+  address,
+  coordinates,
 });
 export const setTrialPayout = (payout) => ({
   type: "SET_TRIAL_PAYOUT",
@@ -45,4 +46,9 @@ export const setTrialDate = (start, end) => ({
   type: "SET_TRIAL_DATE",
   start,
   end,
+});
+
+export const setTrialPoster = (poster) => ({
+  type: "SET_TRIAL_POSTER",
+  poster,
 });
