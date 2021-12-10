@@ -15,9 +15,16 @@ export default function SubmitTrial({
   notQualified,
   setQualified,
   setNotQualified,
-  addCheck,
-  setRequirement,
-  requirement,
+  prerequisite,
+  setPrerequisite,
+  location,
+  setLocation,
+  status,
+  setStatus,
+  start,
+  setStart,
+  end,
+  setEnd,
 }) {
   return (
     <Container>
@@ -34,10 +41,11 @@ export default function SubmitTrial({
               <Form.Group className='mb-3 form-group-control '>
                 <Form.Label>Trial Title</Form.Label>
                 <Form.Control
-                  type='text'
-                  placeholder='Title'
+                  as='textarea'
+                  placeholder='Long-term Safety and Efficacy Study for  Individuals Who Are Long Term Smokers '
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
+                  maxLength='100'
                 />
               </Form.Group>
               <Form.Group className='mb-3 form-group-control'>
@@ -46,9 +54,9 @@ export default function SubmitTrial({
                   type='text'
                   placeholder='Smokers'
                   rows={4}
-                  maxLength='100'
                   value={participants}
                   onChange={(e) => setParticipants(e.target.value)}
+                  maxLength='100'
                 />
               </Form.Group>
 
@@ -58,9 +66,9 @@ export default function SubmitTrial({
                   as='textarea'
                   placeholder='Trial Description'
                   rows={4}
-                  maxLength='400'
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
+                  maxLength='300'
                 />
               </Form.Group>
               <Form.Group className='mb-3 form-group-control'>
@@ -70,9 +78,9 @@ export default function SubmitTrial({
                   id='isQualified'
                   placeholder='Smoker, 18+ years, Gender Neutral'
                   rows={4}
+                  value={qualified}
+                  onChange={(e) => setQualified(e.target.value)}
                   maxLength='100'
-                  value={requirement}
-                  onChange={(e) => setRequirement(e.target.value)}
                 />
               </Form.Group>
               <Form.Group className='mb-3 form-group-control'>
@@ -80,16 +88,22 @@ export default function SubmitTrial({
                 <Form.Control
                   as='textarea'
                   id='notQualified'
-                  placeholder='Not Qualified'
+                  placeholder='Non-smokers, 17 years and under'
                   rows={4}
-                  maxLength='400'
                   value={notQualified}
                   onChange={(e) => setNotQualified(e.target.value)}
+                  maxLength='100'
                 />
               </Form.Group>
               <Form.Group className='mb-3 form-group-control'>
                 <Form.Label>Any Prerequisite?</Form.Label>
-                <Form.Control type='text' placeholder='Not Qualified' />
+                <Form.Control
+                  as='textarea'
+                  placeholder='Negative allergic test results'
+                  value={prerequisite}
+                  onChange={(e) => setPrerequisite(e.target.value)}
+                  maxLength='100'
+                />
               </Form.Group>
             </Form>
           </Container>
@@ -101,8 +115,13 @@ export default function SubmitTrial({
             </p>
             <Form className='margin-top-sm font-size-xsm'>
               <Form.Group className='mb-3 form-group-control '>
-                <Form.Label>Location</Form.Label>
-                <Form.Control type='text' placeholder='Trails address' />
+                <Form.Label>Trial's Address</Form.Label>
+                <Form.Control
+                  type='text'
+                  placeholder='101 Van Ness Ave, San Francisco, CA 94109'
+                  value={location}
+                  onChange={(e) => setLocation(e.target.value)}
+                />
               </Form.Group>
               <Form.Group className='mb-3 form-group-control'>
                 <Form.Label>Payout</Form.Label>
@@ -117,10 +136,14 @@ export default function SubmitTrial({
 
               <Form.Group className='mb-3 form-group-control'>
                 <Form.Label>Trial Status</Form.Label>
-                <Form.Select aria-label='Default select example'>
+                <Form.Select
+                  aria-label='Default select example'
+                  value={status}
+                  onChange={(e) => setStatus(e.target.value)}
+                >
                   <option>Select status</option>
-                  <option value='1'>Recruiting</option>
-                  <option value='2'>Not Recruiting</option>
+                  <option value='Recruiting'>Recruiting</option>
+                  <option value='Not Recruiting'>Not Recruiting</option>
                 </Form.Select>
               </Form.Group>
               <Row className='form-row'>
@@ -130,6 +153,8 @@ export default function SubmitTrial({
                     type='text'
                     placeholder='11/20/2021'
                     className='form-control-width'
+                    value={start}
+                    onChange={(e) => setStart(e.target.value)}
                     maxLength='10'
                   />
                 </Form.Group>
@@ -137,8 +162,10 @@ export default function SubmitTrial({
                   <Form.Label>End Date</Form.Label>
                   <Form.Control
                     type='text'
-                    placeholder='3/20/2022'
+                    placeholder='03/20/2022'
                     className='form-control-width'
+                    value={end}
+                    onChange={(e) => setEnd(e.target.value)}
                     maxLength='10'
                   />
                 </Form.Group>
@@ -163,6 +190,18 @@ export default function SubmitTrial({
             </Form.Group>
             <Form.Group className='left-20 '>
               <Button
+                disabled={
+                  !qualified ||
+                  !notQualified ||
+                  !title ||
+                  !participants ||
+                  !payout ||
+                  !prerequisite ||
+                  !location ||
+                  !status ||
+                  !start ||
+                  !end
+                }
                 variant='primary'
                 className='card-primary-color-btn width-308 bottom-3'
                 onClick={(e) => {
