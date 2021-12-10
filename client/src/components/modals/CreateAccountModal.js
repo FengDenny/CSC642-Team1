@@ -15,11 +15,11 @@ export default function CreateAccountModal(props) {
       <Modal.Body>
         {auth.isLoggedIn ? (
           <p className='modal-header-p font-weight-200 margin-left-percent-9  font-size-18 '>
-            Trail Submissions are only available to clinical users.
+            Trial Submissions available only to clinical users.
           </p>
         ) : (
           <p className='modal-header-p font-weight-200 margin-left-percent-9  font-size-18 '>
-            Applying for trials are only available to participants.
+            Trial applications available only to participants.
           </p>
         )}
       </Modal.Body>
