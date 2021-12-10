@@ -20,6 +20,7 @@ export default function ParticipantAuthForm({
   setShowPassword,
   FaEye,
   FaEyeSlash,
+  setShowModal,
 }) {
   return (
     <>
@@ -66,7 +67,7 @@ export default function ParticipantAuthForm({
           />
           <span
             id='eye'
-            className='toggle-password primary-color'
+            className='toggle-password primary-color cursor-pointer'
             onClick={() => passwordReveal(showPassword, setShowPassword)}
           >
             {!showPassword ? <FaEye /> : <FaEyeSlash />}
@@ -84,7 +85,10 @@ export default function ParticipantAuthForm({
           <Button
             variant='outline-primary'
             className='primary-color-btn'
-            onClick={(e) => handleFormSubmit(e)}
+            onClick={(e) => {
+              handleFormSubmit(e);
+              setShowModal(false);
+            }}
           >
             SIGN UP, IT'S FREE
           </Button>
