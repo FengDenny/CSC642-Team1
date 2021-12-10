@@ -101,6 +101,12 @@
   box-shadow: none !important;
 }
 
+.show {
+  position: absolute;
+  right: 18%;
+  bottom: 52%;
+}
+
 /* Navbar END */
 
 /* Hero START */
