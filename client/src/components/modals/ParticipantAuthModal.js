@@ -4,8 +4,13 @@ import { Link } from "react-router-dom";
 import ParticipantFormData from "../form/ParticipantFormData";
 
 export default function ModalForm(props) {
-  const { onHide, setActive, setShowClincicalModal, setShowSignInModal } =
-    props;
+  const {
+    onHide,
+    setActive,
+    setShowClincicalModal,
+    setShowSignInModal,
+    setShowModal,
+  } = props;
   return (
     <>
       <Modal
@@ -28,6 +33,7 @@ export default function ModalForm(props) {
             setActive={setActive}
             setShowClincicalModal={setShowClincicalModal}
             setShowSignInModal={setShowSignInModal}
+            setShowModal={setShowModal}
           />
         </Modal.Body>
         <Modal>
