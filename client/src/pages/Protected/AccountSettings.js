@@ -2,8 +2,30 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Button, Form, Container, Row, Col } from "react-bootstrap";
+import { Alert } from "react-bootstrap";
 import ReactDOM from "react-dom";
-export default function AccountSettings(props) {
+
+export default function AccountSettings({
+  handlePersonalDataSubmit,
+  handleUpdateAccountSubmit,
+  deleteUserInfo,
+            firstName,
+            setFirstName,
+            lastName,
+            setLastName,
+            email,
+            setEmail,
+            address,
+            setAddress,
+            aptno,
+            setAptno,
+            citystate,
+            setCityState,
+            zipcode,
+            setZipcode,
+            password,
+            setPassword,
+}) {
   const { auth } = useSelector((state) => ({ ...state }));
   const { id } = useParams();
   const [validated, SetValidated] = useState(false);
@@ -18,51 +40,118 @@ export default function AccountSettings(props) {
     SetValidated(true);
   };
 
+  const comparePasswords = () => {
+    if(document.getElementById('curPassword').value == password){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
+  const submitPasswordUpdate = (event) =>{
+    if(comparePasswords){
+      setPassword(document.getElementById('newPassword').value);
+      handleUpdateAccountSubmit(event);
+    }
+
+  }
+
+  function deleteAlert(){
+
+    var conf = window.confirm("Are you sure you want to delete your profile?");
+    if(conf == true){
+      deleteUserInfo()
+    }
+  }
+
+
   const personalProfile = (
     <>
-      <h1>Account Settings</h1>
-      <Container>
+    <Container >
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
-          <Row className='mb-3'>
-            <Form.Group as={Col} xs={2} controlId='userFirstName'>
+          <Row >
+            <Form.Group as={Col} xs={3} controlId='userFirstName'>
               <Form.Label>First Name</Form.Label>
-              <Form.Control type='input' value={auth.firstName} required />
+              <Form.Control 
+              type='text' 
+              value={firstName} 
+              onChange={(e)=>{setFirstName(e.target.value)}} 
+              required />
             </Form.Group>
 
-            <Form.Group as={Col} xs={2} controlId='userLastname'>
+            <Form.Group as={Col} xs={3} controlId='userLastname'>
               <Form.Label>Last Name</Form.Label>
-              <Form.Control type='input' value={auth.lastName} required />
+              <Form.Control 
+              type='text' 
+              value={lastName}
+              onChange={(e)=>{setLastName(e.target.value)}}
+              required />
             </Form.Group>
 
-            <Form.Group as={Col} controlId='userEmail'>
+            <Form.Group as={Col} xs={6} controlId='userEmail'>
               <Form.Label>Email</Form.Label>
-              <Form.Control type='email' value={auth.email} required />
+              <Form.Control 
+              type='email' 
+              value={email}
+              onChange={(e)=>{setEmail(e.target.value)}} 
+              required />
             </Form.Group>
           </Row>
-          <Row className='mb-3'>
+          <Row >
             <Form.Group as={Col} controlId='userAddress'>
               <Form.Label>Street Address</Form.Label>
-              <Form.Control type='input' value={auth.address} required />
+              <Form.Control 
+              type='text' 
+              value={address}
+              onChange={(e)=>{setAddress(e.target.value)}} 
+              required />
             </Form.Group>
 
             <Form.Group as={Col} controlId='userAptno'>
               <Form.Label>Apt, Suite, Bldg</Form.Label>
-              <Form.Control type='input' value={auth.aptno} required />
+              <Form.Control 
+              type='text' 
+              value={aptno}
+              onChange={(e)=>{setAptno(e.target.value)}} 
+              required />
             </Form.Group>
           </Row>
-          <Row className='mb-3'>
+          <Row >
             <Form.Group as={Col} controlId='userCityState'>
               <Form.Label>City, State</Form.Label>
-              <Form.Control type='input' value={auth.citystate} required />
+              <Form.Control 
+              type='text' 
+              value={citystate}
+              onChange={(e)=>{setCityState(e.target.value)}}
+              required />
             </Form.Group>
 
             <Form.Group as={Col} controlId='userZipcode'>
               <Form.Label>zipcode</Form.Label>
-              <Form.Control type='input' value={auth.zipcode} required />
+              <Form.Control 
+              type='text' 
+              value={zipcode} 
+              onChange={(e)=>{setZipcode(e.target.value)}}
+              required />
             </Form.Group>
-          </Row>
+          </Row><br/>
           <Row>
-            <Button variant='primary' size='sm'></Button>
+            <Col >
+              <Button 
+              className="primary-color-btn"
+              disabled={
+                !firstName ||
+                !lastName ||
+                !email ||
+                !address ||
+                !aptno ||
+                !citystate ||
+                !zipcode
+              }
+              onClick={(e)=>{handlePersonalDataSubmit(e);}}
+              >Save Changes</Button>
+            </Col>
+            
           </Row>
         </Form>
       </Container>
@@ -71,49 +160,82 @@ export default function AccountSettings(props) {
 
   const updateProfile = (
     <>
-      <h1>Account Settings</h1>
-      <br />
-      <br />
-      <Container>
-        <Form noValidate validated={validated} onSubmit={handleSubmit}>
+    <Container >
+        <Form >
           <Row>
-            <h1>Update Your Email</h1>
-            <Form.Group as={Col} xs={2} controlId='updateEmail'>
+            <h3>Update Your Email</h3>
+          </Row>
+          <Row>
+            <Form.Group  controlId='updateEmail'>
               <Form.Label>Email</Form.Label>
-              <Form.Control type='email' value={auth.email}></Form.Control>
+              <Form.Control
+               type='email' 
+               value={email}
+               onChange={(e)=>{setEmail(e.target.value)}}
+               ></Form.Control>
             </Form.Group>
           </Row>
           <hr />
           <Row>
-            <h1>Update Your Password</h1>
+            <h3>Update Your Password</h3>
           </Row>
           <Row>
-            <Form.Group as={Col} xs={2} controlId='updateEmail'>
+            <Form.Group  id='curPassword'>
               <Form.Label>Current Password</Form.Label>
-              <Form.Control type='email' value={auth.email}></Form.Control>
+              <Form.Control
+               type='password'
+              placeholder="Current Password"></Form.Control>
             </Form.Group>
-            <Form.Group as={Col} xs={2} controlId='updateEmail'>
-              <Form.Label>New Password</Form.Label>
-              <Form.Control type='email' value={auth.email}></Form.Control>
-            </Form.Group>
-            <hr />
-            <Row>
-              <h1>Delete Your Account</h1>
-            </Row>
-            <Button>Delete Account</Button>
-            <hr />
-            <Button>Update Account</Button>
           </Row>
+          <Row>
+            <Form.Group id='newPassword'>
+              <Form.Label>New Password</Form.Label>
+              <Form.Control
+              type='password'
+              placeholder="New Password"></Form.Control>
+            </Form.Group>
+          </Row>
+          
+            <hr />
+            <Row >
+              <Col><h3>Delete Your Account</h3></Col>
+            </Row>
+            <Row>
+              <Button 
+                className="primary-color-btn"
+                id="DeleteButton"
+                onClick={()=>{deleteAlert()}}
+                >Delete Account</Button>
+              
+              
+            </Row><hr style={{width:"340px"}} ></hr>
+            <Row>
+              <Button
+              className="primary-color-btn"
+              disabled={
+                !email ||
+                !document.getElementById('curPassword').value ||
+                !document.getElementById('newPassword').value
+              }
+              onClick={(e)=>{submitPasswordUpdate(e)}}
+              >Update Account</Button>
+            </Row>
         </Form>
       </Container>
     </>
   );
 
   const showPersonalProfile = () => {
+    document.getElementById("Details Button").style.textDecoration="underline";
+    document.getElementById("Details Button").style.textDecorationColor='#0b97ab';
+    document.getElementById("Update Account Button").style.textDecoration="";
     ReactDOM.render(personalProfile, document.getElementById("infotab"));
   };
 
   const showUpdateProfile = () => {
+    document.getElementById("Update Account Button").style.textDecoration="underline";
+    document.getElementById("Update Account Button").style.textDecorationColor='#0b97ab';
+    document.getElementById("Details Button").style.textDecoration="";
     ReactDOM.render(updateProfile, document.getElementById("infotab"));
   };
 
@@ -122,38 +244,35 @@ export default function AccountSettings(props) {
 
   return (
     <>
-      <div
-        style={{
-          flexShrink: 0,
-          width: "25rem",
-          height: "100vh",
-          backgroundColor: "rgba(0, 0, 0, .1)",
-          border: "1px solid rgba(0, 0, 0, .15)",
-          borderWidth: "1px 0",
-        }}
-      ></div>
+    <br/>
 
-      <div
-        class='d-flex flex-column flex-shrink-0 p-3 bg-light'
-        style={{ width: "280px" }}
+    <Container >
+          <Row >
+            <Col xs={9}></Col>
+            <Col xs={{offset:3}}></Col>
+            <Col xs={{offset:1}}></Col>
+            <Col xs={10} >
+                    
+              <h1>Account Settings</h1>
+              </Col>
+            
+          </Row>
+    </Container><br/><br/><br/><br/><br/>
+
+    <Container >
+    
+      <Col lg={{offset:2}}>
+      
+      <div 
+        class='p-3 nav  '
       >
-        <ul class='nav nav-pills flex-column mb-auto'>
-          <li class='margin-top-10'>
-            <svg></svg>
-          </li>
-          <li class='margin-top-10'>
-            <svg></svg>
-          </li>
+        <ul class='nav nav-pills flex-column'>
+          
           <li>
-            <a class='nav-link link-dark '>Orders</a>
-          </li>
-          <li>
-            <buitton class='nav-link link-dark' onClick={showPersonalProfile}>
-              {/* <svg class='bi me-2' width='16' height='16'>
-                <use xlink:href='#grid' />
-              </svg> */}
-              Personal Details
-            </buitton>
+            <button class='nav-link link-dark' onClick={showPersonalProfile}>
+              
+              <h3 className="header-color" id="Details Button">Personal Details</h3>
+            </button>
           </li>
           <li>
             <button
@@ -161,16 +280,17 @@ export default function AccountSettings(props) {
               class='nav-link link-dark'
               onClick={showUpdateProfile}
             >
-              {/* <svg class='bi me-2' width='16' height='16'>
-                <use xlink:href='#people-circle' />
-              </svg> */}
-              Update Account
+              <h3 className="header-color" id="Update Account Button">Update Account</h3>
             </button>
           </li>
         </ul>
-      </div>
 
-      <div id='infotab'> </div>
+        <div class='d-flex flex-column flex-shrink-0 p-3 ' id='infotab'> </div>
+
+      </div>
+      </Col>
+      
+      </Container>
     </>
   );
 }
