@@ -6,6 +6,7 @@ export default function AboutDiscoverTrials() {
   const { id } = useParams();
   const discover = trials.find((trials) => trials.id === Number(id));
   const { _id, payout } = discover.detail[0];
+  console.log(discover.detail[0]);
   return (
     <div>
       {discover ? (
