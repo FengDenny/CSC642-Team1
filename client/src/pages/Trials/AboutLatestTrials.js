@@ -14,7 +14,6 @@ export default function AboutLatestTrials() {
     (trials) => trials.id === Number(id)
   );
   const [showModal, setShowModal] = useState(false);
-  const [alertModal, setAlertModal] = useState(false);
   const [showClincicalModal, setShowClincicalModal] = useState(false);
   const [showSignInModal, setShowSignInModal] = useState(false);
   const [alertApplyModal, setAlertApplyModal] = useState(false);
