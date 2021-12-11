@@ -76,7 +76,7 @@ export default function Cards(props) {
               ) : null}
             </Col>
           </Row>
-          <Col xs={6} className='top-10'>
+          <Col className='top-10'>
             {props.status === "Recruiting" ? (
               <Card.Body>
                 <h5>
