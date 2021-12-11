@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SearchTrials from "./SearchTrials";
 import { useSelector } from "react-redux";
 import LatestTrials from "../../stimulate-backend/data/latest-trials.json";
@@ -8,11 +8,20 @@ import SearchCard from "../../components/card/Cards";
 
 export default function SearchData() {
   const { search } = useSelector((state) => ({ ...state }));
-  const { select } = search;
+  const { select, searchValue } = search;
+  const { value } = select;
+  const { text } = searchValue;
 
   // Recruiting Latest Search
   const latest = LatestTrials["Latest Trials"]
     .map((trials) => trials)
+    .filter(
+      (status) =>
+        status.title.includes(searchValue[0].text) ||
+        status.title.toLowerCase().includes(searchValue[0].text) ||
+        status.participants.includes(searchValue[0].text) ||
+        status.participants.toLowerCase().includes(searchValue[0].text)
+    )
     .sort(function (a, b) {
       return a.id - b.id;
     })
@@ -51,6 +60,13 @@ export default function SearchData() {
   // Recruiting Conflict Search
   const conflict = conflictTrials["Conflict-Free"]
     .map((trials) => trials)
+    .filter(
+      (status) =>
+        status.title.includes(searchValue[0].text) ||
+        status.title.toLowerCase().includes(searchValue[0].text) ||
+        status.participants.includes(searchValue[0].text) ||
+        status.participants.toLowerCase().includes(searchValue[0].text)
+    )
     .sort(function (a, b) {
       return a.id - b.id;
     })
@@ -90,6 +106,13 @@ export default function SearchData() {
   // Not Recruiting Future
   const future = futureTrials
     .map((trials) => trials)
+    .filter(
+      (status) =>
+        status.title.includes(searchValue[0].text) ||
+        status.title.toLowerCase().includes(searchValue[0].text) ||
+        status.participants.includes(searchValue[0].text) ||
+        status.participants.toLowerCase().includes(searchValue[0].text)
+    )
     .sort(function (a, b) {
       return a.id - b.id;
     })
@@ -133,6 +156,8 @@ export default function SearchData() {
         latest={latest}
         conflict={conflict}
         future={future}
+        text={text}
+        value={value}
       />
     </>
   );
