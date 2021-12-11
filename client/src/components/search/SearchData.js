@@ -79,7 +79,46 @@ export default function SearchData() {
                     ineligibleThree={notEligible.requirement_three}
                     ineligibleFour={notEligible.requirement_four}
                     status={item.detail[0].status}
-                    btnName={"Learn More"}
+                    btnName={"Participate"}
+                  ></SearchCard>
+                </>
+              ))
+          )
+      )
+    );
+
+  // Not Recruiting Future
+  const future = futureTrials
+    .map((trials) => trials)
+    .sort(function (a, b) {
+      return a.id - b.id;
+    })
+    .filter((status) => status.detail[0].status === select[0].value)
+    .map((item, index) =>
+      item.eligibility.map(
+        (i) =>
+          i.eligible &&
+          i.eligible.map(
+            (isEligible) =>
+              i.ineligible &&
+              i.ineligible.map((notEligible) => (
+                <>
+                  <SearchCard
+                    key={index}
+                    id={item.id}
+                    price={item.price}
+                    title={item.title}
+                    eligibility={item.participants}
+                    eligibleOne={isEligible.requirement_one}
+                    eligibleTwo={isEligible.requirement_two}
+                    eligibleThree={isEligible.requirement_three}
+                    eligibleFour={isEligible.requirement_four}
+                    ineligibleOne={notEligible.requirement_one}
+                    ineligibleTwo={notEligible.requirement_two}
+                    ineligibleThree={notEligible.requirement_three}
+                    ineligibleFour={notEligible.requirement_four}
+                    status={item.detail[0].status}
+                    btnName={"Discover"}
                   ></SearchCard>
                 </>
               ))
@@ -89,7 +128,12 @@ export default function SearchData() {
 
   return (
     <>
-      <SearchTrials select={select} latest={latest} conflict={conflict} />
+      <SearchTrials
+        select={select}
+        latest={latest}
+        conflict={conflict}
+        future={future}
+      />
     </>
   );
 }
