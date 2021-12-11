@@ -18,6 +18,7 @@ export default function ClinicalAuthForm({
   setShowPassword,
   FaEye,
   FaEyeSlash,
+  setShowClincicalModal,
 }) {
   return (
     <>
@@ -70,7 +71,10 @@ export default function ClinicalAuthForm({
           <Button
             variant='outline-primary'
             className='primary-color-btn'
-            onClick={(e) => handleFormSubmit(e)}
+            onClick={(e) => {
+              handleFormSubmit(e);
+              setShowClincicalModal(false);
+            }}
           >
             SIGN UP, IT'S FREE
           </Button>
