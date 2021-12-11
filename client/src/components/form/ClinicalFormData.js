@@ -17,6 +17,7 @@ export default function ClinicalFormData({
   setActive,
   setShowSignInModal,
   setShowModal,
+  setShowClincicalModal,
 }) {
   const dispatch = useDispatch();
   const { auth } = useSelector((state) => ({ ...state }));
@@ -34,7 +35,7 @@ export default function ClinicalFormData({
     dispatch(setClinicalPassword(password));
     dispatch(setClinicalID(Id));
     dispatch(setClinicalLoggedIn(true));
-    window.location.replace("/submit-trials");
+    // window.location.reload();
   };
 
   return (
@@ -54,6 +55,7 @@ export default function ClinicalFormData({
       setShowPassword={setShowPassword}
       FaEye={FaEye}
       FaEyeSlash={FaEyeSlash}
+      setShowClincicalModal={setShowClincicalModal}
     />
   );
 }
