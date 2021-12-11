@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import SubmitTrial from "./SubmitTrial";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import SignInModal from "../../components/modals/SignInModal";
+import ParticipantAuthModal from "../../components/modals/ParticipantAuthModal";
+import ClinicalAuthModal from "../../components/modals/ClinicalAuthModal";
 import { nanoid } from "nanoid/async";
 import {
   setTrialTitle,
@@ -36,16 +39,21 @@ export default function SubmitTrialData() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  // Modal
+  const [showModal, setShowModal] = useState(false);
+  const [showClincicalModal, setShowClincicalModal] = useState(false);
+  const [showSignInModal, setShowSignInModal] = useState(false);
+  const [active, setActive] = useState("participate");
+
   // check is id is the same as poster id
   const { auth } = useSelector((state) => ({ ...state }));
-  const { clinicalID } = auth;
+  const { clinicalID, clinicalLoggedIn } = auth;
 
   const handleFormSubmit = async (e) => {
     const splitReqirements = qualified.split(",");
     const splitNonReqirements = notQualified.split(",");
     const splitPrerequisite = prerequisite.split(",");
     const Id = await nanoid(5);
-
     e.preventDefault();
     dispatch(setTrialID(Id));
     dispatch(setTrialTitle(title));
@@ -59,7 +67,6 @@ export default function SubmitTrialData() {
     dispatch(setTrialStatus(status));
     dispatch(setTrialDate(start, end));
     dispatch(setTrialPoster(clinicalID));
-    navigate("/");
   };
 
   return (
@@ -87,6 +94,18 @@ export default function SubmitTrialData() {
       setStart={setStart}
       end={end}
       setEnd={setEnd}
+      SignInModal={SignInModal}
+      ParticipantAuthModal={ParticipantAuthModal}
+      ClinicalAuthModal={ClinicalAuthModal}
+      showModal={showModal}
+      setShowModal={setShowModal}
+      showClincicalModal={showClincicalModal}
+      setShowClincicalModal={setShowClincicalModal}
+      showSignInModal={showSignInModal}
+      setShowSignInModal={setShowSignInModal}
+      active={active}
+      setActive={setActive}
+      clinicalLoggedIn={clinicalLoggedIn}
     />
   );
 }
