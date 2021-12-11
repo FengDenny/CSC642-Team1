@@ -5,7 +5,7 @@ import trials from "../../stimulate-backend/data/future-trials.json";
 export default function AboutDiscoverTrials() {
   const { id } = useParams();
   const discover = trials.find((trials) => trials.id === Number(id));
-  const { _id, payout } = discover.detail[0];
+  const { _id, payout,status } = discover.detail[0];
   console.log(discover.detail[0]);
   return (
     <div>
@@ -53,10 +53,11 @@ export default function AboutDiscoverTrials() {
           <p>Participant : {discover.participants}</p>
           <p>ID: {_id}</p>
           <p>Payout: {payout}</p>
-          <p>Study Type: </p>
-          <p>Start Date: </p>
-          <p>End Date: </p>
-          <p>Last Update: </p>
+          <p>Study Type: {discover.detail[0]["study-type"]} </p>
+          <p>Status: {status}</p> 
+          <p>Start Date: {discover.detail[0]["start-date"]} </p>
+          <p>End Date: {discover.detail[0]["end-date"]} </p>
+          <p>Last Update: {discover.detail[0]["last-updated"]}</p>
         </div>
       ) : (
         <h1> Sorry, but this trials doesn't exist yet!</h1>

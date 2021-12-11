@@ -21,6 +21,8 @@ export default function AboutLatestTrials() {
   const { auth, submit } = useSelector((state) => ({ ...state }));
   const { title, participants, payout, description, qualified } = submit;
   const { userId, isLoggedIn } = auth;
+  const { _id, status } = latest.detail[0];
+  
   return (
     
     <>
@@ -60,10 +62,10 @@ export default function AboutLatestTrials() {
            
             <h1>Details</h1>    
             <p>Participant : {latest.participants}</p>
-            <p>ID:         {latest.id}</p>
+            <p>ID:         {_id}</p>
             <p>Payout:     {latest.price}</p>
-            <p>Study Type: </p>
-            <p>Status: </p> 
+            <p>Study Type: {latest.detail[0]["study-type"]} </p>
+            <p>Status: {status}</p> 
             <p>Start Date: {latest.detail[0]["start-date"]} </p>
             <p>End Date: {latest.detail[0]["end-date"]} </p>
             <p>Last Update:  {latest.detail[0]["last-updated"]}</p>

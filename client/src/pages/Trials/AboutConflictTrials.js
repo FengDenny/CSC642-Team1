@@ -7,6 +7,7 @@ export default function AboutConflictTrials() {
   const conflict = trials["Conflict-Free"].find(
     (trials) => trials.id === Number(id)
   );
+  const { _id, payout,status } = conflict.detail[0];
   return (
     <div>
       {conflict ? (
@@ -39,12 +40,13 @@ export default function AboutConflictTrials() {
          
           <h1>Details</h1>    
           <p>Participant : {conflict .participants}</p>
-          <p>ID:         {conflict .id}</p>
+          <p>ID:         {_id}</p>
           <p>Payout:     {conflict .price}</p>
-          <p>Study Type: </p>
-          <p>Start Date: </p>
-          <p>End Date: </p>
-          <p>Last Update: </p>
+          <p>Study Type: {conflict.detail[0]["study-type"]} </p>
+          <p>Status: {status}</p> 
+          <p>Start Date: {conflict.detail[0]["start-date"]} </p>
+          <p>End Date: {conflict.detail[0]["end-date"]} </p>
+          <p>Last Update: {conflict.detail[0]["last-updated"]}</p>
         </div>
     
       ) : (
