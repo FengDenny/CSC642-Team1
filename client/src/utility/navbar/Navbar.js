@@ -17,6 +17,7 @@ library.add(faGithub, faLinkedin, faSearch);
 
 export default function NavbarComponent() {
   const [value, setValue] = useState("");
+  const [text, setText] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [alertModal, setAlertModal] = useState(false);
   const [showClincicalModal, setShowClincicalModal] = useState(false);
@@ -106,7 +107,12 @@ export default function NavbarComponent() {
       </Navbar>
       <Nav className='d-flex gradient nav-height'>
         <Container>
-          <SearchBar value={value} setValue={setValue} />
+          <SearchBar
+            value={value}
+            setValue={setValue}
+            text={text}
+            setText={setText}
+          />
         </Container>
       </Nav>
       {active === "signin" && (
