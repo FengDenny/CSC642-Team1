@@ -1,5 +1,6 @@
 const INITIAL_STATE = {
   select: [{ value: "" }],
+  searchValue: [{ text: "" }],
 };
 
 const searchReducer = (state = INITIAL_STATE, action) => {
@@ -8,6 +9,11 @@ const searchReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         select: [{ value: action.value }],
+      };
+    case "SET_SEARCH_TEXT":
+      return {
+        ...state,
+        searchValue: [{ text: action.text }],
       };
 
     default:
