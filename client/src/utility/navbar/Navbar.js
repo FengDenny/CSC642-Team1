@@ -16,6 +16,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 library.add(faGithub, faLinkedin, faSearch);
 
 export default function NavbarComponent() {
+  const [value, setValue] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [alertModal, setAlertModal] = useState(false);
   const [showClincicalModal, setShowClincicalModal] = useState(false);
@@ -105,7 +106,7 @@ export default function NavbarComponent() {
       </Navbar>
       <Nav className='d-flex gradient nav-height'>
         <Container>
-          <SearchBar />
+          <SearchBar value={value} setValue={setValue} />
         </Container>
       </Nav>
       {active === "signin" && (
@@ -122,6 +123,7 @@ export default function NavbarComponent() {
           onHide={() => setShowClincicalModal(false)}
           setShowModal={setShowModal}
           setShowSignInModal={setShowSignInModal}
+          setShowClincicalModal={setShowClincicalModal}
           setActive={setActive}
         />
       )}
