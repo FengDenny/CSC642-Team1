@@ -63,9 +63,10 @@ export default function AboutLatestTrials() {
             <p>ID:         {latest.id}</p>
             <p>Payout:     {latest.price}</p>
             <p>Study Type: </p>
-            <p>Start Date: </p>
-            <p>End Date: </p>
-            <p>Last Update: </p>
+            <p>Status: </p> 
+            <p>Start Date: {latest.detail[0]["start-date"]} </p>
+            <p>End Date: {latest.detail[0]["end-date"]} </p>
+            <p>Last Update:  {latest.detail[0]["last-updated"]}</p>
 
           
             
