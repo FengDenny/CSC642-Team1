@@ -20,8 +20,12 @@ export default function SearchBar({ value, setValue }) {
 
   const handleSubmitSearch = (e) => {
     e.preventDefault();
-    dispatch(setSearchSelect(value));
-    // console.log(select[0].value);
+    if (value === "") {
+      dispatch(setSearchSelect("Recruiting"));
+    } else {
+      dispatch(setSearchSelect(value));
+    }
+
     navigate("/search");
   };
 
