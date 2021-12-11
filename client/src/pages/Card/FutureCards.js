@@ -6,7 +6,7 @@ export default function FutureCards(props) {
   return (
     <>
       {/* show only 4 cards  */}
-      {console.log(trials)}
+      {/* {console.log(trials)} */}
       {trials &&
         trials
           .sort(function (a, b) {
@@ -38,6 +38,7 @@ export default function FutureCards(props) {
                           ineligibleTwo={notEligible.requirement_two}
                           ineligibleThree={notEligible.requirement_three}
                           ineligibleFour={notEligible.requirement_four}
+                          status={item.detail[0].status}
                           btnName={"Discover"}
                         ></Card>
                       </>

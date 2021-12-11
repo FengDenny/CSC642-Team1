@@ -6,7 +6,7 @@ export default function ConflictCard(props) {
   return (
     <>
       {/* show only 4 cards  */}
-      {console.log("After sort:", trials["Conflict-Free"])}
+      {/* {console.log("After sort:", trials["Conflict-Free"])} */}
       {trials["Conflict-Free"] &&
         trials["Conflict-Free"]
           .sort(function (a, b) {
@@ -36,6 +36,7 @@ export default function ConflictCard(props) {
                           ineligibleTwo={notEligible.requirement_two}
                           ineligibleThree={notEligible.requirement_three}
                           ineligibleFour={notEligible.requirement_four}
+                          status={item.detail[0].status}
                           btnName={"Participate"}
                         ></Card>
                       </>

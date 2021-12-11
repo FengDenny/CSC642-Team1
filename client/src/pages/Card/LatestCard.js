@@ -6,7 +6,7 @@ export default function LatestCard(props) {
   return (
     <>
       {/* show only 4 cards  */}
-      {console.log(trials["Latest Trials"])}
+      {/* {console.log(trials["Latest Trials"])} */}
       {trials["Latest Trials"] &&
         trials["Latest Trials"]
           .sort(function (a, b) {
@@ -36,6 +36,7 @@ export default function LatestCard(props) {
                           ineligibleTwo={notEligible.requirement_two}
                           ineligibleThree={notEligible.requirement_three}
                           ineligibleFour={notEligible.requirement_four}
+                          status={item.detail[0].status}
                           btnName={"Learn More"}
                         ></Card>
                       </>
