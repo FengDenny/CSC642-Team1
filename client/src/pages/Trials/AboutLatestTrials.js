@@ -23,12 +23,39 @@ export default function AboutLatestTrials() {
   const { title, participants, payout, description, qualified } = submit;
   const { userId, isLoggedIn } = auth;
   return (
+    
     <>
+    
       <div>
         {latest ? (
           <div>
+                            
+           
+
+            <p>{latest.price}</p>
+            
+            <h1>Legals</h1>
+
+            {latest.eligibility.map((el) => el.eligible && el.eligible.map((id) => <div>
+            <p>{id.requirement_one}</p>
+            <p>{id.requirement_two}</p>
+            <p>{id.requirement_three}</p></div>
+            ))}
+            {latest.eligibility.map((el) => el.ineligible && el.ineligible.map((id) => <div>
+            <p>{id.requirement_one}</p>
+            <p>{id.requirement_two}</p>
+            <p>{id.requirement_three}</p></div>
+            ))}
+
             <h1>{latest.title}</h1>
             <p>{latest.description}</p>
+            <p>{latest.participants}</p>
+            <p>{latest.id}</p>
+          
+            <h1>Legals</h1>
+            <div>
+            <a href=" # " >  Legals Information</a> 
+            <a href=" # " >  Legals Disclosures</a> </div>
             {!isLoggedIn ? (
               <button
                 onClick={() => {
