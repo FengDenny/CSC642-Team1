@@ -333,6 +333,43 @@
           "coordinates": [-122.3924584, 37.7648591]
         }
       ]
+    },
+    {
+      "id": 9,
+      "price": "$190",
+      "title": " Participants With Advanced Solid Tumors",
+      "participants": "Solid Tumor's Patients",
+      "description": "The purpose of this first-in-patient, open label study is to determine the maximum tolerated dose and/or recommended dose for further study of  solid tumors. ",
+      "eligibility": [
+        {
+          "eligible": [
+            {
+              "requirement_one": "18 years and up",
+              "requirement_two": "Solid Tumor",
+              "requirement_three": "Gender Neutral"
+            }
+          ],
+          "ineligible": [{ "requirement_one": "Non Solid Tumor Patients" }]
+        }
+      ],
+      "prerequisite": [{ "requirement_one": "none" }],
+      "detail": [
+        {
+          "_id": "CP10250177",
+          "payout": "175",
+          "status": "Not Recruiting",
+          "study-type": "Interventional",
+          "start-date": "12/10/2021",
+          "end-date": "03/15/2022",
+          "last-updated": "10/11/2021"
+        }
+      ],
+      "location": [
+        {
+          "address": "1975 4th St, San Francisco, CA 94158",
+          "coordinates": [-122.3924584, 37.7648591]
+        }
+      ]
     }
   ]
 }
