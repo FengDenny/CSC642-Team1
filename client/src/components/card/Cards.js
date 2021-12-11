@@ -76,6 +76,21 @@ export default function Cards(props) {
               ) : null}
             </Col>
           </Row>
+          <Col xs={6} className='top-10'>
+            {props.status === "Recruiting" ? (
+              <Card.Body>
+                <h5>
+                  Status: <span className='green-color'>{props.status}</span>
+                </h5>
+              </Card.Body>
+            ) : props.status === "Not Recruiting" ? (
+              <Card.Body>
+                <h5>
+                  Status: <span className='red-color'>{props.status}</span>
+                </h5>
+              </Card.Body>
+            ) : null}
+          </Col>
         </Card.Body>
         <Button
           variant='primary'
