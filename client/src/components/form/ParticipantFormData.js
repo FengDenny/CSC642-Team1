@@ -38,8 +38,6 @@ export default function ParticipantFormData({
     dispatch(setUserPassword(password));
     dispatch(setUserID(Id));
     dispatch(setIsLoggedIn(true));
-
-    // window.location.reload();
   };
 
   return (
