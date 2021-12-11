@@ -13,6 +13,7 @@ import thunk from "redux-thunk";
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import authReducer from "./redux/reducers/authReducer";
 import trailSubmitReducer from "./redux/reducers/trialSubmitReducer";
+import searchReducer from "./redux/reducers/searchReducer";
 import { composeWithDevTools } from "redux-devtools-extension";
 // redux-persist
 import { persistStore, persistReducer } from "redux-persist";
@@ -23,6 +24,7 @@ import autoMergeLevel1 from "redux-persist/lib/stateReconciler/autoMergeLevel1";
 const rootReducer = combineReducers({
   auth: authReducer,
   submit: trailSubmitReducer,
+  search: searchReducer,
 });
 
 const persistConfig = {
