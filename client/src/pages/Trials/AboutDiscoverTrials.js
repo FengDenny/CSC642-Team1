@@ -5,7 +5,7 @@ import trials from "../../stimulate-backend/data/future-trials.json";
 export default function AboutDiscoverTrials() {
   const { id } = useParams();
   const discover = trials.find((trials) => trials.id === Number(id));
-  console.log(discover.detail[0].payout);
+  const { _id, payout } = discover.detail[0];
   return (
     <div>
       {discover ? (
@@ -50,8 +50,8 @@ export default function AboutDiscoverTrials() {
 
           <h1>Details</h1>
           <p>Participant : {discover.participants}</p>
-          <p>ID: {discover.detail[0]._id}</p>
-          <p>Payout: {discover.detail[0].payout}</p>
+          <p>ID: {_id}</p>
+          <p>Payout: {payout}</p>
           <p>Study Type: </p>
           <p>Start Date: </p>
           <p>End Date: </p>
