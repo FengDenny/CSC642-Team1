@@ -1,13 +1,13 @@
 import React from "react";
-
-export default function SearchTrials({ latest, conflict }) {
+import { Container, Col, Row, Button, Image } from "react-bootstrap";
+export default function SearchTrials({ latest, conflict, future }) {
   return (
-    <>
-      {latest || conflict ? (
-        <>
-          {latest} {conflict}
-        </>
+    <Container>
+      {latest || conflict || future ? (
+        <div className='d-flex flex-wrap'>
+          {latest} {conflict} {future}
+        </div>
       ) : null}
-    </>
+    </Container>
   );
 }
