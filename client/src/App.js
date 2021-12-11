@@ -87,6 +87,18 @@ function App() {
       path: "/search",
       element: <SearchData />,
     },
+    {
+      path: "/search/latest/:id",
+      element: <AboutLatestTrials />,
+    },
+    {
+      path: "/search/conflict-free/:id",
+      element: <AboutConflictTrials />,
+    },
+    {
+      path: "/search/discover/:id",
+      element: <AboutDiscoverTrials />,
+    },
   ]);
   return (
     <div className='App'>
