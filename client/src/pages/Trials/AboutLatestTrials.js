@@ -22,56 +22,62 @@ export default function AboutLatestTrials() {
   const { title, participants, payout, description, qualified } = submit;
   const { userId, isLoggedIn } = auth;
   const { _id, status } = latest.detail[0];
-  
+
   return (
-    
     <>
-    
       <div>
         {latest ? (
           <div>
-                  
             <p>Payout: {latest.price}</p>
-          
 
             <h1>{latest.title}</h1>
             <p>{latest.description}</p>
 
             <h1>Legals</h1>
             <div>
-            <a href=" # " >  Legals Information</a> 
-            <p></p>
-            <a href=" # " >  Legals Disclosures</a> </div>
+              <a href=' # '> Legals Information</a>
+              <p></p>
+              <a href=' # '> Legals Disclosures</a>{" "}
+            </div>
             <p></p>
             <h1>Eligibility</h1>
-            {latest.eligibility.map((el) => el.eligible && el.eligible.map((id) => <div>
-            <p>{id.requirement_one}</p>
-            <p>{id.requirement_two}</p>
-            <p>{id.requirement_three}</p></div>
-            ))}
-            {latest.eligibility.map((el) => el.ineligible && el.ineligible.map((id) => <div>
-            <p>{id.requirement_one}</p>
-            <p>{id.requirement_two}</p>
-            <p>{id.requirement_three}</p>
-            
-            <h1>Prerequisite</h1> 
-            <p>                 </p> 
-            <p></p></div>
-            ))}
+            {latest.eligibility.map(
+              (el) =>
+                el.eligible &&
+                el.eligible.map((id) => (
+                  <div>
+                    <p>{id.requirement_one}</p>
+                    <p>{id.requirement_two}</p>
+                    <p>{id.requirement_three}</p>
+                  </div>
+                ))
+            )}
+            {latest.eligibility.map(
+              (el) =>
+                el.ineligible &&
+                el.ineligible.map((id) => (
+                  <div>
+                    <p>{id.requirement_one}</p>
+                    <p>{id.requirement_two}</p>
+                    <p>{id.requirement_three}</p>
 
-           
-            <h1>Details</h1>    
+                    <h1>Prerequisite</h1>
+                    <p> </p>
+                    <p></p>
+                  </div>
+                ))
+            )}
+
+            <h1>Details</h1>
             <p>Participant : {latest.participants}</p>
-            <p>ID:         {_id}</p>
-            <p>Payout:     {latest.price}</p>
+            <p>ID: {_id}</p>
+            <p>Payout: {latest.price}</p>
             <p>Study Type: {latest.detail[0]["study-type"]} </p>
-            <p>Status: {status}</p> 
+            <p>Status: {status}</p>
             <p>Start Date: {latest.detail[0]["start-date"]} </p>
             <p>End Date: {latest.detail[0]["end-date"]} </p>
-            <p>Last Update:  {latest.detail[0]["last-updated"]}</p>
+            <p>Last Update: {latest.detail[0]["last-updated"]}</p>
 
-          
-            
             {!isLoggedIn ? (
               <button
                 onClick={() => {
@@ -81,7 +87,7 @@ export default function AboutLatestTrials() {
               >
                 Apply Now!
               </button>
-            ) : (
+            ) : status !== "Not Recruiting" ? (
               <button
                 onClick={() => {
                   setActive("apply");
@@ -90,7 +96,7 @@ export default function AboutLatestTrials() {
               >
                 Apply Now!
               </button>
-            )}
+            ) : null}
           </div>
         ) : submit ? (
           <div>
