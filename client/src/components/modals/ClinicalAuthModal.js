@@ -3,7 +3,13 @@ import { Modal, Button, Form, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import ClinicalFormData from "../form/ClinicalFormData";
 export default function ClinicalAuthModal(props) {
-  const { onHide, setActive, setShowModal, setShowSignInModal } = props;
+  const {
+    onHide,
+    setActive,
+    setShowModal,
+    setShowSignInModal,
+    setShowClincicalModal,
+  } = props;
   return (
     <Modal {...props} aria-labelledby='contained-modal-title-vcenter' centered>
       <Modal.Header closeButton>
@@ -20,6 +26,7 @@ export default function ClinicalAuthModal(props) {
           setActive={setActive}
           setShowSignInModal={setShowSignInModal}
           setShowModal={setShowModal}
+          setShowClincicalModal={setShowClincicalModal}
         />
       </Modal.Body>
       <Modal>
