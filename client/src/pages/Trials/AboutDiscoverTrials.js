@@ -50,7 +50,7 @@ export default function AboutDiscoverTrials() {
 
           <h1>Details</h1>
           <p>Participant : {discover.participants}</p>
-          <p>ID: {discover.id}</p>
+          <p>ID: {discover.detail[0]._id}</p>
           <p>Payout: {discover.detail[0].payout}</p>
           <p>Study Type: </p>
           <p>Start Date: </p>
