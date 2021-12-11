@@ -29,13 +29,20 @@ export default function AboutLatestTrials() {
       <div>
         {latest ? (
           <div>
-                            
-           
+                  
+            <p>Payout: {latest.price}</p>
+          
 
-            <p>{latest.price}</p>
-            
+            <h1>{latest.title}</h1>
+            <p>{latest.description}</p>
+
             <h1>Legals</h1>
-
+            <div>
+            <a href=" # " >  Legals Information</a> 
+            <p></p>
+            <a href=" # " >  Legals Disclosures</a> </div>
+            <p></p>
+            <h1>Eligibility</h1>
             {latest.eligibility.map((el) => el.eligible && el.eligible.map((id) => <div>
             <p>{id.requirement_one}</p>
             <p>{id.requirement_two}</p>
@@ -44,18 +51,25 @@ export default function AboutLatestTrials() {
             {latest.eligibility.map((el) => el.ineligible && el.ineligible.map((id) => <div>
             <p>{id.requirement_one}</p>
             <p>{id.requirement_two}</p>
-            <p>{id.requirement_three}</p></div>
+            <p>{id.requirement_three}</p>
+            
+            <h1>Prerequisite</h1> 
+            <p>                 </p> 
+            <p></p></div>
             ))}
 
-            <h1>{latest.title}</h1>
-            <p>{latest.description}</p>
-            <p>{latest.participants}</p>
-            <p>{latest.id}</p>
+           
+            <h1>Details</h1>    
+            <p>Participant : {latest.participants}</p>
+            <p>ID:         {latest.id}</p>
+            <p>Payout:     {latest.price}</p>
+            <p>Study Type: </p>
+            <p>Start Date: </p>
+            <p>End Date: </p>
+            <p>Last Update: </p>
+
           
-            <h1>Legals</h1>
-            <div>
-            <a href=" # " >  Legals Information</a> 
-            <a href=" # " >  Legals Disclosures</a> </div>
+            
             {!isLoggedIn ? (
               <button
                 onClick={() => {

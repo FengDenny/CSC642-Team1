@@ -9,9 +9,43 @@ export default function AboutDiscoverTrials() {
     <div>
       {discover ? (
         <div>
+          
+
           <h1>{discover.title}</h1>
           <p>{discover.description}</p>
-        </div>
+
+          <h1>Legals</h1>
+          <div>
+          <a href=" # " >  Legals Information</a> 
+          <p></p>
+          <a href=" # " >  Legals Disclosures</a> </div>
+          <p></p>
+          <h1>Eligibility</h1>
+          {discover.eligibility.map((el) => el.eligible && el.eligible.map((id) => <div>
+          <p>{id.requirement_one}</p>
+          <p>{id.requirement_two}</p>
+          <p>{id.requirement_three}</p></div>
+          ))}
+          {discover.eligibility.map((el) => el.ineligible && el.ineligible.map((id) => <div>
+          <p>{id.requirement_one}</p>
+          <p>{id.requirement_two}</p>
+          <p>{id.requirement_three}</p>
+          
+          <h1>Prerequisite</h1> 
+          <p>                 </p> 
+          <p></p></div>
+          ))}
+
+         
+          <h1>Details</h1>    
+          <p>Participant : {discover.participants}</p>
+          <p>ID:         {discover.id}</p>
+          <p>Payout:     {discover.price}</p>
+          <p>Study Type: </p>
+          <p>Start Date: </p>
+          <p>End Date: </p>
+          <p>Last Update: </p>
+          </div>
       ) : (
         <h1> Sorry, but this trials doesn't exist yet!</h1>
       )}
