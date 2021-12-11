@@ -16,6 +16,7 @@ import TrialSubmitted from "./pages/Protected/clinical/TrialSubmitted";
 import AboutLatestTrials from "./pages/Trials/AboutLatestTrials";
 import AboutConflictTrials from "./pages/Trials/AboutConflictTrials";
 import AboutDiscoverTrials from "./pages/Trials/AboutDiscoverTrials";
+import SearchData from "./components/search/SearchData";
 import Navbar from "./utility/navbar/Navbar";
 import Footer from "./utility/footer/Footer";
 import { useSelector } from "react-redux";
@@ -81,6 +82,10 @@ function App() {
     {
       path: "discover/:id",
       element: <AboutDiscoverTrials />,
+    },
+    {
+      path: "/search",
+      element: <SearchData />,
     },
   ]);
   return (
