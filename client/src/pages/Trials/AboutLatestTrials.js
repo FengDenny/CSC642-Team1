@@ -6,6 +6,8 @@ import ClinicalAuthModal from "../../components/modals/ClinicalAuthModal";
 import AppliedTrialModal from "../../components/modals/ApplyTrialModal";
 import trials from "../../stimulate-backend/data/latest-trials.json";
 import { useSelector, useDispatch } from "react-redux";
+import { Container, Col, Row, Button } from "react-bootstrap";
+import { FaCheck, FaTimes } from "react-icons/fa";
 import {
   setAppliedTitle,
   setAppliedParticipants,
@@ -19,6 +21,8 @@ export default function AboutLatestTrials() {
   const latest = trials["Latest Trials"].find(
     (trials) => trials.id === Number(id)
   );
+
+  console.log(latest);
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
   const [showClincicalModal, setShowClincicalModal] = useState(false);
@@ -33,60 +37,176 @@ export default function AboutLatestTrials() {
 
   return (
     <>
-      <div>
+      <Container>
         {latest ? (
           <div>
-            <p>Payout: {latest.price}</p>
-
-            <h1>{latest.title}</h1>
-            <p>{latest.description}</p>
-
-            <h1>Legals</h1>
-            <div>
+            <h2 className='primary-color margin-top-10 font-size-lg font-weight-bold'>
+              {latest.title}
+            </h2>
+            <hr style={{ width: "405px" }} />
+            <p className='font-size-sm width-620'>{latest.description}</p>
+            <hr style={{ width: "405px" }} />
+            <h2 className='primary-color margin-top-sm font-size-sm font-weight-bold'>
+              Legals
+            </h2>
+            <div className=' margin-top-sm'>
               <a href=' # '> Legals Information</a>
               <p></p>
-              <a href=' # '> Legals Disclosures</a>{" "}
+              <a href=' # '> Legals Disclosures</a>
             </div>
-            <p></p>
-            <h1>Eligibility</h1>
-            {latest.eligibility.map(
-              (el) =>
-                el.eligible &&
-                el.eligible.map((id) => (
-                  <div>
-                    <p>{id.requirement_one}</p>
-                    <p>{id.requirement_two}</p>
-                    <p>{id.requirement_three}</p>
-                  </div>
-                ))
-            )}
-            {latest.eligibility.map(
-              (el) =>
-                el.ineligible &&
-                el.ineligible.map((id) => (
-                  <div>
-                    <p>{id.requirement_one}</p>
-                    <p>{id.requirement_two}</p>
-                    <p>{id.requirement_three}</p>
+            <hr style={{ width: "405px" }} />
+            <h2 className='primary-color margin-top-sm font-size-sm font-weight-bold'>
+              Eligibility
+            </h2>
+            <Row className='width-619  margin-top-sm'>
+              <Col xs={6}>
+                {latest.eligibility.map(
+                  (el) =>
+                    el.eligible &&
+                    el.eligible.map((id) => (
+                      <div className='font-size-xsm margin-left-negative'>
+                        {id.requirement_one ? (
+                          <p>
+                            <FaCheck className='green-color ' />{" "}
+                            {id.requirement_one}
+                          </p>
+                        ) : null}
+                        {id.requirement_two ? (
+                          <p>
+                            <FaCheck className='green-color ' />{" "}
+                            {id.requirement_two}
+                          </p>
+                        ) : null}
+                        {id.requirement_three ? (
+                          <p>
+                            <FaCheck className='green-color ' />{" "}
+                            {id.requirement_three}
+                          </p>
+                        ) : null}
+                      </div>
+                    ))
+                )}
+              </Col>
+              <Col xs={6}>
+                {latest.eligibility.map(
+                  (el) =>
+                    el.ineligible &&
+                    el.ineligible.map((id) => (
+                      <div className='font-size-xsm '>
+                        {id.requirement_one ? (
+                          <p>
+                            <FaTimes className='red-color ' />{" "}
+                            {id.requirement_one}
+                          </p>
+                        ) : null}
+                        {id.requirement_two ? (
+                          <p>
+                            <FaTimes className='red-color ' />{" "}
+                            {id.requirement_two}
+                          </p>
+                        ) : null}
+                        {id.requirement_three ? (
+                          <p>
+                            <FaTimes className='red-color ' />{" "}
+                            {id.requirement_three}
+                          </p>
+                        ) : null}
+                      </div>
+                    ))
+                )}
+              </Col>
+            </Row>
+            <hr style={{ width: "405px" }} />
+            <h2 className='primary-color margin-top-sm font-size-sm font-weight-bold'>
+              Prerequisite
+            </h2>
+            {latest.prerequisite.map((result) => (
+              <div className='font-size-xsm  margin-top-sm'>
+                <p>
+                  <FaCheck className='green-color ' /> {result.requirement_one}
+                </p>
+                {result.requirement_two ? (
+                  <p>
+                    {" "}
+                    <FaCheck className='green-color ' />{" "}
+                    {result.requirement_two}
+                  </p>
+                ) : null}
+                {result.requirement_three ? (
+                  <p>
+                    {" "}
+                    <FaCheck className='green-color ' />{" "}
+                    {result.requirement_three}
+                  </p>
+                ) : null}
+                {result.requirement_four ? (
+                  <p>
+                    {" "}
+                    <FaCheck className='green-color ' />{" "}
+                    {result.requirement_four}
+                  </p>
+                ) : null}
+              </div>
+            ))}
+            <hr style={{ width: "405px" }} />
+            <h2 className='primary-color margin-top-sm font-size-sm  font-weight-bold'>
+              Details
+            </h2>
+            <p className='font-size-xsm '>
+              Participants:{" "}
+              <span className='primary-color font-weight-bold'>
+                {latest.participants}
+              </span>
+            </p>
+            <p className=' font-size-xsm '>
+              ID:{" "}
+              <span className='primary-color font-weight-bold'>
+                {latest.detail[0]._id}
+              </span>
+            </p>
+            <p className='font-size-xsm '>
+              Payout:{" "}
+              <span className='primary-color font-size-md font-weight-bold'>
+                {latest.price}
+              </span>
+            </p>
+            <p className='font-size-xsm '>
+              Study Type:{" "}
+              <span className='primary-color font-weight-bold'>
+                {latest.detail[0]["study-type"]}
+              </span>
+            </p>
+            <p className=' font-size-xsm '>
+              Status: {""}
+              {latest.detail[0].status === "Recruiting" ? (
+                <span className='green-color font-weight-bold'>
+                  {latest.detail[0].status}
+                </span>
+              ) : latest.detail[0].status === "Not Recruiting" ? (
+                <span className='red-color font-weight-bold'>
+                  {latest.detail[0].status}
+                </span>
+              ) : null}
+            </p>
 
-                    <h1>Prerequisite</h1>
-                    <p> </p>
-                    <p></p>
-                  </div>
-                ))
-            )}
-
-            <h1>Details</h1>
-
-            <p>Participant : {latest.participants}</p>
-            <p>ID: {latest.detail[0]._id}</p>
-            <p>Payout: {latest.price}</p>
-            <p>Study Type: {latest.detail[0]["study-type"]} </p>
-            <p>Status: {latest.detail[0].status}</p>
-
-            <p>Start Date: {latest.detail[0]["start-date"]} </p>
-            <p>End Date: {latest.detail[0]["end-date"]} </p>
-            <p>Last Update: {latest.detail[0]["last-updated"]}</p>
+            <p className='font-size-xsm '>
+              Start Date:{" "}
+              <span className=' primary-color font-weight-bold'>
+                {latest.detail[0]["start-date"]}
+              </span>
+            </p>
+            <p className=' font-size-xsm '>
+              End Date:{" "}
+              <span className=' primary-color font-weight-bold'>
+                {latest.detail[0]["end-date"]}
+              </span>
+            </p>
+            <p className='font-size-xsm '>
+              Last Update:{" "}
+              <span className=' primary-color font-weight-bold'>
+                {latest.detail[0]["last-updated"]}
+              </span>
+            </p>
 
             {!isLoggedIn ? (
               <button
@@ -94,6 +214,7 @@ export default function AboutLatestTrials() {
                   setActive("participant");
                   setShowModal(true);
                 }}
+                className='primary-color-btn height34'
               >
                 Apply Now!
               </button>
@@ -107,6 +228,7 @@ export default function AboutLatestTrials() {
                   dispatch(setAppliedParticipants(latest.participants));
                   dispatch(setAppliedDescription(latest.description));
                 }}
+                className='primary-color-btn height34'
               >
                 Apply Now!
               </button>
@@ -114,28 +236,45 @@ export default function AboutLatestTrials() {
           </div>
         ) : submit ? (
           <div>
-            <h1>{title}</h1>
-            <p>Payout: ${payout}</p>
+            <h2 className='primary-color margin-top-sm  font-weight-bold'>
+              {title}
+            </h2>
+            <p className='margin-top-sm font-size-xsm '>
+              Payout:{" "}
+              <span className='primary-color font-size-md font-weight-bold'>
+                ${payout}
+              </span>
+            </p>
             <p>{description}</p>
             <p>{participants}</p>
-            {qualified[0].map((m) => (
-              <p>
-                <span className='green-color'>✓ </span>
-                {m}
-              </p>
-            ))}
-            {notQualified[0].map((m) => (
-              <p>
-                <span className='red-color'>X </span>
-                {m}
-              </p>
-            ))}
-            <p>
+            <Row className='width-619'>
+              <Col xs={6}>
+                {qualified[0].map((result) => (
+                  <p>
+                    <FaCheck className='green-color ' /> {result}
+                  </p>
+                ))}
+              </Col>
+
+              <Col xs={6}>
+                {notQualified[0].map((result) => (
+                  <p>
+                    <FaTimes className='red-color ' /> {result}
+                  </p>
+                ))}
+              </Col>
+            </Row>
+
+            <p className='margin-top-sm font-size-xsm '>
               Status:{" "}
               {submit.status === "Recruiting" ? (
-                <span className='green-color'>{submit.status}</span>
+                <span className='green-color font-weight-bold'>
+                  {submit.status}
+                </span>
               ) : (
-                <span className='red-color'>{submit.status} </span>
+                <span className='red-color font-weight-bold'>
+                  {submit.status}{" "}
+                </span>
               )}
             </p>
             {!isLoggedIn ? (
@@ -144,6 +283,7 @@ export default function AboutLatestTrials() {
                   setActive("participant");
                   setShowModal(true);
                 }}
+                className='primary-color-btn height34'
               >
                 Apply Now!
               </button>
@@ -156,6 +296,7 @@ export default function AboutLatestTrials() {
                   dispatch(setAppliedParticipants(submit.participants));
                   dispatch(setAppliedDescription(submit.description));
                 }}
+                className='primary-color-btn height34'
               >
                 Apply Now!
               </button>
@@ -164,7 +305,7 @@ export default function AboutLatestTrials() {
         ) : (
           <h1> Sorry, but this trials doesn't exist yet!</h1>
         )}
-      </div>
+      </Container>
       {active === "applied" && (
         <AppliedTrialModal
           show={appliedModal}
