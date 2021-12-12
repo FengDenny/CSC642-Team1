@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 export default function SubmitCard() {
   const { submit } = useSelector((state) => ({ ...state }));
-  const { title, trialID, participants, payout } = submit;
+  const { title, trialID, participants, payout, status } = submit;
   return (
     <CardSubmit
       key={trialID}
@@ -12,6 +12,7 @@ export default function SubmitCard() {
       submitPrice={payout}
       title={title}
       eligibility={participants}
+      status={status}
       btnName={"Learn More"}
     ></CardSubmit>
   );
