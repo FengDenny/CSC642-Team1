@@ -8,8 +8,8 @@
 }
 
 a {
-  list-style-type: none;
-  text-decoration: none;
+  list-style-type: none !important;
+  text-decoration: none !important;
 }
 
 html,
@@ -102,6 +102,18 @@ textarea {
 }
 
 /* Buttons */
+
+.link-btn {
+  width: 350px !important;
+  height: 32px !important;
+  color: var(--white-color) !important;
+  border: 2px solid var(--primary-color) !important;
+  border-radius: var(--border-radius) !important;
+  font-family: var(--primary-font);
+  box-shadow: var(--drop-shadow) !important;
+  font-weight: 400;
+  background-color: var(--primary-color) !important;
+}
 
 .outline-white {
   color: var(--white-color) !important;
