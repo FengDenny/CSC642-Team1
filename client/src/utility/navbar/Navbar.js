@@ -44,9 +44,22 @@ export default function NavbarComponent() {
 
               <Col xs={6} md={4}>
                 <Nav.Item>
-                  <Nav.Link href='/participate' className='links'>
-                    Participate
-                  </Nav.Link>
+                  {auth.isLoggedIn ? (
+                    <Nav.Link href='/participate' className='links'>
+                      Participate
+                    </Nav.Link>
+                  ) : (
+                    <Nav.Link
+                      href='#'
+                      className='links'
+                      onClick={() => {
+                        setActive("clinical");
+                        setAlertModal(true);
+                      }}
+                    >
+                      Participate
+                    </Nav.Link>
+                  )}
                 </Nav.Item>
               </Col>
 
@@ -146,6 +159,16 @@ export default function NavbarComponent() {
       {active === "participants" && (
         <CreateAccountModal
           fname={auth.firstName}
+          show={alertModal}
+          onHide={() => {
+            setAlertModal(false);
+          }}
+          setActive={setActive}
+        />
+      )}{" "}
+      {active === "clinical" && (
+        <CreateAccountModal
+          cname={auth.companyName}
           show={alertModal}
           onHide={() => {
             setAlertModal(false);
