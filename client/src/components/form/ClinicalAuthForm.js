@@ -58,6 +58,7 @@ export default function ClinicalAuthForm({
             id='password-input'
             type='password'
             placeholder='*********'
+            maxLength='21'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
