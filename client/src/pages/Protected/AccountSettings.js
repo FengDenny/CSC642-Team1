@@ -110,6 +110,7 @@ export default function AccountSettings({
                         <Form.Control
                           type='text'
                           placeholder={auth.address}
+                          value={address}
                           onChange={(e) => {
                             setAddress(e.target.value);
                           }}
@@ -122,6 +123,7 @@ export default function AccountSettings({
                         <Form.Control
                           type='text'
                           placeholder={auth.aptno}
+                          value={aptno}
                           onChange={(e) => {
                             setAptno(e.target.value);
                           }}
@@ -135,6 +137,7 @@ export default function AccountSettings({
                         <Form.Control
                           type='text'
                           placeholder={auth.citystate}
+                          value={citystate}
                           onChange={(e) => {
                             setCityState(e.target.value);
                           }}
@@ -147,6 +150,7 @@ export default function AccountSettings({
                         <Form.Control
                           type='text'
                           placeholder={auth.zipcode}
+                          value={zipcode}
                           onChange={(e) => {
                             setZipcode(e.target.value);
                           }}
