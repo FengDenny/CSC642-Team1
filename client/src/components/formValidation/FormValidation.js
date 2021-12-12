@@ -30,7 +30,7 @@ export const passwordValidation = (nameType, setError) => {
   const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
   if (!nameType.match(passwordRegex)) {
     setError(
-      "Password must be between 6 to 20 characters containing one numeric digit, one uppercase and one lowercase letter "
+      "Password must be 6 to 20 characters with one numeric digit, uppercase and lowercase letter "
     );
   } else {
     setError("");
