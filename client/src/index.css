@@ -103,8 +103,11 @@
 
 .toggle-password {
   position: absolute;
-  right: 18%;
-  bottom: 52%;
+  display: flex;
+  align-self: flex-end;
+  justify-content: flex-end;
+  left: 390px !important;
+  margin-top: -25px;
   border: none !important;
 }
 
