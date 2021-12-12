@@ -17,7 +17,7 @@ export default function AppledTrialFormData() {
 
   // redux
   const { auth } = useSelector((state) => ({ ...state }));
-  const { firstName, lastName, email } = auth;
+  const { firstName, lastName, email, userId } = auth;
   const { id } = useParams();
 
   const handleApply = (e) => {
@@ -33,6 +33,7 @@ export default function AppledTrialFormData() {
         )
       )
     );
+    window.location.replace(`/trials/${userId}`);
   };
 
   return (
