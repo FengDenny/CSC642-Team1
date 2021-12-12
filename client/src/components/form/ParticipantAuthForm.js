@@ -21,6 +21,10 @@ export default function ParticipantAuthForm({
   FaEye,
   FaEyeSlash,
   setShowModal,
+  firstNameError,
+  lastNameError,
+  emailError,
+  passwordError,
 }) {
   return (
     <>
@@ -35,6 +39,11 @@ export default function ParticipantAuthForm({
               value={first}
               onChange={(e) => setFirst(e.target.value)}
             />
+            {firstNameError && (
+              <Form.Label className='red-color top5'>
+                {firstNameError}
+              </Form.Label>
+            )}
           </Form.Group>
           <Form.Group className='mb-3'>
             <Form.Label>Last Name</Form.Label>
@@ -45,6 +54,11 @@ export default function ParticipantAuthForm({
               value={last}
               onChange={(e) => setLast(e.target.value)}
             />
+            {lastNameError && (
+              <Form.Label className='red-color top5'>
+                {lastNameError}
+              </Form.Label>
+            )}
           </Form.Group>
         </Row>
         <Form.Group className='mb-3 form-group-control'>
@@ -55,6 +69,9 @@ export default function ParticipantAuthForm({
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
+          {emailError && (
+            <Form.Label className='red-color top5'>{emailError}</Form.Label>
+          )}
         </Form.Group>
         <Form.Group className='mb-3 form-group-control'>
           <Form.Label>Password</Form.Label>
@@ -72,6 +89,9 @@ export default function ParticipantAuthForm({
           >
             {!showPassword ? <FaEye /> : <FaEyeSlash />}
           </span>
+          {passwordError && (
+            <Form.Label className='red-color top5'>{passwordError}</Form.Label>
+          )}
         </Form.Group>
         <Form.Group className='mb-3 form-group-control'>
           <Form.Label>
@@ -83,6 +103,17 @@ export default function ParticipantAuthForm({
         </Form.Group>
         <Form.Group className='mb-3 form-group-control'>
           <Button
+            type='submit'
+            disabled={
+              firstNameError ||
+              lastNameError ||
+              emailError ||
+              passwordError ||
+              !first ||
+              !last ||
+              !email ||
+              !password
+            }
             variant='outline-primary'
             className='primary-color-btn'
             onClick={(e) => {

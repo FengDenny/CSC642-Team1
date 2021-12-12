@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import ParticipantAuthForm from "./ParticipantAuthForm";
 import { useDispatch } from "react-redux";
 import {
@@ -10,11 +10,13 @@ import {
   setIsLoggedIn,
 } from "../../redux/actions/authAction";
 import { nanoid } from "nanoid/async";
-import { useSelector } from "react-redux";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { passwordReveal } from "../passwordToggle/PasswordReveal";
-import { useNavigate } from "react-router-dom";
-
+import {
+  nameValidation,
+  emailValidation,
+  passwordValidation,
+} from "../formValidation/FormValidation";
 export default function ParticipantFormData({
   setActive,
   setShowSignInModal,
@@ -27,8 +29,17 @@ export default function ParticipantFormData({
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const { auth } = useSelector((state) => ({ ...state }));
-  const { isLoggedIn } = auth;
+  const [firstNameError, setFirstNameError] = useState("");
+  const [lastNameError, setLastNameError] = useState("");
+  const [emailError, setEmailError] = useState();
+  const [passwordError, setPasswordError] = useState("");
+
+  useEffect(() => {
+    first && nameValidation(first, "First name", setFirstNameError);
+    last && nameValidation(last, "Last name", setLastNameError);
+    password && passwordValidation(password, setPasswordError);
+    email && emailValidation(email, setEmailError);
+  }, [first, last, email, password]);
   const handleFormSubmit = async (e) => {
     const Id = await nanoid(4);
     e.preventDefault();
@@ -60,6 +71,10 @@ export default function ParticipantFormData({
       FaEyeSlash={FaEyeSlash}
       passwordReveal={passwordReveal}
       setShowModal={setShowModal}
+      firstNameError={firstNameError}
+      lastNameError={lastNameError}
+      emailError={emailError}
+      passwordError={passwordError}
     />
   );
 }
