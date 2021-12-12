@@ -9,6 +9,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   setAppliedTitle,
   setAppliedParticipants,
+  setAppliedDescription,
 } from "../../redux/actions/appliedAction";
 
 import { useParams, Outlet, useNavigate } from "react-router-dom";
@@ -104,6 +105,7 @@ export default function AboutLatestTrials() {
                   setAppliedModal(true);
                   dispatch(setAppliedTitle(latest.title));
                   dispatch(setAppliedParticipants(latest.participants));
+                  dispatch(setAppliedDescription(latest.description));
                 }}
               >
                 Apply Now!
@@ -152,6 +154,7 @@ export default function AboutLatestTrials() {
                   setAppliedModal(true);
                   dispatch(setAppliedTitle(submit.title));
                   dispatch(setAppliedParticipants(submit.participants));
+                  dispatch(setAppliedDescription(submit.description));
                 }}
               >
                 Apply Now!
