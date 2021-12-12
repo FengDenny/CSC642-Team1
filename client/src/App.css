@@ -39,6 +39,7 @@ textarea {
   --border-radius: 5px;
   --white-color: #fff;
   --font-size-18: 18px;
+  --font-size-14: 14px;
   --font-size-xsm: 20px;
   --font-size-sm: 25px;
   --font-size-md: 30px;
@@ -90,6 +91,9 @@ textarea {
 /* Font Size */
 .font-size-18 {
   font-size: var(--font-size-18) !important;
+}
+.font-size-14 {
+  font-size: var(--font-size-14) !important;
 }
 .font-size-xsm {
   font-size: var(--font-size-xsm) !important;
