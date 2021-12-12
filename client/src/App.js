@@ -45,11 +45,11 @@ function App() {
     {
       path: "account/:id",
       element:
-        auth.isLoggedIn || auth.clinicalLoggedIn ? (
-          <AccountSettingsData />
-        ) : (
-          <Navigate to='/' />
-        ),
+        auth.isLoggedIn ? 
+        <AccountSettingsData /> : 
+        (auth.clinicalLoggedIn ? 
+          <ClinicalAccountSettingsData /> :
+          <Navigate to='/' />),
     },
     {
       path: "/participate",
