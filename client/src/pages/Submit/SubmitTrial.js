@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Container, Card, Button, Form, Row } from "react-bootstrap";
+import { Container, Card, Button, Form, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 export default function SubmitTrial({
   title,
   setTitle,
@@ -42,7 +43,15 @@ export default function SubmitTrial({
   endError,
   locationError,
   commaError,
+  commaTwoError,
+  aptno,
+  setAptno,
+  citystate,
+  setCityState,
+  zipcode,
+  setZipcode,
 }) {
+  const { auth } = useSelector((state) => ({ ...state }));
   return (
     <>
       <Container>
@@ -117,6 +126,11 @@ export default function SubmitTrial({
                     onChange={(e) => setNotQualified(e.target.value)}
                     maxLength='100'
                   />
+                  {commaTwoError && (
+                    <Form.Label className='red-color top5 font-size-14'>
+                      {commaTwoError}
+                    </Form.Label>
+                  )}
                 </Form.Group>
                 <Form.Group className='mb-3 form-group-control'>
                   <Form.Label>Any Prerequisite?</Form.Label>
@@ -131,26 +145,72 @@ export default function SubmitTrial({
               </Form>
             </Container>
           </Card>
-          <Card className='margin-auto width-450 height-auto top-10'>
-            <Container fluid className=''>
-              <p className='font-size-sm margin-left-57 primary-color top-10'>
-                Specific Details
-              </p>
-              <Form className='margin-top-sm font-size-xsm'>
-                <Form.Group className='mb-3 form-group-control '>
-                  <Form.Label>Trial's Address</Form.Label>
+
+          <Card className='margin-auto width-450 height-auto top-10 padding-10'>
+            <Container fluid className='margin-top-sm'>
+              <Form.Label className='form-group-control font-size-sm primary-color'>
+                Trial's Location
+              </Form.Label>
+              <Row className='row-width-margin'>
+                <Form.Group as={Col} id='userAddress'>
+                  <Form.Label>Street Address</Form.Label>
                   <Form.Control
                     type='text'
-                    placeholder='101 Van Ness Ave, San Francisco, CA 94109'
+                    placeholder={auth.address}
                     value={location}
-                    onChange={(e) => setLocation(e.target.value)}
+                    onChange={(e) => {
+                      setLocation(e.target.value);
+                    }}
+                    required
                   />
-                  {locationError && (
-                    <Form.Label className='red-color top5 font-size-14'>
-                      {locationError}
-                    </Form.Label>
-                  )}
                 </Form.Group>
+
+                <Form.Group as={Col} id='userAptno'>
+                  <Form.Label>Apt, Suite, Bldg</Form.Label>
+                  <Form.Control
+                    type='text'
+                    placeholder={auth.aptno}
+                    value={aptno}
+                    onChange={(e) => {
+                      setAptno(e.target.value);
+                    }}
+                    required
+                  />
+                </Form.Group>
+              </Row>
+              <Row className='row-width-margin'>
+                <Form.Group as={Col} id='userCityState'>
+                  <Form.Label>City, State</Form.Label>
+                  <Form.Control
+                    type='text'
+                    placeholder={auth.citystate}
+                    value={citystate}
+                    onChange={(e) => {
+                      setCityState(e.target.value);
+                    }}
+                    required
+                  />
+                </Form.Group>
+
+                <Form.Group as={Col} id='userZipcode'>
+                  <Form.Label>zipcode</Form.Label>
+                  <Form.Control
+                    type='text'
+                    placeholder={auth.zipcode}
+                    value={zipcode}
+                    onChange={(e) => {
+                      setZipcode(e.target.value);
+                    }}
+                    required
+                  />
+                </Form.Group>
+              </Row>
+            </Container>
+          </Card>
+
+          <Card className='margin-auto width-450 height-auto top-20'>
+            <Container fluid className=''>
+              <Form className='margin-top-sm font-size-xsm'>
                 <Form.Group className='mb-3 form-group-control'>
                   <Form.Label>Payout</Form.Label>
                   <Form.Control
@@ -161,7 +221,7 @@ export default function SubmitTrial({
                     onChange={(e) => setPayout(e.target.value)}
                   />
                   {priceError && (
-                    <Form.Label className='red-color top5 font-size-xsm'>
+                    <Form.Label className='red-color top5 font-size-14'>
                       {priceError}
                     </Form.Label>
                   )}
@@ -216,7 +276,7 @@ export default function SubmitTrial({
               </Form>
             </Container>
           </Card>
-          <Card className='margin-auto width-450 height-auto top-20 padding-10'>
+          <Card className='margin-auto width-450 height-auto margin-top-sm top-20 padding-10'>
             <Container fluid className='margin-top-sm'>
               <Form.Group className='width-200 left-20'>
                 <p className=''>
