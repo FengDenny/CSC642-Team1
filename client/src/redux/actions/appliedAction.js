@@ -25,3 +25,7 @@ export const setAppliedParticipants = (participants) => ({
   type: "SET_APPLIED_PARTICIPANTS",
   participants,
 });
+export const setAppliedDescription = (description) => ({
+  type: "SET_APPLIED_DESCRIPTION",
+  description,
+});
