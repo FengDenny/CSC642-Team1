@@ -208,6 +208,11 @@ textarea {
   position: relative;
   margin-left: 50px !important;
 }
+
+.margin-left-negative {
+  margin-left: -9px !important;
+}
+
 .margin-left-percent-9 {
   position: relative;
   margin-left: 9% !important;
@@ -219,6 +224,10 @@ textarea {
 .margin-left-50 {
   position: relative;
   margin-left: 50px !important;
+}
+.margin-left-5 {
+  position: relative;
+  margin-left: 5px !important;
 }
 .margin-left-57 {
   position: relative;
@@ -276,6 +285,13 @@ textarea {
 .width-396 {
   width: 396px !important;
 }
+.width-619 {
+  width: 559px !important;
+}
+
+.width-620 {
+  width: 620px !important;
+}
 
 .width-308 {
   width: 308px !important;
@@ -290,6 +306,9 @@ textarea {
   height: auto !important;
 }
 
+.height34 {
+  height: 34px !important;
+}
 .height60 {
   height: 60px !important;
 }
