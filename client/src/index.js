@@ -14,6 +14,7 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import authReducer from "./redux/reducers/authReducer";
 import trailSubmitReducer from "./redux/reducers/trialSubmitReducer";
 import searchReducer from "./redux/reducers/searchReducer";
+import appliedReducer from "./redux/reducers/appliedReducer";
 import { composeWithDevTools } from "redux-devtools-extension";
 // redux-persist
 import { persistStore, persistReducer } from "redux-persist";
@@ -25,6 +26,7 @@ const rootReducer = combineReducers({
   auth: authReducer,
   submit: trailSubmitReducer,
   search: searchReducer,
+  applied: appliedReducer,
 });
 
 const persistConfig = {
