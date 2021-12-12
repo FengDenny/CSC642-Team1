@@ -5,6 +5,7 @@ const INITIAL_STATE = {
   url: "",
   trialTitle: "",
   participants: "",
+  description: "",
 };
 
 const appliedReducer = (state = INITIAL_STATE, action) => {
@@ -39,6 +40,11 @@ const appliedReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         participants: action.participants,
+      };
+    case "SET_APPLIED_DESCRIPTION":
+      return {
+        ...state,
+        description: action.description,
       };
 
     default:
