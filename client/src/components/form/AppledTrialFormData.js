@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AppliedTrialForm from "./AppliedTrialForm";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -14,8 +14,9 @@ export default function AppledTrialFormData() {
   const [first, setFirst] = useState("");
   const [last, setLast] = useState("");
   const [emailApply, setEmailApply] = useState("");
-  const { auth } = useSelector((state) => ({ ...state }));
 
+  // redux
+  const { auth } = useSelector((state) => ({ ...state }));
   const { firstName, lastName, email } = auth;
   const { id } = useParams();
 
