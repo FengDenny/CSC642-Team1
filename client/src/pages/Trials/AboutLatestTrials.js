@@ -5,7 +5,11 @@ import ParticipantAuthModal from "../../components/modals/ParticipantAuthModal";
 import ClinicalAuthModal from "../../components/modals/ClinicalAuthModal";
 import AppliedTrialModal from "../../components/modals/ApplyTrialModal";
 import trials from "../../stimulate-backend/data/latest-trials.json";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  setAppliedTitle,
+  setAppliedParticipants,
+} from "../../redux/actions/appliedAction";
 
 import { useParams, Outlet, useNavigate } from "react-router-dom";
 
@@ -14,6 +18,7 @@ export default function AboutLatestTrials() {
   const latest = trials["Latest Trials"].find(
     (trials) => trials.id === Number(id)
   );
+  const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
   const [showClincicalModal, setShowClincicalModal] = useState(false);
   const [showSignInModal, setShowSignInModal] = useState(false);
@@ -97,6 +102,8 @@ export default function AboutLatestTrials() {
                 onClick={() => {
                   setActive("applied");
                   setAppliedModal(true);
+                  dispatch(setAppliedTitle(latest.title));
+                  dispatch(setAppliedParticipants(latest.participants));
                 }}
               >
                 Apply Now!
@@ -138,12 +145,13 @@ export default function AboutLatestTrials() {
               >
                 Apply Now!
               </button>
-            ) : latest.detail[0].status !== "Not Recruiting" ||
-              submit.status !== "Not Recruiting" ? (
+            ) : submit.status !== "Not Recruiting" ? (
               <button
                 onClick={() => {
                   setActive("applied");
                   setAppliedModal(true);
+                  dispatch(setAppliedTitle(submit.title));
+                  dispatch(setAppliedParticipants(submit.participants));
                 }}
               >
                 Apply Now!
