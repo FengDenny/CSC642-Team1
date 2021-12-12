@@ -262,3 +262,9 @@
 .height-footer .links {
   width: 200px !important;
 }
+
+/* Account Settings */
+.nav-pills .nav-link.active {
+  text-decoration: underline !important;
+  color: var(--primary-color) !important;
+}
