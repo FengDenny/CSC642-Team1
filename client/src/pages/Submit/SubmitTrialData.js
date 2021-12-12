@@ -24,6 +24,7 @@ import {
   priceValidation,
   dateValidation,
   addressValidations,
+  containCommasValidations,
 } from "../../components/formValidation/FormValidation";
 
 // import { addCheck } from "./getArray";
@@ -43,6 +44,7 @@ export default function SubmitTrialData() {
   const [startError, setStartError] = useState("");
   const [endError, setEndError] = useState("");
   const [locationError, setLocationError] = useState("");
+  const [commaError, setCommaError] = useState("");
 
   // date
   const [start, setStart] = useState("");
@@ -58,13 +60,15 @@ export default function SubmitTrialData() {
   // check is id is the same as poster id
   const { auth } = useSelector((state) => ({ ...state }));
   const { clinicalID, clinicalLoggedIn } = auth;
+  const navigate = useNavigate();
 
   useEffect(() => {
     payout && priceValidation(payout, "Price", setPriceError);
     start && dateValidation(start, "Start date", setStartError);
     end && dateValidation(end, "End date", setEndError);
     location && addressValidations(location, "Address", setLocationError);
-  }, [payout, start, end, location]);
+    qualified && containCommasValidations(qualified, setCommaError);
+  }, [payout, start, end, location, qualified]);
 
   const handleFormSubmit = async (e) => {
     const splitReqirements = qualified.split(",");
@@ -84,6 +88,7 @@ export default function SubmitTrialData() {
     dispatch(setTrialStatus(status));
     dispatch(setTrialDate(start, end));
     dispatch(setTrialPoster(clinicalID));
+    navigate("/");
   };
 
   return (
@@ -127,6 +132,7 @@ export default function SubmitTrialData() {
       startError={startError}
       endError={endError}
       locationError={locationError}
+      commaError={commaError}
     />
   );
 }

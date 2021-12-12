@@ -41,6 +41,7 @@ export default function SubmitTrial({
   startError,
   endError,
   locationError,
+  commaError,
 }) {
   return (
     <>
@@ -99,6 +100,11 @@ export default function SubmitTrial({
                     onChange={(e) => setQualified(e.target.value)}
                     maxLength='100'
                   />
+                  {commaError && (
+                    <Form.Label className='red-color top5 font-size-14'>
+                      {commaError}
+                    </Form.Label>
+                  )}
                 </Form.Group>
                 <Form.Group className='mb-3 form-group-control'>
                   <Form.Label>Who may not participate</Form.Label>

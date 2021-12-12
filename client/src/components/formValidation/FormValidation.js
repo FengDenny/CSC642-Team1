@@ -90,3 +90,11 @@ export const dateValidation = (nameType, name, setError) => {
       break;
   }
 };
+
+export const containCommasValidations = (nameType, setError) => {
+  if (nameType.includes(",") === false) {
+    setError("Please use the following format: A,B,C");
+  } else {
+    setError("");
+  }
+};
