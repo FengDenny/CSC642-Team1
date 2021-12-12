@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './AccountSettings.css';
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Button, Form, Container, Row, Col, Tab, Nav } from "react-bootstrap";
@@ -48,19 +49,40 @@ export default function AccountSettings({
       deleteUserInfo();
     }
   }
+
   return (
     <>
-      <h1 className='text-center primary-color'>Account Settings</h1>
+      <br/>
+      <Container>
+        <Row>
+        <Col xs={8}></Col>
+            <Col xs={4}></Col>
+            <Col></Col>
+            <Col></Col>
+            <Col xs={10}><h1 className='primary-color'>Account Settings</h1>
+            </Col>
+          
+        </Row>
+        
+      </Container><br/><br/><br/><br/><br/>
+      
       <Container className='container'>
-        <Tab.Container id='left-tabs-example' defaultActiveKey='first'>
+        <Tab.Container defaultActiveKey='first'>
           <Row>
-            <Col>
-              <Nav variant='pills' className='flex-column'>
-                <Nav.Item>
-                  <Nav.Link eventKey='first'>Personal Details</Nav.Link>
+            <Col xs={4}></Col>
+            <Col></Col>
+            <Col></Col>
+            <Col xs={7}>
+              <Nav  
+               
+              className='flex-column bgLight'>
+                <Nav.Item >
+                  <Nav.Link name="personalDetailsBtn"  style={{color:'#5f6368'}}
+                   
+                   eventKey='first'><h4>Personal Details</h4></Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey='second'>Update Account</Nav.Link>
+                  <Nav.Link style={{color:'#5f6368'}} id="updateAccountBtn" eventKey='second'><h4>Update Account</h4></Nav.Link>
                 </Nav.Item>
               </Nav>
             </Col>
@@ -68,9 +90,11 @@ export default function AccountSettings({
               <Tab.Content>
                 {/* Personal Details */}
                 <Tab.Pane eventKey='first'>
+                <Container>
                   <Form>
                     <Row>
-                      <Form.Group as={Col} xs={3} id='userFirstName'>
+                      <Col>
+                      <Form.Group id='userFirstName'>
                         <Form.Label>First Name</Form.Label>
                         <Form.Control
                           type='text'
@@ -80,6 +104,7 @@ export default function AccountSettings({
                           required
                         />
                       </Form.Group>
+                      </Col>
 
                       <Form.Group as={Col} xs={3} id='userLastName'>
                         <Form.Label>Last Name</Form.Label>
@@ -171,14 +196,16 @@ export default function AccountSettings({
                       </Col>
                     </Row>
                   </Form>
+                  </Container>
                 </Tab.Pane>
                 <Tab.Pane eventKey='second'>
                   <Container>
                     <Form>
                       <Row>
-                        <h3>Update Your Email</h3>
+                        <Col ><h3>Update Your Email</h3></Col>
                       </Row>
                       <Row>
+                        <Col>
                         <Form.Group id='updateEmail'>
                           <Form.Label>Email</Form.Label>
                           <Form.Control
@@ -189,9 +216,9 @@ export default function AccountSettings({
                               setEmail(e.target.value);
                             }}
                           ></Form.Control>
-                        </Form.Group>
+                        </Form.Group></Col>
                       </Row>
-                      <hr />
+                      <hr style={{width:'425px'}} />
                       <Row>
                         <h3>Update Your Password</h3>
                       </Row>
@@ -214,8 +241,9 @@ export default function AccountSettings({
                         </Form.Group>
                       </Row>
 
-                      <hr />
+                      <hr style={{width:'360px'}} />
                       <Row>
+                        <Col>
                         <Button
                           className='primary-color-btn'
                           id='DeleteButton'
@@ -225,9 +253,11 @@ export default function AccountSettings({
                         >
                           Delete Account
                         </Button>
+                        </Col>
                       </Row>
-                      <hr style={{ width: "340px" }}></hr>
+                      <hr style={{width:'360px'}} />
                       <Row>
+                        <Col>
                         <Button
                           className='primary-color-btn'
                           onClick={(e) => {
@@ -236,7 +266,7 @@ export default function AccountSettings({
                           }}
                         >
                           Update Account
-                        </Button>
+                        </Button></Col>
                       </Row>
                     </Form>
                   </Container>
@@ -248,4 +278,6 @@ export default function AccountSettings({
       </Container>
     </>
   );
+
+  
 }
