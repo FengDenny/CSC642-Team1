@@ -19,6 +19,7 @@ import {
   setTrialID,
   setTrialDate,
   setTrialPoster,
+  setTrialType,
 } from "../../redux/actions/trailSubmitAction";
 import {
   setUserAptNo,
@@ -47,7 +48,7 @@ export default function SubmitTrialData() {
   const [citystate, setCityState] = useState("");
   const [aptno, setAptno] = useState("");
   const [zipcode, setZipcode] = useState("");
-  const [password, setPassword] = useState("");
+  const [studyType, setStudyType] = useState("");
 
   // Error
   const [priceError, setPriceError] = useState("");
@@ -98,6 +99,7 @@ export default function SubmitTrialData() {
     dispatch(setTrialPrerequisite(splitPrerequisite));
     dispatch(setTrialLocation(location));
     dispatch(setTrialStatus(status));
+    dispatch(setTrialType(studyType));
     dispatch(setTrialDate(start, end));
     dispatch(setTrialPoster(clinicalID));
     dispatch(setUserAptNo(aptno));
@@ -127,6 +129,8 @@ export default function SubmitTrialData() {
       setLocation={setLocation}
       status={status}
       setStatus={setStatus}
+      studyType={studyType}
+      setStudyType={setStudyType}
       start={start}
       setStart={setStart}
       end={end}
