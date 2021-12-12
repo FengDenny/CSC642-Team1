@@ -19,6 +19,9 @@ export default function ClinicalAuthForm({
   FaEye,
   FaEyeSlash,
   setShowClincicalModal,
+  nameError,
+  emailError,
+  passwordError,
 }) {
   return (
     <>
@@ -29,8 +32,12 @@ export default function ClinicalAuthForm({
             type='text'
             placeholder='Participaid'
             value={name}
+            maxLength='40'
             onChange={(e) => setName(e.target.value)}
           />
+          {nameError && (
+            <Form.Label className='red-color top5'>{nameError}</Form.Label>
+          )}
         </Form.Group>
         <Form.Group className='mb-3 form-group-control'>
           <Form.Label>Email</Form.Label>
@@ -40,6 +47,9 @@ export default function ClinicalAuthForm({
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
+          {emailError && (
+            <Form.Label className='red-color top5'>{emailError}</Form.Label>
+          )}
         </Form.Group>
         <Form.Group className='mb-3 form-group-control'>
           <Form.Label>Password</Form.Label>
@@ -58,6 +68,9 @@ export default function ClinicalAuthForm({
           >
             {!showPassword ? <FaEye /> : <FaEyeSlash />}
           </span>
+          {passwordError && (
+            <Form.Label className='red-color top5'>{passwordError}</Form.Label>
+          )}
         </Form.Group>
         <Form.Group className='mb-3 form-group-control'>
           <Form.Label>
@@ -69,6 +82,15 @@ export default function ClinicalAuthForm({
         </Form.Group>
         <Form.Group className='mb-3 form-group-control'>
           <Button
+            type='submit'
+            disabled={
+              nameError ||
+              emailError ||
+              passwordError ||
+              !name ||
+              !email ||
+              !password
+            }
             variant='outline-primary'
             className='primary-color-btn'
             onClick={(e) => {
@@ -94,6 +116,7 @@ export default function ClinicalAuthForm({
         <Form.Group className='mb-3 form-group-control form-group-control-last'>
           <Form.Label>Need a participants account?</Form.Label>
           <Button
+            type='submit'
             onClick={() => {
               setActive("participant");
               setShowModal(true);

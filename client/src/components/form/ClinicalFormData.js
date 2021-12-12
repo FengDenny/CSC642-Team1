@@ -12,6 +12,11 @@ import { nanoid } from "nanoid/async";
 import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { passwordReveal } from "../passwordToggle/PasswordReveal";
+import {
+  nameValidation,
+  emailValidation,
+  passwordValidation,
+} from "../formValidation/FormValidation";
 
 export default function ClinicalFormData({
   setActive,
@@ -26,6 +31,15 @@ export default function ClinicalFormData({
   const [email, setEmail] = useState("H@yahoo.org");
   const [password, setPassword] = useState("123456");
   const [showPassword, setShowPassword] = useState(false);
+  const [nameError, setNameError] = useState("");
+  const [emailError, setEmailError] = useState();
+  const [passwordError, setPasswordError] = useState("");
+
+  useEffect(() => {
+    name && nameValidation(name, "Company's Name", setNameError);
+    email && emailValidation(email, setEmailError);
+    password && passwordValidation(password, setPasswordError);
+  }, [name, email, password]);
 
   const handleFormSubmit = async (e) => {
     const Id = await nanoid(4);
@@ -56,6 +70,9 @@ export default function ClinicalFormData({
       FaEye={FaEye}
       FaEyeSlash={FaEyeSlash}
       setShowClincicalModal={setShowClincicalModal}
+      nameError={nameError}
+      emailError={emailError}
+      passwordError={passwordError}
     />
   );
 }
