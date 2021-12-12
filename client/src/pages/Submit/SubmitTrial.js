@@ -42,6 +42,8 @@ export default function SubmitTrial({
   startError,
   endError,
   locationError,
+  studyType,
+  setStudyType,
   commaError,
   commaTwoError,
   aptno,
@@ -61,12 +63,14 @@ export default function SubmitTrial({
           </h1>
           <Card className='margin-auto width-450 height-auto '>
             <p className='font-size-xsm margin-left-70 top-10 red-color'>
-              All fields are required!
+              All fields with * are required.
             </p>
             <Container fluid className='top-5'>
               <Form className='margin-top-sm font-size-xsm'>
                 <Form.Group className='mb-3 form-group-control '>
-                  <Form.Label>Trial Title</Form.Label>
+                  <Form.Label>
+                    Trial Title <span className='red-color'>*</span>
+                  </Form.Label>
                   <Form.Control
                     as='textarea'
                     placeholder='Long-term Safety and Efficacy Study for  Individuals Who Are Long Term Smokers '
@@ -76,7 +80,9 @@ export default function SubmitTrial({
                   />
                 </Form.Group>
                 <Form.Group className='mb-3 form-group-control'>
-                  <Form.Label>Participants</Form.Label>
+                  <Form.Label>
+                    Participants <span className='red-color'>*</span>
+                  </Form.Label>
                   <Form.Control
                     type='text'
                     placeholder='Smokers'
@@ -88,7 +94,9 @@ export default function SubmitTrial({
                 </Form.Group>
 
                 <Form.Group className='mb-3 form-group-control'>
-                  <Form.Label>Description</Form.Label>
+                  <Form.Label>
+                    Description <span className='red-color'>*</span>
+                  </Form.Label>
                   <Form.Control
                     as='textarea'
                     placeholder='Trial Description'
@@ -99,7 +107,9 @@ export default function SubmitTrial({
                   />
                 </Form.Group>
                 <Form.Group className='mb-3 form-group-control'>
-                  <Form.Label>Who may participate</Form.Label>
+                  <Form.Label>
+                    Who may participate <span className='red-color'>*</span>
+                  </Form.Label>
                   <Form.Control
                     as='textarea'
                     id='isQualified'
@@ -116,7 +126,9 @@ export default function SubmitTrial({
                   )}
                 </Form.Group>
                 <Form.Group className='mb-3 form-group-control'>
-                  <Form.Label>Who may not participate</Form.Label>
+                  <Form.Label>
+                    Who may not participate <span className='red-color'>*</span>
+                  </Form.Label>
                   <Form.Control
                     as='textarea'
                     id='notQualified'
@@ -133,7 +145,9 @@ export default function SubmitTrial({
                   )}
                 </Form.Group>
                 <Form.Group className='mb-3 form-group-control'>
-                  <Form.Label>Any Prerequisite?</Form.Label>
+                  <Form.Label>
+                    Any Prerequisite? <span className='red-color'>*</span>
+                  </Form.Label>
                   <Form.Control
                     as='textarea'
                     placeholder='Negative allergic test results'
@@ -153,7 +167,9 @@ export default function SubmitTrial({
               </Form.Label>
               <Row className='row-width-margin'>
                 <Form.Group as={Col} id='userAddress'>
-                  <Form.Label>Street Address</Form.Label>
+                  <Form.Label>
+                    Street Address <span className='red-color'>*</span>
+                  </Form.Label>
                   <Form.Control
                     type='text'
                     placeholder={auth.address}
@@ -180,7 +196,9 @@ export default function SubmitTrial({
               </Row>
               <Row className='row-width-margin'>
                 <Form.Group as={Col} id='userCityState'>
-                  <Form.Label>City, State</Form.Label>
+                  <Form.Label>
+                    City, State <span className='red-color'>*</span>
+                  </Form.Label>
                   <Form.Control
                     type='text'
                     placeholder={auth.citystate}
@@ -193,7 +211,9 @@ export default function SubmitTrial({
                 </Form.Group>
 
                 <Form.Group as={Col} id='userZipcode'>
-                  <Form.Label>zipcode</Form.Label>
+                  <Form.Label>
+                    Zipcode <span className='red-color'>*</span>
+                  </Form.Label>
                   <Form.Control
                     type='text'
                     placeholder={auth.zipcode}
@@ -212,7 +232,9 @@ export default function SubmitTrial({
             <Container fluid className=''>
               <Form className='margin-top-sm font-size-xsm'>
                 <Form.Group className='mb-3 form-group-control'>
-                  <Form.Label>Payout</Form.Label>
+                  <Form.Label>
+                    Payout <span className='red-color'>*</span>
+                  </Form.Label>
                   <Form.Control
                     type='number'
                     placeholder='50'
@@ -228,7 +250,9 @@ export default function SubmitTrial({
                 </Form.Group>
 
                 <Form.Group className='mb-3 form-group-control'>
-                  <Form.Label>Trial Status</Form.Label>
+                  <Form.Label>
+                    Trial Status <span className='red-color'>*</span>
+                  </Form.Label>
                   <Form.Select
                     aria-label='Default select example'
                     value={status}
@@ -239,9 +263,25 @@ export default function SubmitTrial({
                     <option value='Not Recruiting'>Not Recruiting</option>
                   </Form.Select>
                 </Form.Group>
+                <Form.Group className='mb-3 form-group-control'>
+                  <Form.Label>
+                    Study Type <span className='red-color'>*</span>
+                  </Form.Label>
+                  <Form.Select
+                    aria-label='Default select example'
+                    value={studyType}
+                    onChange={(e) => setStudyType(e.target.value)}
+                  >
+                    <option>Select type</option>{" "}
+                    <option value='Interventional'>Interventional</option>
+                    <option value='Observational'>Observational</option>
+                  </Form.Select>
+                </Form.Group>
                 <Row className='form-row'>
                   <Form.Group className='mb-3'>
-                    <Form.Label>Start Date</Form.Label>
+                    <Form.Label>
+                      Start Date <span className='red-color'>*</span>
+                    </Form.Label>
                     <Form.Control
                       type='text'
                       placeholder='11/20/2021'
@@ -257,7 +297,9 @@ export default function SubmitTrial({
                     )}
                   </Form.Group>
                   <Form.Group className='mb-3'>
-                    <Form.Label>End Date</Form.Label>
+                    <Form.Label>
+                      End Date <span className='red-color'>*</span>
+                    </Form.Label>
                     <Form.Control
                       type='text'
                       placeholder='03/20/2022'
@@ -297,8 +339,11 @@ export default function SubmitTrial({
                     priceError ||
                     !qualified ||
                     !notQualified ||
+                    !studyType ||
                     !title ||
                     !participants ||
+                    !citystate ||
+                    !zipcode ||
                     !payout ||
                     !prerequisite ||
                     !location ||
