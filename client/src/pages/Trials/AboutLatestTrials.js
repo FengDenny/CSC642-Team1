@@ -31,7 +31,7 @@ export default function AboutLatestTrials() {
   const [alertApplyModal, setAlertApplyModal] = useState(false);
   const [appliedModal, setAppliedModal] = useState(false);
   const [active, setActive] = useState("apply");
-  const { auth, submit } = useSelector((state) => ({ ...state }));
+  const { auth, submit, applied } = useSelector((state) => ({ ...state }));
   const {
     title,
     participants,
@@ -45,6 +45,7 @@ export default function AboutLatestTrials() {
     trialID,
   } = submit;
   const { isLoggedIn, clinicalLoggedIn } = auth;
+  const { appliedID } = applied;
 
   return (
     <>
@@ -321,6 +322,7 @@ export default function AboutLatestTrials() {
               </button>
             ) : submit.status !== "Not Recruiting" ? (
               <button
+                disabled={appliedID ? "true" : "false"}
                 onClick={() => {
                   setActive("applied");
                   setAppliedModal(true);
@@ -330,7 +332,7 @@ export default function AboutLatestTrials() {
                 }}
                 className='primary-color-btn height34'
               >
-                Apply Now!
+                {appliedID ? "Applied" : " Apply Now"}
               </button>
             ) : null}
           </div>
