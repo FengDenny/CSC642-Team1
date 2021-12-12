@@ -15,6 +15,7 @@ import {
 } from "../../redux/actions/appliedAction";
 
 import { useParams, Outlet, useNavigate } from "react-router-dom";
+import GoogleMapContainer from "../../components/map/GoogleMapContainer";
 
 export default function AboutLatestTrials() {
   const { id } = useParams();
@@ -43,6 +44,7 @@ export default function AboutLatestTrials() {
     studyType,
     date,
     trialID,
+    location,
   } = submit;
   const { isLoggedIn, clinicalLoggedIn } = auth;
   const { appliedID } = applied;
@@ -164,61 +166,74 @@ export default function AboutLatestTrials() {
             <h2 className='primary-color margin-top-sm font-size-sm  font-weight-bold'>
               Details
             </h2>
-            <p className='font-size-xsm '>
-              Participants:{" "}
-              <span className='primary-color font-weight-bold'>
-                {latest.participants}
-              </span>
-            </p>
-            <p className=' font-size-xsm '>
-              ID:{" "}
-              <span className='primary-color font-weight-bold'>
-                {latest.detail[0]._id}
-              </span>
-            </p>
-            <p className='font-size-xsm '>
-              Payout:{" "}
-              <span className='primary-color font-size-md font-weight-bold'>
-                {latest.price}
-              </span>
-            </p>
-            <p className='font-size-xsm '>
-              Study Type:{" "}
-              <span className='primary-color font-weight-bold'>
-                {latest.detail[0]["study-type"]}
-              </span>
-            </p>
-            <p className=' font-size-xsm '>
-              Status: {""}
-              {latest.detail[0].status === "Recruiting" ? (
-                <span className='green-color font-weight-bold'>
-                  {latest.detail[0].status}
-                </span>
-              ) : latest.detail[0].status === "Not Recruiting" ? (
-                <span className='red-color font-weight-bold'>
-                  {latest.detail[0].status}
-                </span>
-              ) : null}
-            </p>
+            <Row className='width-619'>
+              <Col xs={6}>
+                <p className='font-size-xsm '>
+                  Participants:{" "}
+                  <span className='primary-color font-weight-bold'>
+                    {latest.participants}
+                  </span>
+                </p>
+                <p className=' font-size-xsm '>
+                  ID:{" "}
+                  <span className='primary-color font-weight-bold'>
+                    {latest.detail[0]._id}
+                  </span>
+                </p>
+                <p className='font-size-xsm '>
+                  Payout:{" "}
+                  <span className='primary-color font-size-md font-weight-bold'>
+                    {latest.price}
+                  </span>
+                </p>
+                <p className='font-size-xsm '>
+                  Study Type:{" "}
+                  <span className='primary-color font-weight-bold'>
+                    {latest.detail[0]["study-type"]}
+                  </span>
+                </p>
+                <p className=' font-size-xsm '>
+                  Status: {""}
+                  {latest.detail[0].status === "Recruiting" ? (
+                    <span className='green-color font-weight-bold'>
+                      {latest.detail[0].status}
+                    </span>
+                  ) : latest.detail[0].status === "Not Recruiting" ? (
+                    <span className='red-color font-weight-bold'>
+                      {latest.detail[0].status}
+                    </span>
+                  ) : null}
+                </p>
 
-            <p className='font-size-xsm '>
-              Start Date:{" "}
-              <span className=' primary-color font-weight-bold'>
-                {latest.detail[0]["start-date"]}
-              </span>
-            </p>
-            <p className=' font-size-xsm '>
-              End Date:{" "}
-              <span className=' primary-color font-weight-bold'>
-                {latest.detail[0]["end-date"]}
-              </span>
-            </p>
-            <p className='font-size-xsm '>
-              Last Update:{" "}
-              <span className=' primary-color font-weight-bold'>
-                {latest.detail[0]["last-updated"]}
-              </span>
-            </p>
+                <p className='font-size-xsm '>
+                  Start Date:{" "}
+                  <span className=' primary-color font-weight-bold'>
+                    {latest.detail[0]["start-date"]}
+                  </span>
+                </p>
+                <p className=' font-size-xsm '>
+                  End Date:{" "}
+                  <span className=' primary-color font-weight-bold'>
+                    {latest.detail[0]["end-date"]}
+                  </span>
+                </p>
+                <p className='font-size-xsm '>
+                  Last Update:{" "}
+                  <span className=' primary-color font-weight-bold'>
+                    {latest.detail[0]["last-updated"]}
+                  </span>
+                </p>
+              </Col>
+
+              <Col xs={6}>
+                {latest.location.map((loc) => (
+                  <GoogleMapContainer
+                    isActive={"result-map-container"}
+                    mapAddress={`${loc.address} `}
+                  />
+                ))}
+              </Col>
+            </Row>
           </div>
         ) : submit ? (
           <div>
@@ -261,84 +276,99 @@ export default function AboutLatestTrials() {
             <h2 className='primary-color margin-top-sm font-size-sm  font-weight-bold'>
               Details
             </h2>
-            <p className='font-size-xsm '>
-              Participants:{" "}
-              <span className='primary-color font-weight-bold'>
-                {participants}
-              </span>
-            </p>
-            <p className=' font-size-xsm '>
-              ID:{" "}
-              <span className='primary-color font-weight-bold'>{trialID}</span>
-            </p>
-            <p className='font-size-xsm '>
-              Payout:{" "}
-              <span className='primary-color font-size-md font-weight-bold'>
-                ${payout}
-              </span>
-            </p>
-            <p className='font-size-xsm '>
-              Study Type:{" "}
-              <span className='primary-color font-weight-bold'>
-                {studyType}
-              </span>
-            </p>
-            <p className=' font-size-xsm '>
-              Status: {""}
-              {status === "Recruiting" ? (
-                <span className='green-color font-weight-bold'>{status}</span>
-              ) : status === "Not Recruiting" ? (
-                <span className='red-color font-weight-bold'>{status}</span>
-              ) : null}
-            </p>
+            <Row className='width-619'>
+              <Col xs={6}>
+                <p className='font-size-xsm '>
+                  Participants:{" "}
+                  <span className='primary-color font-weight-bold'>
+                    {participants}
+                  </span>
+                </p>
+                <p className=' font-size-xsm '>
+                  ID:{" "}
+                  <span className='primary-color font-weight-bold'>
+                    {trialID}
+                  </span>
+                </p>
+                <p className='font-size-xsm '>
+                  Payout:{" "}
+                  <span className='primary-color font-size-md font-weight-bold'>
+                    ${payout}
+                  </span>
+                </p>
+                <p className='font-size-xsm '>
+                  Study Type:{" "}
+                  <span className='primary-color font-weight-bold'>
+                    {studyType}
+                  </span>
+                </p>
+                <p className=' font-size-xsm '>
+                  Status: {""}
+                  {status === "Recruiting" ? (
+                    <span className='green-color font-weight-bold'>
+                      {status}
+                    </span>
+                  ) : status === "Not Recruiting" ? (
+                    <span className='red-color font-weight-bold'>{status}</span>
+                  ) : null}
+                </p>
 
-            <p className='font-size-xsm '>
-              Start Date:{" "}
-              <span className=' primary-color font-weight-bold'>
-                {date[0].start}
-              </span>
-            </p>
-            <p className=' font-size-xsm '>
-              End Date:{" "}
-              <span className=' primary-color font-weight-bold'>
-                {date[0].end}
-              </span>
-            </p>
-            <p className='font-size-xsm '>
-              Last Update:{" "}
-              <span className=' primary-color font-weight-bold'>
-                {today.toDateString()}
-              </span>
-            </p>
-            {clinicalLoggedIn ? null : !isLoggedIn ? (
-              <button
-                onClick={() => {
-                  setActive("participant");
-                  setShowModal(true);
-                }}
-                className='primary-color-btn height34'
-              >
-                Apply Now!
-              </button>
-            ) : submit.status !== "Not Recruiting" ? (
-              <button
-                disabled={appliedID ? "true" : "false"}
-                onClick={() => {
-                  setActive("applied");
-                  setAppliedModal(true);
-                  dispatch(setAppliedTitle(submit.title));
-                  dispatch(setAppliedParticipants(submit.participants));
-                  dispatch(setAppliedDescription(submit.description));
-                }}
-                className='primary-color-btn height34'
-              >
-                {appliedID ? "Applied" : " Apply Now"}
-              </button>
-            ) : null}
+                <p className='font-size-xsm '>
+                  Start Date:{" "}
+                  <span className=' primary-color font-weight-bold'>
+                    {date[0].start}
+                  </span>
+                </p>
+                <p className=' font-size-xsm '>
+                  End Date:{" "}
+                  <span className=' primary-color font-weight-bold'>
+                    {date[0].end}
+                  </span>
+                </p>
+                <p className='font-size-xsm '>
+                  Last Update:{" "}
+                  <span className=' primary-color font-weight-bold'>
+                    {today.toDateString()}
+                  </span>
+                </p>
+              </Col>
+
+              <Col xs={6}>
+                <GoogleMapContainer
+                  isActive={"result-map-container"}
+                  mapAddress={`${location.address} `}
+                />
+              </Col>
+            </Row>
           </div>
         ) : (
           <h1> Sorry, but this trials doesn't exist yet!</h1>
         )}
+        {clinicalLoggedIn ? null : !isLoggedIn ? (
+          <button
+            onClick={() => {
+              setActive("participant");
+              setShowModal(true);
+            }}
+            className='primary-color-btn height34'
+          >
+            Apply Now!
+          </button>
+        ) : submit.status !== "Not Recruiting" ? (
+          <button
+            disabled={appliedID ? "true" : "false"}
+            onClick={() => {
+              setActive("applied");
+              setAppliedModal(true);
+              dispatch(setAppliedTitle(submit.title));
+              dispatch(setAppliedParticipants(submit.participants));
+              dispatch(setAppliedDescription(submit.description));
+            }}
+            className='primary-color-btn height34'
+          >
+            {appliedID ? "Applied" : " Apply Now"}
+          </button>
+        ) : null}
       </Container>
       {active === "applied" && (
         <AppliedTrialModal

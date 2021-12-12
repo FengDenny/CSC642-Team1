@@ -4,6 +4,8 @@ import trials from "../../stimulate-backend/data/future-trials.json";
 import { Container, Col, Row, Button } from "react-bootstrap";
 import { FaCheck, FaTimes } from "react-icons/fa";
 import { useSelector } from "react-redux";
+import GoogleMapContainer from "../../components/map/GoogleMapContainer";
+
 export default function AboutDiscoverTrials() {
   const { id } = useParams();
   const discover = trials.find((trials) => trials.id === Number(id));
@@ -21,6 +23,7 @@ export default function AboutDiscoverTrials() {
     studyType,
     date,
     trialID,
+    location,
   } = submit;
   return (
     <Container>
@@ -117,61 +120,73 @@ export default function AboutDiscoverTrials() {
           <h2 className='primary-color margin-top-sm  font-weight-bold'>
             Details
           </h2>
-          <p className='font-size-xsm '>
-            Participants:{" "}
-            <span className='primary-color font-weight-bold'>
-              {discover.participants}
-            </span>
-          </p>
-          <p className=' font-size-xsm '>
-            ID:{" "}
-            <span className='primary-color font-weight-bold'>
-              {discover.detail[0]._id}
-            </span>
-          </p>
-          <p className='font-size-xsm '>
-            Payout:{" "}
-            <span className='primary-color font-size-md font-weight-bold'>
-              ${discover.detail[0].payout}
-            </span>
-          </p>
-          <p className='font-size-xsm '>
-            Study Type:{" "}
-            <span className='primary-color font-weight-bold'>
-              {discover.detail[0]["study-type"]}
-            </span>
-          </p>
-          <p className=' font-size-xsm '>
-            Status: {""}
-            {discover.detail[0].status === "Recruiting" ? (
-              <span className='green-color font-weight-bold'>
-                {discover.detail[0].status}
-              </span>
-            ) : discover.detail[0].status === "Not Recruiting" ? (
-              <span className='red-color font-weight-bold'>
-                {discover.detail[0].status}
-              </span>
-            ) : null}
-          </p>
+          <Row className='width-619'>
+            <Col xs={6}>
+              <p className='font-size-xsm '>
+                Participants:{" "}
+                <span className='primary-color font-weight-bold'>
+                  {discover.participants}
+                </span>
+              </p>
+              <p className=' font-size-xsm '>
+                ID:{" "}
+                <span className='primary-color font-weight-bold'>
+                  {discover.detail[0]._id}
+                </span>
+              </p>
+              <p className='font-size-xsm '>
+                Payout:{" "}
+                <span className='primary-color font-size-md font-weight-bold'>
+                  ${discover.detail[0].payout}
+                </span>
+              </p>
+              <p className='font-size-xsm '>
+                Study Type:{" "}
+                <span className='primary-color font-weight-bold'>
+                  {discover.detail[0]["study-type"]}
+                </span>
+              </p>
+              <p className=' font-size-xsm '>
+                Status: {""}
+                {discover.detail[0].status === "Recruiting" ? (
+                  <span className='green-color font-weight-bold'>
+                    {discover.detail[0].status}
+                  </span>
+                ) : discover.detail[0].status === "Not Recruiting" ? (
+                  <span className='red-color font-weight-bold'>
+                    {discover.detail[0].status}
+                  </span>
+                ) : null}
+              </p>
 
-          <p className='font-size-xsm '>
-            Start Date:{" "}
-            <span className=' primary-color font-weight-bold'>
-              {discover.detail[0]["start-date"]}
-            </span>
-          </p>
-          <p className=' font-size-xsm '>
-            End Date:{" "}
-            <span className=' primary-color font-weight-bold'>
-              {discover.detail[0]["end-date"]}
-            </span>
-          </p>
-          <p className='font-size-xsm '>
-            Last Update:{" "}
-            <span className=' primary-color font-weight-bold'>
-              {discover.detail[0]["last-updated"]}
-            </span>
-          </p>
+              <p className='font-size-xsm '>
+                Start Date:{" "}
+                <span className=' primary-color font-weight-bold'>
+                  {discover.detail[0]["start-date"]}
+                </span>
+              </p>
+              <p className=' font-size-xsm '>
+                End Date:{" "}
+                <span className=' primary-color font-weight-bold'>
+                  {discover.detail[0]["end-date"]}
+                </span>
+              </p>
+              <p className='font-size-xsm '>
+                Last Update:{" "}
+                <span className=' primary-color font-weight-bold'>
+                  {discover.detail[0]["last-updated"]}
+                </span>
+              </p>
+            </Col>
+            <Col xs={6}>
+              {discover.location.map((loc) => (
+                <GoogleMapContainer
+                  isActive={"result-map-container"}
+                  mapAddress={`${loc.address} `}
+                />
+              ))}
+            </Col>
+          </Row>
         </div>
       ) : submit ? (
         <div>
@@ -211,56 +226,71 @@ export default function AboutDiscoverTrials() {
             </Col>
           </Row>
           <hr style={{ width: "405px" }} />
+
           <h2 className='primary-color margin-top-sm font-size-sm  font-weight-bold'>
             Details
           </h2>
-          <p className='font-size-xsm '>
-            Participants:{" "}
-            <span className='primary-color font-weight-bold'>
-              {participants}
-            </span>
-          </p>
-          <p className=' font-size-xsm '>
-            ID:{" "}
-            <span className='primary-color font-weight-bold'>{trialID}</span>
-          </p>
-          <p className='font-size-xsm '>
-            Payout:{" "}
-            <span className='primary-color font-size-md font-weight-bold'>
-              ${payout}
-            </span>
-          </p>
-          <p className='font-size-xsm '>
-            Study Type:{" "}
-            <span className='primary-color font-weight-bold'>{studyType}</span>
-          </p>
-          <p className=' font-size-xsm '>
-            Status: {""}
-            {status === "Recruiting" ? (
-              <span className='green-color font-weight-bold'>{status}</span>
-            ) : status === "Not Recruiting" ? (
-              <span className='red-color font-weight-bold'>{status}</span>
-            ) : null}
-          </p>
+          <Row className='width-619'>
+            <Col xs={6}>
+              <p className='font-size-xsm '>
+                Participants:{" "}
+                <span className='primary-color font-weight-bold'>
+                  {participants}
+                </span>
+              </p>
+              <p className=' font-size-xsm '>
+                ID:{" "}
+                <span className='primary-color font-weight-bold'>
+                  {trialID}
+                </span>
+              </p>
+              <p className='font-size-xsm '>
+                Payout:{" "}
+                <span className='primary-color font-size-md font-weight-bold'>
+                  ${payout}
+                </span>
+              </p>
+              <p className='font-size-xsm '>
+                Study Type:{" "}
+                <span className='primary-color font-weight-bold'>
+                  {studyType}
+                </span>
+              </p>
+              <p className=' font-size-xsm '>
+                Status: {""}
+                {status === "Recruiting" ? (
+                  <span className='green-color font-weight-bold'>{status}</span>
+                ) : status === "Not Recruiting" ? (
+                  <span className='red-color font-weight-bold'>{status}</span>
+                ) : null}
+              </p>
 
-          <p className='font-size-xsm '>
-            Start Date:{" "}
-            <span className=' primary-color font-weight-bold'>
-              {date[0].start}
-            </span>
-          </p>
-          <p className=' font-size-xsm '>
-            End Date:{" "}
-            <span className=' primary-color font-weight-bold'>
-              {date[0].end}
-            </span>
-          </p>
-          <p className='font-size-xsm '>
-            Last Update:{" "}
-            <span className=' primary-color font-weight-bold'>
-              {today.toDateString()}
-            </span>
-          </p>
+              <p className='font-size-xsm '>
+                Start Date:{" "}
+                <span className=' primary-color font-weight-bold'>
+                  {date[0].start}
+                </span>
+              </p>
+              <p className=' font-size-xsm '>
+                End Date:{" "}
+                <span className=' primary-color font-weight-bold'>
+                  {date[0].end}
+                </span>
+              </p>
+              <p className='font-size-xsm '>
+                Last Update:{" "}
+                <span className=' primary-color font-weight-bold'>
+                  {today.toDateString()}
+                </span>
+              </p>
+            </Col>
+            <Col xs={6}>
+              <GoogleMapContainer
+                isActive={"result-map-container"}
+                mapAddress={`${location.address} `}
+              />
+            </Col>
+          </Row>
         </div>
       ) : (
         <h2> Sorry, but this trials doesn't exist yet!</h2>
