@@ -37,6 +37,10 @@ export const setTrialStatus = (status) => ({
   type: "SET_TRIAL_STATUS",
   status,
 });
+export const setTrialType = (studyType) => ({
+  type: "SET_TRIAL_TYPE",
+  studyType,
+});
 export const setTrialID = (trialID) => ({
   type: "SET_TRIAL_ID",
   trialID,

@@ -8,6 +8,7 @@ const INITIAL_STATE = {
   location: [{ address: "", coordinates: [{ lat: "", lng: "" }] }],
   payout: "",
   status: "",
+  studyType: "",
   trialID: "",
   date: [{ start: "", end: "" }],
   poster: "",
@@ -62,6 +63,11 @@ const trialSubmitReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         status: action.status,
+      };
+    case "SET_TRIAL_TYPE":
+      return {
+        ...state,
+        studyType: action.studyType,
       };
     case "SET_TRIAL_ID":
       return {
