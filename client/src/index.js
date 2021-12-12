@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import "./mediaQueries.css";
 import App from "./App";
+import "./map.css";
 import "bootstrap/dist/css/bootstrap.css";
 // for ghpages deployment
 // import { HashRouter as Router } from "react-router-dom";
