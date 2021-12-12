@@ -38,17 +38,13 @@ export const passwordValidation = (nameType, setError) => {
 };
 
 export const addressValidations = (nameType, name, setError) => {
-  const addressRegex =
-    /^(\d+) ?([A-Za-z](?= ))? (.*?) ([^ ]+?) ?((?<= )APT)? ?((?<= )\d*)?$/;
+  const addressRegex = /^[a-zA-Z0-9\s,'-]*$/;
   switch (nameType) {
     case nameType:
       if (nameType.length === 0) {
         setError(`${name} is required.`);
-      } else if (
-        name === "Address" &&
-        (nameType.length >= 40 || !nameType.match(addressRegex))
-      ) {
-        setError(`${name} can only be up to 40 alphanumeric characters.`);
+      } else if (!nameType.match(addressRegex)) {
+        setError(`Invalid ${name} type`);
       }
       break;
     default:
@@ -93,7 +89,7 @@ export const dateValidation = (nameType, name, setError) => {
 
 export const containCommasValidations = (nameType, setError) => {
   if (nameType.includes(",") === false) {
-    setError("Please use the following format: A,B,C");
+    setError("Please use the following format: A,B,C or A, B, C");
   } else {
     setError("");
   }
