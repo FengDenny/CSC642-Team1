@@ -44,6 +44,11 @@ export default function AccountSettingsData() {
     dispatch(setUserEmail(email));
   };
 
+  const detailsBtn = () => {
+
+    document.getElementById('personalDetailsBtn').style.textDecoration="underline";
+  };
+
   return (
     <AccountSettings
       handleSettingsSubmit={handleSettingsSubmit}
