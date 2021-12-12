@@ -6,7 +6,12 @@ import ParticipantAuthModal from "../../components/modals/ParticipantAuthModal";
 import ClinicalAuthModal from "../../components/modals/ClinicalAuthModal";
 import AppliedTrialModal from "../../components/modals/ApplyTrialModal";
 import trials from "../../stimulate-backend/data/conflict-free.json";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  setAppliedTitle,
+  setAppliedParticipants,
+  setAppliedDescription,
+} from "../../redux/actions/appliedAction";
 
 export default function AboutConflictTrials() {
   const { id } = useParams();
@@ -22,6 +27,7 @@ export default function AboutConflictTrials() {
   const { _id, payout, status } = conflict.detail[0];
   const { auth, submit } = useSelector((state) => ({ ...state }));
   const { isLoggedIn } = auth;
+  const dispatch = useDispatch();
   return (
     <>
       <div>
@@ -90,6 +96,9 @@ export default function AboutConflictTrials() {
                 onClick={() => {
                   setActive("applied");
                   setAppliedModal(true);
+                  dispatch(setAppliedTitle(conflict.title));
+                  dispatch(setAppliedParticipants(conflict.participants));
+                  dispatch(setAppliedDescription(conflict.description));
                 }}
               >
                 Apply Now!
