@@ -48,6 +48,15 @@ textarea {
 }
 
 /* UniversaL CSS */
+/* row */
+.row-width-margin {
+  position: relative;
+  width: 337px !important;
+  flex-wrap: nowrap !important;
+  margin-left: 40px !important;
+  margin-bottom: 10px !important;
+  top: -5px !important;
+}
 /* text */
 .text-shadow {
   text-shadow: 1px 1px #fff, 1px 1px #ffff, 1px 0px #fff;
