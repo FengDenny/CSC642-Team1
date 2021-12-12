@@ -83,7 +83,7 @@ export default function AccountSettings({
                     style={{ color: "#5f6368" }}
                     eventKey='first'
                   >
-                    <h4 className='button-underline'>Personal Details</h4>
+                    <h4>Personal Details</h4>
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
@@ -92,7 +92,7 @@ export default function AccountSettings({
                     id='updateAccountBtn'
                     eventKey='second'
                   >
-                    <h4 className='button-underline'>Update Account</h4>
+                    <h4>Update Account</h4>
                   </Nav.Link>
                 </Nav.Item>
               </Nav>
