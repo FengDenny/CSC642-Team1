@@ -21,7 +21,8 @@ export default function AboutLatestTrials() {
   const latest = trials["Latest Trials"].find(
     (trials) => trials.id === Number(id)
   );
-
+  const timeElapsed = Date.now();
+  const today = new Date(timeElapsed);
   console.log(latest);
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
@@ -31,8 +32,18 @@ export default function AboutLatestTrials() {
   const [appliedModal, setAppliedModal] = useState(false);
   const [active, setActive] = useState("apply");
   const { auth, submit } = useSelector((state) => ({ ...state }));
-  const { title, participants, payout, description, qualified, notQualified } =
-    submit;
+  const {
+    title,
+    participants,
+    payout,
+    description,
+    qualified,
+    notQualified,
+    status,
+    studyType,
+    date,
+    trialID,
+  } = submit;
   const { userId, isLoggedIn } = auth;
 
   return (
@@ -239,14 +250,21 @@ export default function AboutLatestTrials() {
             <h2 className='primary-color margin-top-sm  font-weight-bold'>
               {title}
             </h2>
-            <p className='margin-top-sm font-size-xsm '>
-              Payout:{" "}
-              <span className='primary-color font-size-md font-weight-bold'>
-                ${payout}
-              </span>
-            </p>
-            <p>{description}</p>
-            <p>{participants}</p>
+            <hr style={{ width: "405px" }} />
+            <p className='font-size-sm width-620'>{description}</p>
+            <hr style={{ width: "405px" }} />
+            <h2 className='primary-color margin-top-sm font-size-sm font-weight-bold'>
+              Legals
+            </h2>
+            <div>
+              <a href=' # '> Legals Information</a>
+              <p></p>
+              <a href=' # '> Legals Disclosures</a>
+            </div>
+            <hr style={{ width: "405px" }} />
+            <h2 className='primary-color margin-top-sm font-size-sm font-weight-bold'>
+              Eligibility
+            </h2>
             <Row className='width-619'>
               <Col xs={6}>
                 {qualified[0].map((result) => (
@@ -264,18 +282,58 @@ export default function AboutLatestTrials() {
                 ))}
               </Col>
             </Row>
+            <hr style={{ width: "405px" }} />
+            <h2 className='primary-color margin-top-sm font-size-sm  font-weight-bold'>
+              Details
+            </h2>
+            <p className='font-size-xsm '>
+              Participants:{" "}
+              <span className='primary-color font-weight-bold'>
+                {participants}
+              </span>
+            </p>
+            <p className=' font-size-xsm '>
+              ID:{" "}
+              <span className='primary-color font-weight-bold'>{trialID}</span>
+            </p>
+            <p className='font-size-xsm '>
+              Payout:{" "}
+              <span className='primary-color font-size-md font-weight-bold'>
+                ${payout}
+              </span>
+            </p>
+            <p className='font-size-xsm '>
+              Study Type:{" "}
+              <span className='primary-color font-weight-bold'>
+                {studyType}
+              </span>
+            </p>
+            <p className=' font-size-xsm '>
+              Status: {""}
+              {status === "Recruiting" ? (
+                <span className='green-color font-weight-bold'>{status}</span>
+              ) : status === "Not Recruiting" ? (
+                <span className='red-color font-weight-bold'>{status}</span>
+              ) : null}
+            </p>
 
-            <p className='margin-top-sm font-size-xsm '>
-              Status:{" "}
-              {submit.status === "Recruiting" ? (
-                <span className='green-color font-weight-bold'>
-                  {submit.status}
-                </span>
-              ) : (
-                <span className='red-color font-weight-bold'>
-                  {submit.status}{" "}
-                </span>
-              )}
+            <p className='font-size-xsm '>
+              Start Date:{" "}
+              <span className=' primary-color font-weight-bold'>
+                {date[0].start}
+              </span>
+            </p>
+            <p className=' font-size-xsm '>
+              End Date:{" "}
+              <span className=' primary-color font-weight-bold'>
+                {date[0].end}
+              </span>
+            </p>
+            <p className='font-size-xsm '>
+              Last Update:{" "}
+              <span className=' primary-color font-weight-bold'>
+                {today.toDateString()}
+              </span>
             </p>
             {!isLoggedIn ? (
               <button
