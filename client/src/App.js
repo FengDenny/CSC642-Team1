@@ -11,6 +11,7 @@ import {
 import Home from "./pages/home/Home";
 import SubmitTrialData from "./pages/Submit/SubmitTrialData";
 import AccountSettingsData from "./pages/Protected/AccountSettingsData";
+import ClinicalAccountSettingsData from "./pages/Protected/ClinicalAccountSettingsData";
 import Participate from "./pages/Protected/Participate/Participate";
 import TrialSubmitted from "./pages/Protected/clinical/TrialSubmitted";
 import AboutLatestTrials from "./pages/Trials/AboutLatestTrials";
@@ -44,12 +45,13 @@ function App() {
 
     {
       path: "account/:id",
-      element:
-        auth.isLoggedIn ? 
-        <AccountSettingsData /> : 
-        (auth.clinicalLoggedIn ? 
-          <ClinicalAccountSettingsData /> :
-          <Navigate to='/' />),
+      element: auth.isLoggedIn ? (
+        <AccountSettingsData />
+      ) : auth.clinicalLoggedIn ? (
+        <ClinicalAccountSettingsData />
+      ) : (
+        <Navigate to='/' />
+      ),
     },
     {
       path: "/participate",
