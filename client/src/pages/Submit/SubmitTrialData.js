@@ -21,6 +21,11 @@ import {
   setTrialPoster,
 } from "../../redux/actions/trailSubmitAction";
 import {
+  setUserAptNo,
+  setUserCityState,
+  setUserZipcode,
+} from "../../redux/actions/authAction";
+import {
   priceValidation,
   dateValidation,
   addressValidations,
@@ -39,12 +44,18 @@ export default function SubmitTrialData() {
   const [prerequisite, setPrerequisite] = useState("");
   const [location, setLocation] = useState("");
   const [status, setStatus] = useState("");
+  const [citystate, setCityState] = useState("");
+  const [aptno, setAptno] = useState("");
+  const [zipcode, setZipcode] = useState("");
+  const [password, setPassword] = useState("");
+
   // Error
   const [priceError, setPriceError] = useState("");
   const [startError, setStartError] = useState("");
   const [endError, setEndError] = useState("");
   const [locationError, setLocationError] = useState("");
   const [commaError, setCommaError] = useState("");
+  const [commaTwoError, setCommaTwoError] = useState("");
 
   // date
   const [start, setStart] = useState("");
@@ -68,7 +79,8 @@ export default function SubmitTrialData() {
     end && dateValidation(end, "End date", setEndError);
     location && addressValidations(location, "Address", setLocationError);
     qualified && containCommasValidations(qualified, setCommaError);
-  }, [payout, start, end, location, qualified]);
+    notQualified && containCommasValidations(notQualified, setCommaTwoError);
+  }, [payout, start, end, location, qualified, notQualified]);
 
   const handleFormSubmit = async (e) => {
     const splitReqirements = qualified.split(",");
@@ -88,6 +100,9 @@ export default function SubmitTrialData() {
     dispatch(setTrialStatus(status));
     dispatch(setTrialDate(start, end));
     dispatch(setTrialPoster(clinicalID));
+    dispatch(setUserAptNo(aptno));
+    dispatch(setUserCityState(citystate));
+    dispatch(setUserZipcode(zipcode));
     navigate("/");
   };
 
@@ -133,6 +148,13 @@ export default function SubmitTrialData() {
       endError={endError}
       locationError={locationError}
       commaError={commaError}
+      commaTwoError={commaTwoError}
+      aptno={aptno}
+      setAptno={setAptno}
+      citystate={citystate}
+      setCityState={setCityState}
+      zipcode={zipcode}
+      setZipcode={setZipcode}
     />
   );
 }
