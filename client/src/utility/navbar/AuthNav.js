@@ -27,7 +27,6 @@ export const AuthClinicalNav = () => {
             <NavDropdown.Item href={`/approved-trials/${auth.clinicalID}`}>
               Approved Trials
             </NavDropdown.Item>
-            <NavDropdown.Item href='#action/3.3'>Something</NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item
               as='button'
