@@ -44,7 +44,7 @@ export default function AboutLatestTrials() {
     date,
     trialID,
   } = submit;
-  const { userId, isLoggedIn } = auth;
+  const { isLoggedIn, clinicalLoggedIn } = auth;
 
   return (
     <>
@@ -218,32 +218,6 @@ export default function AboutLatestTrials() {
                 {latest.detail[0]["last-updated"]}
               </span>
             </p>
-
-            {!isLoggedIn ? (
-              <button
-                onClick={() => {
-                  setActive("participant");
-                  setShowModal(true);
-                }}
-                className='primary-color-btn height34'
-              >
-                Apply Now!
-              </button>
-            ) : latest.detail[0].status !== "Not Recruiting" ||
-              submit.status !== "Not Recruiting" ? (
-              <button
-                onClick={() => {
-                  setActive("applied");
-                  setAppliedModal(true);
-                  dispatch(setAppliedTitle(latest.title));
-                  dispatch(setAppliedParticipants(latest.participants));
-                  dispatch(setAppliedDescription(latest.description));
-                }}
-                className='primary-color-btn height34'
-              >
-                Apply Now!
-              </button>
-            ) : null}
           </div>
         ) : submit ? (
           <div>
@@ -335,7 +309,7 @@ export default function AboutLatestTrials() {
                 {today.toDateString()}
               </span>
             </p>
-            {!isLoggedIn ? (
+            {clinicalLoggedIn ? null : !isLoggedIn ? (
               <button
                 onClick={() => {
                   setActive("participant");
