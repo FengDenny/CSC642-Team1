@@ -36,3 +36,57 @@ export const passwordValidation = (nameType, setError) => {
     setError("");
   }
 };
+
+export const addressValidations = (nameType, name, setError) => {
+  const addressRegex =
+    /^(\d+) ?([A-Za-z](?= ))? (.*?) ([^ ]+?) ?((?<= )APT)? ?((?<= )\d*)?$/;
+  switch (nameType) {
+    case nameType:
+      if (nameType.length === 0) {
+        setError(`${name} is required.`);
+      } else if (
+        name === "Address" &&
+        (nameType.length >= 40 || !nameType.match(addressRegex))
+      ) {
+        setError(`${name} can only be up to 40 alphanumeric characters.`);
+      }
+      break;
+    default:
+      break;
+  }
+};
+
+export const priceValidation = (nameType, name, setError) => {
+  const nonNegNumRegex = /^[0-9]+$/;
+  switch (nameType) {
+    case nameType:
+      if (nameType.length === 0) {
+        setError(`${name} is required.`);
+      } else if (!nameType.match(nonNegNumRegex)) {
+        setError(`Invalid ${name}. `);
+      } else {
+        setError("");
+      }
+      break;
+    default:
+      break;
+  }
+};
+
+export const dateValidation = (nameType, name, setError) => {
+  const dateRegex =
+    /^(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d$/;
+  switch (nameType) {
+    case nameType:
+      if (nameType.length === 0) {
+        setError(`${name} is required.`);
+      } else if (!nameType.match(dateRegex)) {
+        setError(`Incorrect date format. must be in mm/dd/yyyy `);
+      } else {
+        setError("");
+      }
+      break;
+    default:
+      break;
+  }
+};
