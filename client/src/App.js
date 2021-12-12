@@ -10,12 +10,13 @@ import {
 } from "react-router-dom";
 import Home from "./pages/home/Home";
 import SubmitTrialData from "./pages/Submit/SubmitTrialData";
-import AccountSettings from "./pages/Protected/AccountSettings";
+import AccountSettingsData from "./pages/Protected/AccountSettingsData";
 import Participate from "./pages/Protected/Participate/Participate";
 import TrialSubmitted from "./pages/Protected/clinical/TrialSubmitted";
 import AboutLatestTrials from "./pages/Trials/AboutLatestTrials";
 import AboutConflictTrials from "./pages/Trials/AboutConflictTrials";
 import AboutDiscoverTrials from "./pages/Trials/AboutDiscoverTrials";
+import TrialApplied from "./pages/Protected/applied/TrialApplied";
 import SearchData from "./components/search/SearchData";
 import Navbar from "./utility/navbar/Navbar";
 import Footer from "./utility/footer/Footer";
@@ -40,11 +41,12 @@ function App() {
         </>
       ),
     },
+
     {
       path: "account/:id",
       element:
         auth.isLoggedIn || auth.clinicalLoggedIn ? (
-          <AccountSettings />
+          <AccountSettingsData />
         ) : (
           <Navigate to='/' />
         ),
@@ -71,6 +73,11 @@ function App() {
           <Navigate to='/' />
         ),
     },
+    {
+      path: "/trials/:id",
+      element: auth.isLoggedIn ? <TrialApplied /> : <Navigate to='/' />,
+    },
+
     {
       path: "latest/:id",
       element: <AboutLatestTrials />,
