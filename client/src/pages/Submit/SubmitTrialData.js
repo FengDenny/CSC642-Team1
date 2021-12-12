@@ -20,6 +20,11 @@ import {
   setTrialDate,
   setTrialPoster,
 } from "../../redux/actions/trailSubmitAction";
+import {
+  priceValidation,
+  dateValidation,
+  addressValidations,
+} from "../../components/formValidation/FormValidation";
 
 // import { addCheck } from "./getArray";
 
@@ -33,10 +38,15 @@ export default function SubmitTrialData() {
   const [prerequisite, setPrerequisite] = useState("");
   const [location, setLocation] = useState("");
   const [status, setStatus] = useState("");
+  // Error
+  const [priceError, setPriceError] = useState("");
+  const [startError, setStartError] = useState("");
+  const [endError, setEndError] = useState("");
+  const [locationError, setLocationError] = useState("");
+
   // date
   const [start, setStart] = useState("");
   const [end, setEnd] = useState("");
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   // Modal
@@ -48,6 +58,13 @@ export default function SubmitTrialData() {
   // check is id is the same as poster id
   const { auth } = useSelector((state) => ({ ...state }));
   const { clinicalID, clinicalLoggedIn } = auth;
+
+  useEffect(() => {
+    payout && priceValidation(payout, "Price", setPriceError);
+    start && dateValidation(start, "Start date", setStartError);
+    end && dateValidation(end, "End date", setEndError);
+    location && addressValidations(location, "Address", setLocationError);
+  }, [payout, start, end, location]);
 
   const handleFormSubmit = async (e) => {
     const splitReqirements = qualified.split(",");
@@ -106,6 +123,10 @@ export default function SubmitTrialData() {
       active={active}
       setActive={setActive}
       clinicalLoggedIn={clinicalLoggedIn}
+      priceError={priceError}
+      startError={startError}
+      endError={endError}
+      locationError={locationError}
     />
   );
 }

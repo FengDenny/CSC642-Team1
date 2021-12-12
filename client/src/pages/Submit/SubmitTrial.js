@@ -37,6 +37,10 @@ export default function SubmitTrial({
   active,
   setActive,
   clinicalLoggedIn,
+  priceError,
+  startError,
+  endError,
+  locationError,
 }) {
   return (
     <>
@@ -135,6 +139,11 @@ export default function SubmitTrial({
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
                   />
+                  {locationError && (
+                    <Form.Label className='red-color top5 font-size-14'>
+                      {locationError}
+                    </Form.Label>
+                  )}
                 </Form.Group>
                 <Form.Group className='mb-3 form-group-control'>
                   <Form.Label>Payout</Form.Label>
@@ -145,6 +154,11 @@ export default function SubmitTrial({
                     value={payout}
                     onChange={(e) => setPayout(e.target.value)}
                   />
+                  {priceError && (
+                    <Form.Label className='red-color top5 font-size-xsm'>
+                      {priceError}
+                    </Form.Label>
+                  )}
                 </Form.Group>
 
                 <Form.Group className='mb-3 form-group-control'>
@@ -170,6 +184,11 @@ export default function SubmitTrial({
                       onChange={(e) => setStart(e.target.value)}
                       maxLength='10'
                     />
+                    {startError && (
+                      <Form.Label className='red-color top5 font-size-14'>
+                        {startError}
+                      </Form.Label>
+                    )}
                   </Form.Group>
                   <Form.Group className='mb-3'>
                     <Form.Label>End Date</Form.Label>
@@ -181,6 +200,11 @@ export default function SubmitTrial({
                       onChange={(e) => setEnd(e.target.value)}
                       maxLength='10'
                     />
+                    {endError && (
+                      <Form.Label className='red-color top5 font-size-14'>
+                        {endError}
+                      </Form.Label>
+                    )}
                   </Form.Group>
                 </Row>
               </Form>
@@ -204,6 +228,7 @@ export default function SubmitTrial({
               <Form.Group className='left-20 '>
                 <Button
                   disabled={
+                    priceError ||
                     !qualified ||
                     !notQualified ||
                     !title ||
