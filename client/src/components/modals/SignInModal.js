@@ -3,7 +3,7 @@ import { Modal, Button, Form, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import SignInFormData from "../form/SignInFormData";
 export default function signInModal(props) {
-  const { onHide, setActive, setShowModal } = props;
+  const { onHide, setActive, setShowModal, setShowSignInModal } = props;
   return (
     <>
       <Modal
@@ -17,7 +17,11 @@ export default function signInModal(props) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <SignInFormData setActive={setActive} setShowModal={setShowModal} />
+          <SignInFormData
+            setActive={setActive}
+            setShowModal={setShowModal}
+            setShowSignInModal={setShowSignInModal}
+          />
         </Modal.Body>
         <Modal>
           <Button onClick={onHide}>Close</Button>

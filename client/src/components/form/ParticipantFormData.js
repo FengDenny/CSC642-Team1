@@ -17,6 +17,7 @@ import {
   emailValidation,
   passwordValidation,
 } from "../formValidation/FormValidation";
+import { toast } from "react-toastify";
 export default function ParticipantFormData({
   setActive,
   setShowSignInModal,
@@ -49,6 +50,7 @@ export default function ParticipantFormData({
     dispatch(setUserPassword(password));
     dispatch(setUserID(Id));
     dispatch(setIsLoggedIn(true));
+    toast.success(`${email} has signed up successfully!`);
   };
 
   return (

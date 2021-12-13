@@ -5,9 +5,13 @@ import {
   setIsLoggedIn,
   setClinicalLoggedIn,
 } from "../../redux/actions/authAction";
-// import { useNavigate, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 
-export default function SignInFormData({ setActive, setShowModal }) {
+export default function SignInFormData({
+  setActive,
+  setShowModal,
+  setShowSignInModal,
+}) {
   const { auth } = useSelector((state) => ({ ...state }));
   const [email, setEmail] = useState("DFENG415@YAHOO.COM");
   const [password, setPassword] = useState("123456");
@@ -27,12 +31,10 @@ export default function SignInFormData({ setActive, setShowModal }) {
 
     if (reduxEmail === email && reduxPass === password) {
       dispatch(setIsLoggedIn(true));
-
-      setTimeout(() => {
-        window.location.reload(`account/${auth.userId}`);
-      }, 500);
+      toast.success(`Welcome back, ${email}`);
     } else {
       dispatch(setIsLoggedIn(false));
+      toast.success(`Email or Password is incorrect`);
     }
 
     if (ReduxClinicalEmail === email && ReduxClinicalPass === password) {
@@ -57,6 +59,7 @@ export default function SignInFormData({ setActive, setShowModal }) {
       setEmail={setEmail}
       handleFormSubmit={handleFormSubmit}
       isSignedIn={isSignedIn}
+      setShowSignInModal={setShowSignInModal}
     />
   );
 }

@@ -12,6 +12,8 @@ import { nanoid } from "nanoid/async";
 import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { passwordReveal } from "../passwordToggle/PasswordReveal";
+import { toast } from "react-toastify";
+
 import {
   nameValidation,
   emailValidation,
@@ -49,30 +51,32 @@ export default function ClinicalFormData({
     dispatch(setClinicalPassword(password));
     dispatch(setClinicalID(Id));
     dispatch(setClinicalLoggedIn(true));
-    // window.location.reload();
+    toast.success(`${email} has signed up successfully!`);
   };
 
   return (
-    <ClinicalAuthForm
-      setActive={setActive}
-      setShowSignInModal={setShowSignInModal}
-      setShowModal={setShowModal}
-      name={name}
-      setName={setName}
-      email={email}
-      setEmail={setEmail}
-      password={password}
-      setPassword={setPassword}
-      handleFormSubmit={handleFormSubmit}
-      passwordReveal={passwordReveal}
-      showPassword={showPassword}
-      setShowPassword={setShowPassword}
-      FaEye={FaEye}
-      FaEyeSlash={FaEyeSlash}
-      setShowClincicalModal={setShowClincicalModal}
-      nameError={nameError}
-      emailError={emailError}
-      passwordError={passwordError}
-    />
+    <>
+      <ClinicalAuthForm
+        setActive={setActive}
+        setShowSignInModal={setShowSignInModal}
+        setShowModal={setShowModal}
+        name={name}
+        setName={setName}
+        email={email}
+        setEmail={setEmail}
+        password={password}
+        setPassword={setPassword}
+        handleFormSubmit={handleFormSubmit}
+        passwordReveal={passwordReveal}
+        showPassword={showPassword}
+        setShowPassword={setShowPassword}
+        FaEye={FaEye}
+        FaEyeSlash={FaEyeSlash}
+        setShowClincicalModal={setShowClincicalModal}
+        nameError={nameError}
+        emailError={emailError}
+        passwordError={passwordError}
+      />
+    </>
   );
 }

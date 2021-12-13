@@ -10,6 +10,7 @@ export default function SignInForm({
   setEmail,
   setPassword,
   handleFormSubmit,
+  setShowSignInModal,
 }) {
   return (
     <>
@@ -45,7 +46,10 @@ export default function SignInForm({
           <Button
             variant='outline-primary'
             className='primary-color-btn'
-            onClick={(e) => handleFormSubmit(e)}
+            onClick={(e) => {
+              handleFormSubmit(e);
+              setShowSignInModal(false);
+            }}
           >
             SIGN IN
           </Button>
