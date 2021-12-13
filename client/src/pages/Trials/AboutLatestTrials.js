@@ -166,7 +166,7 @@ export default function AboutLatestTrials() {
             <h2 className='primary-color margin-top-sm font-size-sm  font-weight-bold'>
               Details
             </h2>
-            <Row className='width-619'>
+            <Row className='margin-left-negative  width-794'>
               <Col xs={6}>
                 <p className='font-size-xsm '>
                   Participants:{" "}
@@ -276,7 +276,7 @@ export default function AboutLatestTrials() {
             <h2 className='primary-color margin-top-sm font-size-sm  font-weight-bold'>
               Details
             </h2>
-            <Row className='width-619'>
+            <Row className='margin-left-negative  width-794'>
               <Col xs={6}>
                 <p className='font-size-xsm '>
                   Participants:{" "}

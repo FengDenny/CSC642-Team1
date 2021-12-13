@@ -48,7 +48,7 @@ export default function AboutDiscoverTrials() {
           <h2 className='primary-color margin-top-sm font-size-lg font-weight-bold'>
             Eligibility
           </h2>
-          <Row className='width-619  margin-top-sm'>
+          <Row className='  margin-top-sm'>
             <Col xs={6}>
               {discover.eligibility.map(
                 (el) =>
@@ -120,7 +120,7 @@ export default function AboutDiscoverTrials() {
           <h2 className='primary-color margin-top-sm  font-weight-bold'>
             Details
           </h2>
-          <Row className='width-619'>
+          <Row className='margin-left-negative  width-794'>
             <Col xs={6}>
               <p className='font-size-xsm '>
                 Participants:{" "}
@@ -230,7 +230,7 @@ export default function AboutDiscoverTrials() {
           <h2 className='primary-color margin-top-sm font-size-sm  font-weight-bold'>
             Details
           </h2>
-          <Row className='width-619'>
+          <Row className='margin-left-negative  width-794'>
             <Col xs={6}>
               <p className='font-size-xsm '>
                 Participants:{" "}
