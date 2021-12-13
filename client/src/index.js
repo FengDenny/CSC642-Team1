@@ -8,7 +8,7 @@ import "bootstrap/dist/css/bootstrap.css";
 // for ghpages deployment
 // import { HashRouter as Router } from "react-router-dom";
 // for development
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import { createStore, combineReducers, applyMiddleware } from "redux";
