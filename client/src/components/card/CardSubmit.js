@@ -74,7 +74,7 @@ export default function Cards(props) {
           className='card-primary-color-btn '
           onClick={() =>
             props.btnName === "Learn More"
-              ? navigate(`latest/${props.id}`, { replace: true })
+              ? navigate(`latest/submit/${props.id}`, { replace: true })
               : props.btnName === "Participate"
               ? navigate(`conflict-free/${props.id}`)
               : props.btnName === "Discover"
