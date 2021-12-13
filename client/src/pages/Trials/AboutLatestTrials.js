@@ -24,9 +24,6 @@ export default function AboutLatestTrials() {
   );
   console.log(latest);
 
-  const timeElapsed = Date.now();
-  const today = new Date(timeElapsed);
-  console.log(latest);
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
   const [showClincicalModal, setShowClincicalModal] = useState(false);
@@ -35,22 +32,10 @@ export default function AboutLatestTrials() {
   const [appliedModal, setAppliedModal] = useState(false);
   const [active, setActive] = useState("apply");
   const { auth, submit, applied } = useSelector((state) => ({ ...state }));
-  const {
-    title,
-    participants,
-    payout,
-    description,
-    qualified,
-    notQualified,
-    status,
-    studyType,
-    date,
-    trialID,
-    location,
-  } = submit;
   const { isLoggedIn, clinicalLoggedIn } = auth;
-  const { appliedID, trialTitle } = applied;
-  // console.log(appliedID.match(latest.id));
+  const { trialTitle } = applied;
+  console.log(trialTitle);
+  console.log(latest.title);
   return (
     <>
       <Container>
