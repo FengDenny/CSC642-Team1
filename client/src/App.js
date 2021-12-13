@@ -56,20 +56,20 @@ function App() {
       ),
     },
     {
-      path: "/participate",
+      path: "participate",
       element: <Participate />,
     },
 
     {
-      path: "/participate/latest/:id",
+      path: "participate/latest/:id",
       element: <AboutLatestTrials />,
     },
     {
-      path: "/approved-trials/:userID/",
+      path: "approved-trials/:userID/",
       element: auth.clinicalLoggedIn ? <TrialSubmitted /> : <Navigate to='/' />,
     },
     {
-      path: "/approved-trials/:userID/latest/:id",
+      path: "approved-trials/:userID/latest/:id",
       element:
         submit.poster === auth.clinicalID ? (
           <AboutLatestTrials />
@@ -78,7 +78,7 @@ function App() {
         ),
     },
     {
-      path: "/trials/:id",
+      path: "trials/:id",
       element: auth.isLoggedIn ? <TrialApplied /> : <Navigate to='/' />,
     },
 
@@ -99,19 +99,19 @@ function App() {
       element: <AboutDiscoverTrials />,
     },
     {
-      path: "/search",
+      path: "search",
       element: <SearchData />,
     },
     {
-      path: "/search/latest/:id",
+      path: "search/latest/:id",
       element: <AboutLatestTrials />,
     },
     {
-      path: "/search/conflict-free/:id",
+      path: "search/conflict-free/:id",
       element: <AboutConflictTrials />,
     },
     {
-      path: "/search/discover/:id",
+      path: "search/discover/:id",
       element: <AboutDiscoverTrials />,
     },
   ]);
