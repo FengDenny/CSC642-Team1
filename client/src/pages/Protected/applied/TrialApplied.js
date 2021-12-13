@@ -13,16 +13,20 @@ export default function TrialApplied() {
       <h1 className='primary-color text-center'>Applied Trials</h1>
       {appliedID ? (
         <Card className='card'>
-          <Card.Header className='card-header-css primary-font font-weight-bold'>
+          <Card.Header className='card-header-css primary-font primary-color font-weight-bold'>
             {trialTitle}
           </Card.Header>
           <Col>
             <Card.Body>
-              <span className='font-weight-bold'>Particpants: </span>
+              <span className='font-weight-bold primary-color'>
+                Particpants:{" "}
+              </span>
               {participants}
             </Card.Body>
-            <Card.Text className='top5'>
-              <span className='font-weight-bold'>Description: </span>
+            <Card.Text className='margin-top-sm'>
+              <span className='font-weight-bold primary-color '>
+                Description:{" "}
+              </span>
               {description}
             </Card.Text>
           </Col>
