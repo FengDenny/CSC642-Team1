@@ -23,6 +23,7 @@ import SearchData from "./components/search/SearchData";
 import Navbar from "./utility/navbar/Navbar";
 import Footer from "./utility/footer/Footer";
 import { useSelector } from "react-redux";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const { auth, submit } = useSelector((state) => ({ ...state }));
