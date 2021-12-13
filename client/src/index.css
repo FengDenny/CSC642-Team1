@@ -267,4 +267,8 @@
 .nav-pills .nav-link.active {
   text-decoration: underline !important;
   color: var(--primary-color) !important;
+  background-color: transparent !important;
+}
+.nav-item h4 {
+  cursor: pointer;
 }
