@@ -22,6 +22,7 @@ export default function AboutLatestTrials() {
   const latest = trials["Latest Trials"].find(
     (trials) => trials.id === Number(id)
   );
+
   const timeElapsed = Date.now();
   const today = new Date(timeElapsed);
   console.log(latest);
@@ -48,7 +49,7 @@ export default function AboutLatestTrials() {
   } = submit;
   const { isLoggedIn, clinicalLoggedIn } = auth;
   const { appliedID } = applied;
-
+  // console.log(appliedID.match(latest.id));
   return (
     <>
       <Container>
@@ -356,7 +357,6 @@ export default function AboutLatestTrials() {
           </button>
         ) : submit.status !== "Not Recruiting" ? (
           <button
-            disabled={appliedID ? "true" : null}
             onClick={() => {
               setActive("applied");
               setAppliedModal(true);
@@ -366,7 +366,7 @@ export default function AboutLatestTrials() {
             }}
             className='primary-color-btn height34'
           >
-            {appliedID ? "Applied" : " Apply Now"}
+            Apply Now
           </button>
         ) : null}
       </Container>
