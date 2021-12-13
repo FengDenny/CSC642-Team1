@@ -76,3 +76,20 @@
     visibility: hidden;
   } */
 }
+
+@media (max-width: 768px) {
+  .map-container {
+    width: 47.2% !important;
+  }
+}
+
+@media (max-width: 425px) {
+  .result-map-container {
+    position: absolute !important;
+    width: 100% !important;
+  }
+  .map-container {
+    right: 0;
+    width: 40% !important;
+  }
+}
