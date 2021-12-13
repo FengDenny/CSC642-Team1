@@ -356,7 +356,7 @@ export default function AboutLatestTrials() {
           </button>
         ) : submit.status !== "Not Recruiting" ? (
           <button
-            disabled={appliedID ? "true" : "false"}
+            disabled={appliedID ? "true" : null}
             onClick={() => {
               setActive("applied");
               setAppliedModal(true);
