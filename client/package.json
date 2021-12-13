@@ -1,6 +1,6 @@
 {
-  "homepage": "https://fengdenny.github.io/CSC642-Team1/",
-  "name": "client",
+  "homepage": "https://fengdenny.github.io/csc642participaid/",
+  "name": "csc642participaid",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
