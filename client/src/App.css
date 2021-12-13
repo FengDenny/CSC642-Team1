@@ -48,6 +48,9 @@ textarea {
 }
 
 /* UniversaL CSS */
+.drop-shadow-text {
+  text-shadow: var(--drop-shadow) !important;
+}
 /* row */
 .row-width-margin {
   position: relative;
@@ -327,6 +330,9 @@ textarea {
 }
 .height60 {
   height: 60px !important;
+}
+.height70 {
+  height: 90px !important;
 }
 .height120 {
   height: 300px !important;

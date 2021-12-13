@@ -22,6 +22,7 @@ import TrialApplied from "./pages/Protected/applied/TrialApplied";
 import SearchData from "./components/search/SearchData";
 import Navbar from "./utility/navbar/Navbar";
 import Footer from "./utility/footer/Footer";
+import Banner from "./utility/banner/Banner";
 import { useSelector } from "react-redux";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -117,6 +118,7 @@ function App() {
   ]);
   return (
     <div className='App'>
+      <Banner />
       <Navbar />
       {element}
       <Footer />
