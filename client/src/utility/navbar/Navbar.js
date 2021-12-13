@@ -44,11 +44,7 @@ export default function NavbarComponent() {
 
               <Col xs={6} md={4}>
                 <Nav.Item>
-                  {auth.isLoggedIn ? (
-                    <Nav.Link href='/participate' className='links'>
-                      Participate
-                    </Nav.Link>
-                  ) : (
+                  {auth.clinicalLoggedIn ? (
                     <Nav.Link
                       href='#'
                       className='links'
@@ -57,6 +53,10 @@ export default function NavbarComponent() {
                         setAlertModal(true);
                       }}
                     >
+                      Participate
+                    </Nav.Link>
+                  ) : (
+                    <Nav.Link href='/participate' className='links'>
                       Participate
                     </Nav.Link>
                   )}
@@ -134,6 +134,7 @@ export default function NavbarComponent() {
           onHide={() => setShowSignInModal(false)}
           setShowModal={setShowModal}
           setActive={setActive}
+          setShowSignInModal={setShowSignInModal}
         />
       )}{" "}
       {active === "clinical" && (
