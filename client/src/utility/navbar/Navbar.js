@@ -28,7 +28,7 @@ export default function NavbarComponent() {
     <>
       <Navbar collapseOnSelect expand='lg' variant='dark' className='gradient '>
         <Container fluid>
-          <Navbar.Brand href='/'>
+          <Navbar.Brand href='/csc642participaid/#'>
             <Image src={Logo} rounded alt='logo' className='navbar-logo' />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
