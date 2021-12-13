@@ -15,6 +15,7 @@ import ClinicalAccountSettingsData from "./pages/Protected/ClinicalAccountSettin
 import Participate from "./pages/Protected/Participate/Participate";
 import TrialSubmitted from "./pages/Protected/clinical/TrialSubmitted";
 import AboutLatestTrials from "./pages/Trials/AboutLatestTrials";
+import AboutLatestSubmitTrials from "./pages/Trials/AboutLatestSubmit";
 import AboutConflictTrials from "./pages/Trials/AboutConflictTrials";
 import AboutDiscoverTrials from "./pages/Trials/AboutDiscoverTrials";
 import TrialApplied from "./pages/Protected/applied/TrialApplied";
@@ -83,6 +84,10 @@ function App() {
     {
       path: "latest/:id",
       element: <AboutLatestTrials />,
+    },
+    {
+      path: "latest/submit/:id",
+      element: <AboutLatestSubmitTrials />,
     },
     {
       path: "conflict-free/:id",
