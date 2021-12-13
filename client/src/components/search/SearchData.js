@@ -5,6 +5,7 @@ import LatestTrials from "../../stimulate-backend/data/latest-trials.json";
 import futureTrials from "../../stimulate-backend/data/future-trials.json";
 import conflictTrials from "../../stimulate-backend/data/conflict-free.json";
 import SearchCard from "../../components/card/Cards";
+import { Card } from "react-bootstrap";
 
 export default function SearchData() {
   const { search } = useSelector((state) => ({ ...state }));
@@ -25,7 +26,10 @@ export default function SearchData() {
     .sort(function (a, b) {
       return a.id - b.id;
     })
-    .filter((status) => status.detail[0].status === select[0].value)
+    .filter(
+      (status) =>
+        status.detail[0].status.toLowerCase() === select[0].value.toLowerCase()
+    )
     .map((item, index) =>
       item.eligibility.map(
         (i) =>

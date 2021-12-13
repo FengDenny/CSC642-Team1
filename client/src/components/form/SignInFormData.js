@@ -13,39 +13,38 @@ export default function SignInFormData({
   setShowSignInModal,
 }) {
   const { auth } = useSelector((state) => ({ ...state }));
-  const [email, setEmail] = useState("DFENG415@YAHOO.COM");
-  const [password, setPassword] = useState("123456");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const dispatch = useDispatch();
+  const { clinicalLoggedIn, isLoggedIn } = auth;
+  const reduxPass = auth.password;
+  const reduxEmail = auth.email;
+  const reduxClinicalPass = auth.clinicalPassword;
+  const reduxClinicalEmail = auth.clinicalEmail;
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
-
     isSignedIn(email, password);
   };
 
   const isSignedIn = (email, password) => {
-    const reduxPass = auth.password;
-    const reduxEmail = auth.email;
-    const ReduxClinicalPass = auth.clinicalPassword;
-    const ReduxClinicalEmail = auth.clinicalEmail;
-    // console.log(reduxPass === password, reduxEmail === email);
-
     if (reduxEmail === email && reduxPass === password) {
       dispatch(setIsLoggedIn(true));
       toast.success(`Welcome back, ${email}`);
-    } else {
-      dispatch(setIsLoggedIn(false));
-      toast.success(`Email or Password is incorrect`);
-    }
-
-    if (ReduxClinicalEmail === email && ReduxClinicalPass === password) {
-      console.log(ReduxClinicalEmail === email);
+      setShowSignInModal(false);
+    } else if (reduxClinicalEmail === email && reduxClinicalPass === password) {
+      console.log(reduxClinicalEmail === email);
       dispatch(setClinicalLoggedIn(true));
-
-      setTimeout(() => {
-        window.location.replace("/submit-trials");
-      }, 500);
-    } else {
+      toast.success(`Welcome back, ${email}`);
+      setShowSignInModal(false);
+    } else if (
+      (reduxEmail !== email && reduxPass !== password) ||
+      (reduxClinicalEmail !== email && reduxClinicalPass !== password)
+    ) {
+      dispatch(setIsLoggedIn(false));
       dispatch(setClinicalLoggedIn(false));
+      toast.success(`Email or Password is incorrect`);
+      setShowSignInModal(true);
     }
   };
 
@@ -60,6 +59,8 @@ export default function SignInFormData({
       handleFormSubmit={handleFormSubmit}
       isSignedIn={isSignedIn}
       setShowSignInModal={setShowSignInModal}
+      clinicalLoggedIn={clinicalLoggedIn}
+      isLoggedIn={isLoggedIn}
     />
   );
 }

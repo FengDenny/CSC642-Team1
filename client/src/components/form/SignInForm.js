@@ -11,6 +11,8 @@ export default function SignInForm({
   setPassword,
   handleFormSubmit,
   setShowSignInModal,
+  clinicalLoggedIn,
+  isLoggedIn,
 }) {
   return (
     <>
@@ -48,7 +50,7 @@ export default function SignInForm({
             className='primary-color-btn'
             onClick={(e) => {
               handleFormSubmit(e);
-              setShowSignInModal(false);
+              // setShowSignInModal(true);
             }}
           >
             SIGN IN

@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Container, Button, Form, Row, Col, Card } from "react-bootstrap";
 export default function SearchTrials({
   latest,
   conflict,
@@ -9,13 +9,9 @@ export default function SearchTrials({
 }) {
   return (
     <Container>
-      {latest || conflict || future ? (
-        <div className='d-flex flex-wrap'>
-          {latest} {conflict} {future}
-        </div>
-      ) : (
-        <div className='d-flex flex-wrap'>Sorry, cannot be found</div>
-      )}
+      <div className='d-flex flex-wrap'>
+        {latest} {conflict} {future}
+      </div>
     </Container>
   );
 }

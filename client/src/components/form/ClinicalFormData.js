@@ -29,9 +29,9 @@ export default function ClinicalFormData({
   const dispatch = useDispatch();
   const { auth } = useSelector((state) => ({ ...state }));
   //Company name state
-  const [name, setName] = useState("health");
-  const [email, setEmail] = useState("H@yahoo.org");
-  const [password, setPassword] = useState("123456");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState();

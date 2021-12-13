@@ -272,3 +272,20 @@
 .nav-item h4 {
   cursor: pointer;
 }
+
+/*  */
+
+.Toastify__toast-container--top-center {
+  top: 5em !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+.Toastify__toast-container {
+  z-index: 9999 !important;
+  --webkit-transform: translate3d(0, 0, 9999px) !important;
+  position: fixed !important;
+  padding: 4px !important;
+  width: 320px !important;
+  box-sizing: border-box !important;
+  color: #fff !important;
+}

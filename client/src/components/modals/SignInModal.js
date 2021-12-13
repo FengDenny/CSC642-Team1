@@ -12,8 +12,8 @@ export default function signInModal(props) {
         centered
       >
         <Modal.Header closeButton>
-          <Modal.Title className='primary-color title-modal'>
-            Welcome back to Participaid!
+          <Modal.Title className='primary-color title-modal text-center margin-left-142'>
+            Welcome back!
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
