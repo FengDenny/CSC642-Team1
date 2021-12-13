@@ -8,7 +8,7 @@ import "bootstrap/dist/css/bootstrap.css";
 // for ghpages deployment
 // import { HashRouter as Router } from "react-router-dom";
 // for development
-import { HashRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import { createStore, combineReducers, applyMiddleware } from "redux";
@@ -47,7 +47,7 @@ const persistor = persistStore(store);
 ReactDOM.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router>
         <App />
       </Router>
     </PersistGate>
