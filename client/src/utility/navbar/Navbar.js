@@ -36,7 +36,7 @@ export default function NavbarComponent() {
             <Nav className='me-auto margin-auto'>
               <Col xs={6} md={4}>
                 <Nav.Item>
-                  <Nav.Link href='#/' className='links  '>
+                  <Nav.Link href='/csc642participaid/#' className='links  '>
                     Home
                   </Nav.Link>
                 </Nav.Item>
@@ -56,7 +56,10 @@ export default function NavbarComponent() {
                       Participate
                     </Nav.Link>
                   ) : (
-                    <Nav.Link href='#/participate' className='links'>
+                    <Nav.Link
+                      href='/csc642participaid/#/participate'
+                      className='links'
+                    >
                       Participate
                     </Nav.Link>
                   )}
@@ -77,7 +80,10 @@ export default function NavbarComponent() {
                       Post
                     </Nav.Link>
                   ) : (
-                    <Nav.Link href='#/submit-trials' className='links'>
+                    <Nav.Link
+                      href='/csc642participaid/#/submit-trials'
+                      className='links'
+                    >
                       Post
                     </Nav.Link>
                   )}
