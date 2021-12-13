@@ -179,7 +179,7 @@ export default function ClinicalAccountSettings({
                       <Row>
                         <Col>
                           <Button
-                            className='primary-color-btn margin-top-10'
+                            className='primary-color-btn margin-top-10 width-396'
                             onClick={(e) => {
                               handleSettingsSubmit(e);
                             }}
@@ -214,7 +214,7 @@ export default function ClinicalAccountSettings({
                           </Form.Group>
                         </Col>
                       </Row>
-                      <hr style={{ width: "425px" }} />
+                      <hr style={{ width: "405px" }} />
                       <Row>
                         <h3>Update Your Password</h3>
                       </Row>
@@ -237,11 +237,11 @@ export default function ClinicalAccountSettings({
                         </Form.Group>
                       </Row>
 
-                      <hr style={{ width: "360px" }} />
+                      <hr style={{ width: "405px" }} />
                       <Row>
                         <Col>
                           <Button
-                            className='primary-color-btn'
+                            className='primary-color-btn margin-top-10 width-396'
                             id='DeleteButton'
                             onClick={() => {
                               deleteAlert();
@@ -251,11 +251,11 @@ export default function ClinicalAccountSettings({
                           </Button>
                         </Col>
                       </Row>
-                      <hr style={{ width: "360px" }} />
+                      <hr style={{ width: "405px" }} />
                       <Row>
                         <Col>
                           <Button
-                            className='primary-color-btn'
+                            className='primary-color-btn  width-396'
                             onClick={(e) => {
                               submitPasswordUpdate(e);
                               handleEmailSubmit(e);
