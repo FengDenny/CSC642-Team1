@@ -8,8 +8,6 @@ import SubmitCard from "../Card/SubmitCard";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import CreateAccountModal from "../../components/modals/CreateAccountModal";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 export default function Home() {
   // submit
@@ -111,7 +109,6 @@ export default function Home() {
           </Container>
         </section>
       </main>
-      <ToastContainer />
       {active === "participants" && (
         <CreateAccountModal
           fname={auth.firstName}
