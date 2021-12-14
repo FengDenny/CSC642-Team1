@@ -24,6 +24,7 @@ import Navbar from "./utility/navbar/Navbar";
 import Footer from "./utility/footer/Footer";
 import Banner from "./utility/banner/Banner";
 import { useSelector } from "react-redux";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
@@ -122,6 +123,7 @@ function App() {
       <Navbar />
       {element}
       <Footer />
+      <ToastContainer />
     </div>
   );
 }
