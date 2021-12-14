@@ -47,7 +47,7 @@ function App() {
     },
 
     {
-      path: "account/:id",
+      path: "/csc642participaid/#/account/:id",
       element: auth.isLoggedIn ? (
         <AccountSettingsData />
       ) : auth.clinicalLoggedIn ? (
