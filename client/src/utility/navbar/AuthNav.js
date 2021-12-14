@@ -57,10 +57,14 @@ export const AuthParticipant = () => {
             menuVariant='dark'
             className='margin-left-149'
           >
-            <NavDropdown.Item href={`/account/${auth.userId}`}>
+            <NavDropdown.Item
+              href={`/csc642participaid/#/account/${auth.userId}`}
+            >
               Account Settings
             </NavDropdown.Item>
-            <NavDropdown.Item href={`/trials/${auth.userId}`}>
+            <NavDropdown.Item
+              href={`/csc642participaid/#/trials/${auth.userId}`}
+            >
               Applied Trials
             </NavDropdown.Item>
             <NavDropdown.Divider />
