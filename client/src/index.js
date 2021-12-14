@@ -47,7 +47,7 @@ const persistor = persistStore(store);
 ReactDOM.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
-      <Router basename='/csc642participaid/#'>
+      <Router>
         <App />
       </Router>
     </PersistGate>
