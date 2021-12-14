@@ -33,7 +33,7 @@ export default function AppledTrialFormData() {
         )
       )
     );
-    window.location.replace(`/trials/${userId}`);
+    window.location.replace(`/csc642participaid/#//trials/${userId}`);
   };
 
   return (
