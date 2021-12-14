@@ -25,14 +25,7 @@ export default function AppledTrialFormData() {
     dispatch(setAppliedEmail(emailApply));
     dispatch(setAppliedName(first, last));
     dispatch(setAppliedID(id));
-    dispatch(
-      setAppliedURL(
-        window.location.pathname.slice(
-          0,
-          window.location.pathname.lastIndexOf("/")
-        )
-      )
-    );
+    dispatch(setAppliedURL(window.location.href));
     window.location.replace(`/csc642participaid/#/trials/${userId}`);
   };
 

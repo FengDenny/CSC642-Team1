@@ -32,12 +32,12 @@ export default function TrialApplied() {
           </Col>
           <Col>
             <div>
-              <Link
-                to={`${url}/${appliedID}`}
+              <Button
                 className='primary-color d-flex justify-content-center link-btn'
+                onClick={() => window.location.replace(`${url}`)}
               >
-                Read More
-              </Link>
+                <span className='bottom-4'>Read More</span>
+              </Button>
             </div>
           </Col>
         </Card>

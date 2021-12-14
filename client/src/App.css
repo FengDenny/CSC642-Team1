@@ -211,6 +211,11 @@ textarea {
   bottom: 3px !important;
 }
 
+.bottom-4 {
+  bottom: 4px !important;
+  position: relative;
+}
+
 .left-20 {
   position: relative;
   margin-left: 50px !important;
