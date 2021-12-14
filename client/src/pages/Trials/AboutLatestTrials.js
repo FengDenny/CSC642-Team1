@@ -8,6 +8,8 @@ import trials from "../../stimulate-backend/data/latest-trials.json";
 import { useSelector, useDispatch } from "react-redux";
 import { Container, Col, Row, Button } from "react-bootstrap";
 import { FaCheck, FaTimes } from "react-icons/fa";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   setAppliedTitle,
   setAppliedParticipants,
