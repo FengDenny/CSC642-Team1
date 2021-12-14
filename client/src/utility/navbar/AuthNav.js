@@ -21,10 +21,14 @@ export const AuthClinicalNav = () => {
             menuVariant='dark'
             className='margin-left-149'
           >
-            <NavDropdown.Item href={`/account/${auth.clinicalID}`}>
+            <NavDropdown.Item
+              href={`/csc642participaid/#/account/${auth.clinicalID}`}
+            >
               Account Settings
             </NavDropdown.Item>
-            <NavDropdown.Item href={`/approved-trials/${auth.clinicalID}`}>
+            <NavDropdown.Item
+              href={`/csc642participaid/#/approved-trials/${auth.clinicalID}`}
+            >
               Approved Trials
             </NavDropdown.Item>
             <NavDropdown.Divider />
