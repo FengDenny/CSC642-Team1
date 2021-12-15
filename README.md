@@ -54,6 +54,11 @@ In order to deliver a responsive real-world application, our team will be mainly
 
 1. GitHub Projects
 
+# Figma Design
+
+Using Figma, we created low fidelity/high fidelity mockups
+[Participaid design](https://www.figma.com/file/5orBOkFkjzB2Qp0wqSFJZk/Team1?node-id=17%3A4726)
+
 # Website Demo
 
 Feel free to toggle around with the functionalities, but since our backend was a stimulation, this project is only able to perform a single post/apply for trials stimulation.
